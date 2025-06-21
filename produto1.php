@@ -10,19 +10,19 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/acessibilidade">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        
+        <link rel="stylesheet" href="css//video-produto1.css">        
         <link rel="shortcut icon" href="img/shortcut icon.png">        
      <title>Tech Tecnologia</title>
-     </head>
-    
+     </head>    
 
 <button id="toggle-dark-mode" class="modo-toggle">
   <i class="fa fa-moon" id="icon-dark"></i> <span id="modo-label">Modo Dark</span>
 </button>
 
- 
-  
-    <header>        
+    <header>   
+        <a href="index.html" class="btn-voltar">
+  <i class="fa fa-arrow-left"></i> Voltar
+</a>     
         <div class="header-conteudo">
             <img src="img/Slogo felippe.png" alt="Logo Mercado" class="logo">
     
@@ -30,6 +30,7 @@
                 <h1>Tech Tecnologia</h1>
                 <p class="slogan">Inovação em código, excelência em resultados</p>
             </div>
+            
     
            
   <div class="container-botao cabecalho">
@@ -37,6 +38,7 @@
       Conhecer Agora <i class="fa fa-arrow-right seta-responsiva"></i>
     </a>
   </div>
+  
 
         </div>
        <!-- <div class="user-icon">
@@ -47,7 +49,7 @@
 
     </header>
 
-    <section class="sobre">
+    <!-- <section class="sobre">
         <h2>Sobre a Tech Tecnologia</h2>
         <p>Sou especialista em criar landing pages modernas e eficientes, feitas para atrair e converter seus clientes. Além disso, ofereço um serviço de manutenção mensal para garantir que seu site esteja sempre atualizado, seguro e funcionando perfeitamente.</p>
   <ul>
@@ -56,17 +58,17 @@
     <li>Suporte dedicado e rápido sempre que precisar</li>
     <li>Foco em resultados reais para o seu negócio</li>
   </ul>
-    </section>
+    </section> -->
 
-    <section class="produto">
+    <!-- <section class="produto">
         <div class="produto-container">
             <div class="produto-imagem">
                 <img src="img/computer.png" alt="Produto em Destaque" class="imagem-produto">
             </div>
             <div class="produto-info">
-                <h2>Video Página comum x Landing Page</h2>
-                <p>Veja no vídeo como uma LANDING PAGE se destaca em relação a uma página comum.</p> 
-                <a href="produto1.php" class="btn-ver-mais">Assista</a> 
+                <h2>Produto em Destaque</h2>
+                <p>Este é o nosso produto especial, que está com uma promoção imperdível!</p> 
+                <a href="produto1.php" class="btn-ver-mais">Ver mais</a> 
                 
             </div>
         </div>
@@ -83,21 +85,33 @@
                 <img src="img/computer.png" alt="Produto em Destaque" class="imagem-produto">
             </div>
         </div>
-    </section>  
+    </section>   -->
+
+    <section class="video-destaque">
+  <div class="video-conteudo">
+    <h2>Assista ao Nosso Vídeo</h2>
+    <p>Veja como podemos transformar sua ideia em um projeto profissional e eficiente.</p>
+    
+    <div class="video-wrapper">
+      <iframe width="560" height="315" src="video/Qual a diferença de.mp4" title="Vídeo Promocional" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
 
     
     
     <section class="foto-e-formulario" id="foto-e-formulario">
-        <div class="foto-container">
-            <img src="img/cliente.png" alt="Foto 1" class="foto">
+        <!-- <div class="foto-container">
+            <img src="img/cliente.png" alt="Foto 1" class="foto"> -->
              <!-- <a href="https://wa.me/5599999999999" target="_blank">
   <video class="foto-container" autoplay muted loop playsinline onclick="this.muted = false; this.play();" style="cursor: pointer;">
     <source src="videos/cliente-video.mp4" type="video/mp4">
     Seu navegador não suporta vídeo.
   </video>
 </a> -->
-            <img src="img/cliente.png" alt="Foto 3" class="foto">
-            <img src="img/cliente.png" alt="Foto 3" class="foto">
+            <!-- <img src="img/cliente.png" alt="Foto 3" class="foto">
+            <img src="img/cliente.png" alt="Foto 3" class="foto"> -->
         </div>
         <div class="formulario" id="formulario">
             <h2>Vamos Conversar!</h2>
@@ -133,15 +147,13 @@
     <i class="fas fa-comment-dots"></i>
   </div>
   <div class="mensagem"></div>
-</div>
-
-
-                
+</div>          
                 </div>
                 <button type="submit" class="botao-enviar">Enviar agora</button>
             </form>
         </div>
     </section>
+    
     
     
 
@@ -179,58 +191,7 @@
 </a>
 
 
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXX-Y');
-    
-        document.addEventListener('DOMContentLoaded', function () {
-            const produtos = document.querySelectorAll('.produto-container');
-    
-            function verificarScroll() {
-                produtos.forEach(produto => {
-                    const rect = produto.getBoundingClientRect();
-                    if (rect.top < window.innerHeight - 100) {
-                        produto.classList.add('aparecendo');
-                    }
-                });
-            }
-    
-            window.addEventListener('scroll', verificarScroll);
-            verificarScroll(); // Para ativar se já estiver visível
-        });
-   
-        document.getElementById('form-contato').addEventListener('submit', function(e) {
-            e.preventDefault(); // impede o envio imediato do formulário
-        
-            const botao = document.querySelector('.botao-enviar');
-            botao.innerHTML = "Enviando... ⏳";
-            botao.disabled = true;
-        
-            setTimeout(() => {
-                botao.innerHTML = "🚀 Enviar agora";
-                botao.disabled = false;
-                // Aqui você pode enviar o formulário de verdade se quiser
-                this.submit(); // Se quiser que ele envie depois dos 3 segundos
-            }, 3000);
-        });
-        document.addEventListener("DOMContentLoaded", function() {
-    const produtos = document.querySelectorAll(".produto-container");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("aparecendo");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    produtos.forEach(produto => {
-      observer.observe(produto);
-    });
-  });
+      
         </script>
         <script src="js/acessibilidade.js"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>    
