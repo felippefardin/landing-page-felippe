@@ -21,7 +21,7 @@
 }
 
 .dark-mode .produto {
-  background-color: #0033cc;
+  background-color: black;
   color: #eee;
 }
 
@@ -132,7 +132,7 @@ body.dark-mode .produto-info h2 {
 }
 
 body.dark-mode .produto-info p {
-  color: #cccccc;
+  color: #fff;
 }
 
 body.dark-mode .produto-imagem img {
