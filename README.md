@@ -1,4 +1,4 @@
-Desenvolvimento uma landing page teste e base para intensificar meu foco nessa área de desenvolvimento. 
-Landing page com a página principal e um painel de controle com diversas fucnionalidades como captar e-mail e whatsapp de cliente e responder diretamente no e-mail com um clique. APIs de pagamento e whatsapp integrado.
-O projeto está em desenvolvimento e irá entrar outras várias funcionalidades que irei atualizando no meu git para ter salvo e exemplo para quem tem interesse em trabalhar com landing page.
-Também estpu deixando publico para outros desenvolvedores me enviar e ajudar com discas e sugestões. 
+Desenvolvi uma landing page como teste e base para aprofundar meus conhecimentos nessa área de desenvolvimento.
+O projeto inclui uma página principal e um painel de controle com diversas funcionalidades, como captação de e-mails e WhatsApp de clientes, além da possibilidade de responder diretamente por e-mail com apenas um clique. Também há integração com APIs de pagamento e WhatsApp.
+O projeto está em constante evolução, com novas funcionalidades sendo implementadas e registradas no meu GitHub, servindo como portfólio e referência para quem deseja trabalhar com landing pages.
+Deixei o repositório público para que outros desenvolvedores possam contribuir com dicas, sugestões e melhorias.
