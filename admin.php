@@ -54,158 +54,16 @@ $totalPaginas = ceil($totalRegistros / $limite);
     <title>Mensagens Não Respondidas</title>
     <link rel="shortcut icon" href="img/atalho.png">
     <style>
-        /* Seu CSS aqui (copie o CSS do seu respondidas.php ou adapte) */
-        body {
-            font-family: Arial, sans-serif;
-            background: #f9f9f9;
-            padding: 20px;
-        }
-        h1 {
-            color: #00a859;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background: white;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-            vertical-align: middle;
-        }
-        th {
-            background: #00a859;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background: #f2f2f2;
-        }
-        th a {
-            color: inherit;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        th a:hover {
-            text-decoration: underline;
-            color: #fff;
-        }
-        .logout {
-            float: right;
-            background: #ff4c4c;
-            color: white;
-            padding: 8px 12px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .busca {
-            margin-top: 20px;
-        }
-        .busca input[type="text"] {
-            padding: 8px;
-            width: 250px;
-        }
-        .busca button {
-            padding: 8px 12px;
-            background: #00a859;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .acoes {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            border: none;
-        }
-        .responder {
-    color: #00a859;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer; 
-}
+        
+        
 
-.responder:hover {
-   background-color: #f1f1f1;
-}
-        .excluir, .marcar {
-            color: #00a859;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .excluir:hover, .marcar:hover {
-            background-color: #f1f1f1;
-        }
-        .paginacao {
-            margin-top: 20px;
-        }
-        .paginacao a {
-            margin: 0 5px;
-            padding: 6px 10px;
-            background: #eee;
-            text-decoration: none;
-            color: #333;
-            border-radius: 4px;
-        }
-        .paginacao a.ativa {
-            background: #00a859;
-            color: white;
-        }
-         /* Dropdown menu conforme seu código anterior */
-        .dropdown-container {
-          display: flex;
-          justify-content: flex-end;
-          margin-bottom: 20px;
-        }
-        .dropdown {
-          position: relative;
-          display: inline-block;
-        }
-        .dropbtn {
-          background-color: #007d3e;
-          color: white;
-          padding: 10px 16px;
-          font-size: 20px;
-          border: none;
-          cursor: pointer;
-          border-radius: 4px;
-        }
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          right: 0;
-          background-color: #ffffff;
-          min-width: 200px;
-          box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-          z-index: 1;
-          border-radius: 4px;
-          overflow: hidden;
-        }
-        .dropdown-content a {
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-          transition: background 0.2s;
-        }
-        .dropdown-content a:hover {
-          background-color: #007d3e;
-          color: white;
-        }
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
     </style>
 </head>
 <body>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/export-adm.css">
+<link rel="stylesheet" href="css/estilo-adm.css">
 
 <div class="dropdown-container">
     <div class="dropdown">
@@ -226,6 +84,21 @@ $totalPaginas = ceil($totalRegistros / $limite);
         <input type="text" name="busca" placeholder="Buscar por nome, e-mail ou WhatsApp" value="<?= htmlspecialchars($filtro) ?>">
         <button type="submit">Buscar</button>
     </form>
+
+     <div style="margin-top: 10px;">
+        <form method="GET" action="exportar_excel.php" style="display:inline;">
+            <button type="submit" class="exportar-button excel">Exportar Excel</button>
+        </form>
+
+        <form method="GET" action="exportar_pdf.php" style="display:inline;">
+            <button type="submit" class="exportar-button pdf">Exportar PDF</button>
+        </form>
+
+        <form method="GET" action="exportar_csv.php" style="display:inline;">
+            <button type="submit" class="exportar-button csv">Exportar CSV</button>
+        </form>
+    </div>
+
 
     <table>
         <thead>

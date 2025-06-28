@@ -177,6 +177,22 @@
    aria-label="Fale conosco no WhatsApp">
   <img src="img/whatsapp-icon.png" alt="WhatsApp">
 </a>
+<div id="modalSucesso" class="modal success">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModal('modalSucesso')">&times;</span>
+    <p>Login efetuado com sucesso!</p>
+  </div>
+</div>
+
+<!-- Modal Erro -->
+<div id="modalErro" class="modal error">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModal('modalErro')">&times;</span>
+    <p id="mensagemErro"></p>
+  </div>
+</div>
+</body>
+</html>
 
 
       <script>
@@ -238,5 +254,5 @@
         
         
     
-</body>
-</html>
+
+
