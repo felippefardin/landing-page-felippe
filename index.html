@@ -3,12 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Conheça os melhores produtos e ofertas exclusivas para você! Compre fácil e rápido com atendimento via WhatsApp.">
+        <meta name="description" content="Tech Tecnologia">
         <meta name="keywords" content="produtos, ofertas, descontos, loja online, comprar, promoção">
         <meta name="author" content="Sua Empresa">
         <meta name="robots" content="index, follow">      
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/acessibilidade">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         
         <link rel="shortcut icon" href="img/shortcut icon.png">        
@@ -55,6 +56,7 @@
     <li>Manutenção contínua para melhorias e segurança</li>
     <li>Suporte dedicado e rápido sempre que precisar</li>
     <li>Foco em resultados reais para o seu negócio</li>
+    <li>Consulte outros serviços</li>
   </ul>
     </section>
 
@@ -77,7 +79,7 @@
             <div class="produto-info">
                 <h2>Produto em Destaque</h2>
                 <p>Este é o nosso produto especial, que está com uma promoção imperdível!</p>
-                <a href="#" class="btn-ver-mais">Ver mais</a>   
+                <a href="produto2.php" class="btn-ver-mais">Ver mais</a>   
             </div>
             <div class="produto-imagem">
                 <img src="img/computer.png" alt="Produto em Destaque" class="imagem-produto">
@@ -142,6 +144,30 @@
             </form>
         </div>
     </section>
+
+    <!-- <section id="avaliacao">
+  <h2>Avalie nosso trabalho</h2>
+  <form action="salvar_avaliacao.php" method="POST">
+    <label for="nome">Seu nome:</label>
+    <input type="text" name="nome" required><br>
+
+    <label>Nota:</label>
+    <div class="estrelas">
+      <input type="radio" name="nota" value="5" id="estrela5"><label for="estrela5">★</label>
+      <input type="radio" name="nota" value="4" id="estrela4"><label for="estrela4">★</label>
+      <input type="radio" name="nota" value="3" id="estrela3"><label for="estrela3">★</label>
+      <input type="radio" name="nota" value="2" id="estrela2"><label for="estrela2">★</label>
+      <input type="radio" name="nota" value="1" id="estrela1"><label for="estrela1">★</label>
+    </div><br>
+
+    <label for="mensagem">Comentário:</label><br>
+    <textarea name="mensagem" rows="5" required></textarea><br>
+
+    <button type="submit">Enviar Avaliação</button>
+  </form>
+</section> -->
+
+    
     
     
 
@@ -177,20 +203,9 @@
    aria-label="Fale conosco no WhatsApp">
   <img src="img/whatsapp-icon.png" alt="WhatsApp">
 </a>
-<div id="modalSucesso" class="modal success">
-  <div class="modal-content">
-    <span class="close" onclick="fecharModal('modalSucesso')">&times;</span>
-    <p>Login efetuado com sucesso!</p>
-  </div>
-</div>
 
-<!-- Modal Erro -->
-<div id="modalErro" class="modal error">
-  <div class="modal-content">
-    <span class="close" onclick="fecharModal('modalErro')">&times;</span>
-    <p id="mensagemErro"></p>
-  </div>
-</div>
+
+
 </body>
 </html>
 

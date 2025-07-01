@@ -6,10 +6,10 @@ if (!isset($_SESSION['usuario'])) {
     exit;
 }
 
-$conn = new mysqli("localhost", "root", "", "femme");
+$conn = new mysqli("localhost", "root", "", "felippe");
 
 $filtro = "";
-$where = "WHERE respondida = 0";
+$where = "WHERE (respondida = 0 OR respondida IS NULL)";
 
 if (isset($_GET['busca']) && !empty(trim($_GET['busca']))) {
     $filtro = $conn->real_escape_string(trim($_GET['busca']));
