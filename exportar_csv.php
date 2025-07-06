@@ -22,3 +22,5 @@ while ($linha = $resultado->fetch_assoc()) {
 fclose($output);
 exit;
 ?>
+
+

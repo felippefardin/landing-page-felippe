@@ -74,18 +74,36 @@
         </div>
     </section> -->
     
-    <section class="produto">
+    <!-- <section class="produto">
         <div class="produto-container reverse">
             <div class="produto-info">
-                <h2>Produto em Destaque</h2>
-                <p>Este é o nosso produto especial, que está com uma promoção imperdível!</p>
+                <h2>Dicas de segurança</h2>
+                <p>Antes de cair em alguma cilada, veja esta cartilha criada para te guiar na navegação.<br>
+                   Ela foi feita com cuidado para todos os leitores, inclusive para idosos e pessoas com pouca familiaridade com a internet.<br>
+                   </p>
                 <a href="#" class="btn-ver-mais">Ver mais</a>   
             </div>
             <div class="produto-imagem">
-                <img src="img/computer.png" alt="Produto em Destaque" class="imagem-produto">
+                <img src="img/cartilha.png" alt="Produto em Destaque" class="imagem-produto">
             </div>
         </div>
-    </section>  
+    </section>   -->
+
+    <section class="cartilha-seguranca" style="padding: 40px 20px; background-color: #f9f9f9;">
+  <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333;">Cartilha de Segurança na Internet</h2>
+    <p style="font-size: 1.1rem; color: #555; line-height: 1.6;">
+      Antes de cair em alguma cilada, veja esta cartilha criada para te guiar na navegação.<br>
+      Ela foi feita com cuidado para todos os leitores, inclusive para idosos e pessoas com pouca familiaridade com a internet.
+    </p>
+    <a href="docs/CartilhaSeguranca.pdf.pdf" target="_blank" style="display: inline-block; margin: 20px 0; padding: 12px 24px; background-color: #007bff; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;">
+      📥 Baixar Cartilha em PDF
+    </a>
+    <div style="margin-top: 30px;">
+      <iframe src="docs/CartilhaSeguranca.pdf.pdf" width="100%" height="600px" style="border: 1px solid #ccc; border-radius: 10px;"></iframe>
+    </div>
+  </div>
+</section>
 
     <!-- <section class="video-destaque">
   <div class="video-conteudo">

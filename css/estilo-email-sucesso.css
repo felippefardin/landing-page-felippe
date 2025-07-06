@@ -1,0 +1,47 @@
+
+.busca {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .busca input[type="text"],
+    .busca input[type="date"] {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .busca button {
+      padding: 6px 12px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .busca button:hover {
+      background-color: #005fa3;
+    }
+
+    .paginacao {
+      margin-top: 20px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .paginacao a {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      color: #333;
+      border-radius: 4px;
+    }
+
+    .paginacao a.ativa {
+      background-color: #0077cc;
+      color: #fff;
+      font-weight: bold;
+    }

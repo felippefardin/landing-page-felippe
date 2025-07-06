@@ -11,10 +11,13 @@
         <link rel="stylesheet" href="css/acessibilidade">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="css/modal-captacao.css">
         
         <link rel="shortcut icon" href="img/shortcut icon.png">        
      <title>Tech Tecnologia</title>
      </head>
+     
+     
     
 
 <button id="toggle-dark-mode" class="modo-toggle">
@@ -66,7 +69,7 @@
                 <img src="img/computer.png" alt="Produto em Destaque" class="imagem-produto">
             </div>
             <div class="produto-info">
-                <h2>Video Página comum x Landing Page</h2>
+                <h2>Página Comum x Landing Page</h2>
                 <p>Veja no vídeo como uma LANDING PAGE se destaca em relação a uma página comum.</p> 
                 <a href="produto1.php" class="btn-ver-mais">Assista</a> 
                 
@@ -77,13 +80,14 @@
     <section class="produto">
         <div class="produto-container reverse">
             <div class="produto-info">
-                <h2>Produto em Destaque</h2>
-                <p>Este é o nosso produto especial, que está com uma promoção imperdível!</p>
+              <div class="produto-imagem">
+                <img src="img/cartilha.png" alt="Produto em Destaque" class="imagem-produto">
+            </div>
+                <h2>Dicas de segurança</h2>
+                <p>Não caia em cilada. Veja essa cartilha extra para sua segurança</p>
                 <a href="produto2.php" class="btn-ver-mais">Ver mais</a>   
             </div>
-            <div class="produto-imagem">
-                <img src="img/computer.png" alt="Produto em Destaque" class="imagem-produto">
-            </div>
+            
         </div>
     </section>  
 
@@ -91,18 +95,18 @@
     
     <section class="foto-e-formulario" id="foto-e-formulario">
         <div class="foto-container">
-            <img src="img/cliente.png" alt="Foto 1" class="foto">
+            <img src="img/combo-flex.png" alt="Foto 1" class="foto">
              <!-- <a href="https://wa.me/5599999999999" target="_blank">
   <video class="foto-container" autoplay muted loop playsinline onclick="this.muted = false; this.play();" style="cursor: pointer;">
     <source src="videos/cliente-video.mp4" type="video/mp4">
     Seu navegador não suporta vídeo.
   </video>
 </a> -->
-            <img src="img/cliente.png" alt="Foto 3" class="foto">
-            <img src="img/cliente.png" alt="Foto 3" class="foto">
+            <img src="img/combo-master.png" alt="Foto 3" class="foto">
+            <img src="img/combo-special.png" alt="Foto 3" class="foto">
         </div>
         <div class="formulario" id="formulario">
-            <h2>Vamos Conversar!</h2>
+            <h2>Vamos conversar? </h2>
             <p class="sub-texto">Preencha e receba uma resposta em minutos</p>
             <form id="form-contato" action="processa_formulario.php" method="POST">
                 <div class="input-grupo com-icone">
@@ -205,12 +209,38 @@
 </a>
 
 
-
+<!-- Modal de Captura de E-mail -->
+<div id="emailModal" class="modal-overlay">
+  <div class="modal-box">
+    <span class="modal-close" onclick="fecharModal()">&times;</span>
+    <h2>Fique por dentro das novidades!</h2>
+    <p>Cadastre seu e-mail e receba promoções exclusivas.</p>
+    <form id="emailForm" method="POST" action="email-sucesso.php">
+      <input type="email" name="email" placeholder="Digite seu e-mail" required>
+      <button type="submit">Quero Receber</button>
+    </form>
+  </div>
+</div>
 </body>
 </html>
 
+      
+<script>
 
-      <script>
+        
+function fecharModal() {
+  document.getElementById('emailModal').style.display = 'none';
+}
+
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    const modal = document.getElementById("emailModal");
+    if (modal) {
+      modal.style.display = "flex";
+    }
+  }, 2000);
+});
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -266,6 +296,7 @@
         <script src="js/acessibilidade.js"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>    
         <script src="script.js"></script>
+        <script src="js/modal-email-captacao.js"></script>
         
         
     
