@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 $conn = new mysqli ("localhost", "root", "", "felippe");
 
 if ($conn->connect_error) {
@@ -53,6 +54,7 @@ $conn->close();
         <?php if ($erro) : ?>
             <div class="error"><?= $erro ?></div>
         <?php endif; ?>
+        
 
         <form method="POST" action="cadastro.php">
             <input type="text" name="nome" placeholder="Seu nome" required>

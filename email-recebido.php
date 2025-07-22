@@ -75,7 +75,7 @@ $resultado = $conn->query($sql);
 </div>
 
  <h1>Olá, <?= ucwords(strtolower($_SESSION['usuario'])) ?>!</h1>
-    <h2>Mensagens Não Respondidas</h2>
+    <h2>E-mails recebidos</h2>
 
 
 

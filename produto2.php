@@ -133,7 +133,7 @@
         </div>
         <div class="formulario" id="formulario">
             <h2>Vamos Conversar!</h2>
-            <p class="sub-texto">Preencha e receba uma resposta em minutos</p>
+            <p class="sub-texto">Preencha e receba uma resposta</p>
             <form id="form-contato" action="processa_formulario.php" method="POST">
                 <div class="input-grupo com-icone">
   <label for="nome">Nome completo</label>
