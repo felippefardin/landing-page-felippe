@@ -16,6 +16,33 @@
         <link rel="shortcut icon" href="img/shortcut icon.png">        
      <title>Tech Tecnologia</title>
      </head>
+
+     <style>
+      .foto-container {
+   display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.foto-container .foto {
+  width: 30%;
+    min-width: 200px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.foto-container .foto:hover {
+  transform: scale(1.05);
+}
+
+
+     </style>
      
      
     
@@ -103,60 +130,56 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
     
     
     <section class="foto-e-formulario" id="foto-e-formulario">
-        <div class="foto-container">
-            <img src="img/combo-flex.png" alt="Foto 1" class="foto">
-             <!-- <a href="https://wa.me/5599999999999" target="_blank">
-  <video class="foto-container" autoplay muted loop playsinline onclick="this.muted = false; this.play();" style="cursor: pointer;">
-    <source src="videos/cliente-video.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>
-</a> -->
-            <img src="img/combo-master.png" alt="Foto 3" class="foto">
-            <img src="img/combo-special.png" alt="Foto 3" class="foto">
+  <div class="foto-container">
+    <img src="img/plano-basico.png" alt="Foto 1" class="foto">
+    <img src="img/plano-intermediario.png" alt="Foto 2" class="foto">
+    <img src="img/plano-avancado.png" alt="Foto 3" class="foto">
+  </div>
+  <div class="formulario" id="formulario">
+    <h2>Vamos conversar? </h2>
+    <p class="sub-texto">Preencha e receba uma resposta</p>
+    <form id="form-contato" action="processa_formulario.php" method="POST">
+      <div class="input-grupo com-icone">
+        <label for="nome">Nome completo</label>
+        <div class="input-wrapper">
+          <input type="text" name="nome" placeholder="Seu nome completo">
+          <i class="fas fa-envelope"></i>
         </div>
-        <div class="formulario" id="formulario">
-            <h2>Vamos conversar? </h2>
-            <p class="sub-texto">Preencha e receba uma resposta</p>
-            <form id="form-contato" action="processa_formulario.php" method="POST">
-                <div class="input-grupo com-icone">
-  <label for="nome">Nome completo</label>
-  <div class="input-wrapper">
-    <input type="text" name="nome" placeholder="Seu nome completo">
-    <i class="fas fa-envelope"></i>
-  </div>
-  <div class="mensagem"></div>
-</div><div class="input-grupo com-icone">
-  <label for="email">Email</label>
-  <div class="input-wrapper">
-    <input type="email" name="email" placeholder="Digite seu melhor email">
-    <i class="fas fa-envelope"></i>
-  </div>
-  <div class="mensagem"></div>
-</div>
-<div class="input-grupo com-icone">
-  <label for="whatspp">Whatsapp</label>
-  <div class="input-wrapper">
-    <input type="text" name="whatsapp" placeholder="Digite seu whatsapp">
-    <i class="fas fa-phone"></i>
-  </div>
-  <div class="mensagem"></div>
-</div>
-<div class="input-grupo com-icone">
-  <label for="mensagem">Mensagem</label>
-  <div class="input-wrapper">
-    <input type="text" name="mensagem" placeholder="Digite seu mensagem">
-    <i class="fas fa-comment-dots"></i>
-  </div>
-  <div class="mensagem"></div>
-</div>
+        <div class="mensagem"></div>
+      </div>
 
-
-                
-                </div>
-                <button type="submit" class="botao-enviar">Enviar agora</button>
-            </form>
+      <div class="input-grupo com-icone">
+        <label for="email">Email</label>
+        <div class="input-wrapper">
+          <input type="email" name="email" placeholder="Digite seu melhor email">
+          <i class="fas fa-envelope"></i>
         </div>
-    </section>
+        <div class="mensagem"></div>
+      </div>
+
+      <div class="input-grupo com-icone">
+        <label for="whatspp">Whatsapp</label>
+        <div class="input-wrapper">
+          <input type="text" name="whatsapp" placeholder="Digite seu whatsapp">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="mensagem"></div>
+      </div>
+
+      <div class="input-grupo com-icone">
+        <label for="mensagem">Mensagem</label>
+        <div class="input-wrapper">
+          <input type="text" name="mensagem" placeholder="Digite sua mensagem">
+          <i class="fas fa-comment-dots"></i>
+        </div>
+        <div class="mensagem"></div>
+      </div>
+
+      <button type="submit" class="botao-enviar">Enviar agora</button>
+    </form>
+  </div>
+</section>
+
 
     <!-- <section id="avaliacao">
   <h2>Avalie nosso trabalho</h2>
@@ -188,16 +211,27 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
             
   <div class="footer-container">
     <div class="footer-social">
-      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
-      <a href="#"><img src="img/linkedin.png" alt="Twitter"></a>
-      <a href="#"><img src="img/youtube.png" alt="Twitter"></a>          
-    </div>
+  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/facebook.png" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/instagram.png" alt="Instagram">
+  </a>
+  <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/twitter.png" alt="Twitter">
+  </a>
+  <a href="https://www.linkedin.com/in/felippefardin/" target="_blank" rel="noopener noreferrer">
+    <img src="img/linkedin.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/youtube.png" alt="YouTube">
+  </a>
+</div>
+
     <div class="footer-info">
       <p>Endereço: <br>
-         Rua Maranhão, 575, Sala 305, Praia da Costa, Vila Velha/ES <BR>
-         Centro Empresárial Praia Da Costa</p>
+         Vila Velha/ES <BR>
+         </p>
        <!-- <a style="color: black; text-decoration: none;" href="https://wa.me/5527998433504" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 5px;">
         Telefone Nutricionista
