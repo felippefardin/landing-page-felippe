@@ -15,6 +15,33 @@
      <title>Tech Tecnologia</title>
      </head>    
 
+      <style>
+      .foto-container {
+   display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.foto-container .foto {
+  width: 30%;
+    min-width: 200px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.foto-container .foto:hover {
+  transform: scale(1.05);
+}
+
+
+     </style>
+
 <button id="toggle-dark-mode" class="modo-toggle">
   <i class="fa fa-moon" id="icon-dark"></i> <span id="modo-label">Modo Dark</span>
 </button>
@@ -101,58 +128,83 @@
 
     
     
-    <section class="foto-e-formulario" id="foto-e-formulario">
-        <!-- <div class="foto-container">
-            <img src="img/cliente.png" alt="Foto 1" class="foto"> -->
-             <!-- <a href="https://wa.me/5599999999999" target="_blank">
-  <video class="foto-container" autoplay muted loop playsinline onclick="this.muted = false; this.play();" style="cursor: pointer;">
-    <source src="videos/cliente-video.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>
-</a> -->
-            <!-- <img src="img/cliente.png" alt="Foto 3" class="foto">
-            <img src="img/cliente.png" alt="Foto 3" class="foto"> -->
+    
+    
+
+     <section class="foto-e-formulario" id="foto-e-formulario">
+  <!-- <div class="foto-container">
+    <img src="img/plano-basico.png" alt="Foto 1" class="foto">
+    <img src="img/plano-intermediario.png" alt="Foto 2" class="foto">
+    <img src="img/plano-avancado.png" alt="Foto 3" class="foto">
+  </div> -->
+  <div class="formulario" id="formulario">
+    <h2>Vamos conversar? </h2>
+    <p class="sub-texto">Preencha e receba uma resposta</p>
+    <form id="form-contato" action="processa_formulario.php" method="POST">
+      <div class="input-grupo com-icone">
+        <label for="nome">Nome completo</label>
+        <div class="input-wrapper">
+          <input type="text" name="nome" placeholder="Seu nome completo">
+          <i class="fas fa-envelope"></i>
         </div>
-        <div class="formulario" id="formulario">
-            <h2>Vamos Conversar!</h2>
-            <p class="sub-texto">Preencha e receba uma resposta</p>
-            <form id="form-contato" action="processa_formulario.php" method="POST">
-                <div class="input-grupo com-icone">
-  <label for="nome">Nome completo</label>
-  <div class="input-wrapper">
-    <input type="text" name="nome" placeholder="Seu nome completo">
-    <i class="fas fa-envelope"></i>
-  </div>
-  <div class="mensagem"></div>
-</div><div class="input-grupo com-icone">
-  <label for="email">Email</label>
-  <div class="input-wrapper">
-    <input type="email" name="email" placeholder="Digite seu melhor email">
-    <i class="fas fa-envelope"></i>
-  </div>
-  <div class="mensagem"></div>
-</div>
-<div class="input-grupo com-icone">
-  <label for="whatspp">Whatsapp</label>
-  <div class="input-wrapper">
-    <input type="text" name="whatsapp" placeholder="Digite seu whatsapp">
-    <i class="fas fa-phone"></i>
-  </div>
-  <div class="mensagem"></div>
-</div>
-<div class="input-grupo com-icone">
-  <label for="mensagem">Mensagem</label>
-  <div class="input-wrapper">
-    <input type="text" name="mensagem" placeholder="Digite seu mensagem">
-    <i class="fas fa-comment-dots"></i>
-  </div>
-  <div class="mensagem"></div>
-</div>          
-                </div>
-                <button type="submit" class="botao-enviar">Enviar agora</button>
-            </form>
+        <div class="mensagem"></div>
+      </div>
+
+      <div class="input-grupo com-icone">
+        <label for="email">Email</label>
+        <div class="input-wrapper">
+          <input type="email" name="email" placeholder="Digite seu melhor email">
+          <i class="fas fa-envelope"></i>
         </div>
-    </section>
+        <div class="mensagem"></div>
+      </div>
+
+      <div class="input-grupo com-icone">
+        <label for="whatspp">Whatsapp</label>
+        <div class="input-wrapper">
+          <input type="text" name="whatsapp" placeholder="Digite seu whatsapp">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="mensagem"></div>
+      </div>
+
+      <div class="input-grupo com-icone">
+        <label for="mensagem">Mensagem</label>
+        <div class="input-wrapper">
+          <input type="text" name="mensagem" placeholder="Digite sua mensagem">
+          <i class="fas fa-comment-dots"></i>
+        </div>
+        <div class="mensagem"></div>
+      </div>
+
+      <button type="submit" class="botao-enviar">Enviar agora</button>
+    </form>
+  </div>
+</section>
+
+
+    <!-- <section id="avaliacao">
+  <h2>Avalie nosso trabalho</h2>
+  <form action="salvar_avaliacao.php" method="POST">
+    <label for="nome">Seu nome:</label>
+    <input type="text" name="nome" required><br>
+
+    <label>Nota:</label>
+    <div class="estrelas">
+      <input type="radio" name="nota" value="5" id="estrela5"><label for="estrela5">★</label>
+      <input type="radio" name="nota" value="4" id="estrela4"><label for="estrela4">★</label>
+      <input type="radio" name="nota" value="3" id="estrela3"><label for="estrela3">★</label>
+      <input type="radio" name="nota" value="2" id="estrela2"><label for="estrela2">★</label>
+      <input type="radio" name="nota" value="1" id="estrela1"><label for="estrela1">★</label>
+    </div><br>
+
+    <label for="mensagem">Comentário:</label><br>
+    <textarea name="mensagem" rows="5" required></textarea><br>
+
+    <button type="submit">Enviar Avaliação</button>
+  </form>
+</section> -->
+
     
     
     
@@ -161,16 +213,27 @@
             
   <div class="footer-container">
     <div class="footer-social">
-      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
-      <a href="#"><img src="img/linkedin.png" alt="Twitter"></a>
-      <a href="#"><img src="img/youtube.png" alt="Twitter"></a>          
-    </div>
+  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/facebook.png" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/instagram.png" alt="Instagram">
+  </a>
+  <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/twitter.png" alt="Twitter">
+  </a>
+  <a href="https://www.linkedin.com/in/felippefardin/" target="_blank" rel="noopener noreferrer">
+    <img src="img/linkedin.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/youtube.png" alt="YouTube">
+  </a>
+</div>
+
     <div class="footer-info">
       <p>Endereço: <br>
-         Rua Maranhão, 575, Sala 305, Praia da Costa, Vila Velha/ES <BR>
-         Centro Empresárial Praia Da Costa</p>
+         Vila Velha/ES <BR>
+         </p>
        <!-- <a style="color: black; text-decoration: none;" href="https://wa.me/5527998433504" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 5px;">
         Telefone Nutricionista

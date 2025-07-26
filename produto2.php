@@ -15,6 +15,33 @@
      <title>Tech Tecnologia</title>
      </head>    
 
+      <style>
+      .foto-container {
+   display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.foto-container .foto {
+  width: 30%;
+    min-width: 200px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.foto-container .foto:hover {
+  transform: scale(1.05);
+}
+
+
+     </style>
+
 <button id="toggle-dark-mode" class="modo-toggle">
   <i class="fa fa-moon" id="icon-dark"></i> <span id="modo-label">Modo Dark</span>
 </button>
@@ -179,16 +206,27 @@
             
   <div class="footer-container">
     <div class="footer-social">
-      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
-      <a href="#"><img src="img/linkedin.png" alt="Twitter"></a>
-      <a href="#"><img src="img/youtube.png" alt="Twitter"></a>          
-    </div>
+  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/facebook.png" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/instagram.png" alt="Instagram">
+  </a>
+  <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/twitter.png" alt="Twitter">
+  </a>
+  <a href="https://www.linkedin.com/in/felippefardin/" target="_blank" rel="noopener noreferrer">
+    <img src="img/linkedin.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+    <img src="img/youtube.png" alt="YouTube">
+  </a>
+</div>
+
     <div class="footer-info">
       <p>Endereço: <br>
-         Rua Maranhão, 575, Sala 305, Praia da Costa, Vila Velha/ES <BR>
-         Centro Empresárial Praia Da Costa</p>
+         Vila Velha/ES <BR>
+         </p>
        <!-- <a style="color: black; text-decoration: none;" href="https://wa.me/5527998433504" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 5px;">
         Telefone Nutricionista
