@@ -111,6 +111,106 @@ $totalPaginas = ceil($totalRegistros / $limite);
             color: #fff;
             font-weight: bold;
         }
+        /* Modal estilizado */
+#modalResponder {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modalResponder .modal-conteudo {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+#modalResponder h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+#modalResponder label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+    color: #444;
+}
+
+#modalResponder textarea,
+#modalResponder input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 14px;
+}
+
+#modalResponder .botoes-modal {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#modalResponder button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#modalResponder button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+#modalResponder button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+#modalResponder button.cancelar {
+    background-color: #6c757d;
+    color: white;
+}
+
+#modalResponder button.cancelar:hover {
+    background-color: #5a6268;
+}
+
+#modalResponder .btn-remover {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#modalResponder .btn-remover:hover {
+    background-color: #c82333;
+}
+#modalResponder button.limpar {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+#modalResponder button.limpar:hover {
+    background-color: #e0a800;
+}
     </style>
 </head>
 <body>
@@ -173,9 +273,9 @@ $totalPaginas = ceil($totalRegistros / $limite);
                 <td><?= $linha['data_envio'] ?></td>
                 <td>
                     <div class="acoes">
-                        <a href="admin.php?marcar=<?= $linha['id'] ?>" class="marcar" onclick="return confirm('Marcar como respondida?')">Marcar</a>
+                        <a href="admin.php?marcar=<?= $linha['id'] ?>" class="marcar" onclick="return confirm('Marcar como respondida?')">Marcar como lida</a>
                         <span>|</span>
-                        <a href="mailto:<?= htmlspecialchars($linha['email']) ?>" class="responder">Responder</a>
+                        <a href="#" class="responder" onclick="abrirModal('<?= htmlspecialchars($linha['email']) ?>'); return false;">Responder</a>
                         <span>|</span>
                         <a href="admin.php?excluir=<?= $linha['id'] ?>" class="excluir" onclick="return confirm('Deseja excluir esta mensagem?')">Excluir</a>
                     </div>
@@ -209,6 +309,51 @@ $totalPaginas = ceil($totalRegistros / $limite);
       window.history.replaceState({}, document.title, urlSemParametros);
     }
   });
+
+  function abrirModal(email) {
+    document.getElementById('email_destino').value = email;
+    document.getElementById('modalResponder').style.display = 'flex';
+}
+
+function fecharModal() {
+    document.getElementById('modalResponder').style.display = 'none';
+    document.getElementById('formResponder').reset();
+}
+
+function removerAnexo() {
+    const input = document.getElementById("inputAnexo");
+    if (input) input.value = "";
+}
+
+
 </script>
+
+<!-- Modal de Resposta -->
+<div id="modalResponder">
+    <div class="modal-conteudo">
+        <h3>Responder E-mail</h3>
+        <form id="formResponder" method="POST" action="enviar_resposta.php" enctype="multipart/form-data">
+            <input type="hidden" name="email_destino" id="email_destino">
+            
+            <label>Mensagem:</label>
+            <textarea name="mensagem" rows="6" required></textarea>
+
+            <label>Anexo (opcional):</label>
+            <input type="file" name="anexo" id="inputAnexo">
+            <button type="button" class="btn-remover" onclick="removerAnexo()">Excluir Anexo</button>
+
+            <div class="botoes-modal">
+                <button type="submit">Enviar</button>
+                <button type="button" class="limpar" onclick="document.getElementById('formResponder').reset()">Limpar</button>
+                <button type="button" class="cancelar" onclick="fecharModal()">Voltar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+            
+   
+
 </body>
 </html>
