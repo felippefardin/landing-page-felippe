@@ -60,7 +60,7 @@ $totalPaginas = ceil($totalRegistros / $limite);
 <head>
     <meta charset="UTF-8">
     <title>Mensagens Não Respondidas</title>
-    <link rel="shortcut icon" href="img/atalho.png">
+    <link rel="shortcut icon" href="img/shortcut icon.png">
     <link rel="stylesheet" href="css/export-adm.css">
     <link rel="stylesheet" href="css/estilo-adm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -219,10 +219,12 @@ $totalPaginas = ceil($totalRegistros / $limite);
     <div class="dropdown">
         <button class="dropbtn">Conta <i class="fa fa-arrow-down"></i></button>
         <div class="dropdown-content">
+            <a href="home.php"><i class="fa fa-home"></i> Home</a>
             <a href="perfil.php"><i class="fa fa-user"></i> Perfil</a>
             <a href="respondidas.php"><i class="fa fa-message"></i> Mensagens respondidas</a>
             <a href="dashboard.php"><i class="fa fa-tachometer"></i> Dashboard</a>
             <a href="email-recebido.php"><i class="fa fa-envelope"></i> Email recebidos</a>
+            <a href="cadastrosatuais.php"><i class="fa fa-user"></i> Usuários</a>
             <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
         </div>
     </div>

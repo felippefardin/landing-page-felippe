@@ -41,12 +41,12 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'felippefardin@gmail.com'; // Seu e-mail
-    $mail->Password = 'uooy pktv klcx ktnb';    // Sua senha de app
+    $mail->Username = 'contatotech.tecnologia@gmail.com'; // Seu e-mail
+    $mail->Password = 'niod xgjo ueoc ddeo';    // Sua senha de app
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->setFrom('felippefardin@gmail.com', 'Recuperação de Senha');
+    $mail->setFrom('contatotech.tecnologia@gmail.com', 'Recuperação de Senha');
     $mail->addAddress($email);
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';

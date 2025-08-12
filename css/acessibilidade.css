@@ -167,6 +167,45 @@ body.dark-mode .btn-voltar {
   background-color: black;
   color: white;
 }
+/* Modo Dark para .oferta-landing-page */
+/* body.dark-mode .oferta-landing-page {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .oferta-landing-page h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .oferta-landing-page strong {
+  color: #ffffff;
+}
+
+body.dark-mode .oferta-landing-page strong[style*="color: #d10000"] {
+  color: #ff4d4d !important;
+}
+body.dark-mode .cartilha-seguranca {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .cartilha-seguranca h2 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .cartilha-seguranca p {
+  color: #cccccc !important;
+}
+
+body.dark-mode .cartilha-seguranca a {
+  background-color: #0d6efd !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .cartilha-seguranca iframe {
+  border-color: #444 !important;
+} */
+
+
 
 
 

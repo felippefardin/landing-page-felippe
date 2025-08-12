@@ -226,15 +226,18 @@ if (isset($_GET['excluir'])) {
 
      <div class="dropdown-container">
     <div class="dropdown">
-      <button class="dropbtn"> Conta  <i class="fa fa-arrow-down"></i> </button>
-      <div class="dropdown-content">
-        <a href="perfil.php"><i class="fa fa-user"></i>  Perfil</a>
-        <a href="admin.php"><i class="fa fa-message"></i>  Mensagens não respondida</a>
-        <a href="dashboard.php"><i class="fa fa-tachometer"></i>  Dashboard</a> 
-        <a href="logout.php"><i class="fas fa-sign-out-alt"></i>  Sair</a>
-      </div>
+        <button class="dropbtn">Conta <i class="fa fa-arrow-down"></i></button>
+        <div class="dropdown-content">
+            <a href="home.php"><i class="fa fa-home"></i> Home</a>
+            <a href="perfil.php"><i class="fa fa-user"></i> Perfil</a>
+            <a href="admin.php"><i class="fa fa-envelope"></i> Mensagens</a>
+            <a href="dashboard.php"><i class="fa fa-tachometer"></i> Dashboard</a>
+            <a href="email-recebido.php"><i class="fa fa-envelope"></i> Email recebidos</a>
+            <a href="cadastrosatuais.php"><i class="fa fa-user"></i> Usuários</a>
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </div>
     </div>
-  </div>
+</div>
     <h1>Olá, <?= ucwords(strtolower($_SESSION['usuario'])) ?>!</h1>
     <h2>Mensagens Recebidas</h2>
 

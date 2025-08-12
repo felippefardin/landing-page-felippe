@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Perfil - Mercado</title>
+    <title>Perfil - Tech Tecnologia</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -138,15 +138,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <label for="whatsapp">WhatsApp:</label>
             <input type="text" name="whatsapp" value="<?= htmlspecialchars($dadosUsuario['whatsapp'] ?? '') ?>" required>
 
-            <label for="senha">Nova Senha (se desejar mudar):</label>
-            <input type="password" name="senha" id="senha">
+             <label for="senha">Nova Senha (se desejar mudar):</label>
+    <div style="position: relative;">
+        <input type="password" name="senha" id="senha" style="padding-right: 40px;">
+        <button type="button" onclick="toggleSenha()" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%);">
+            👁
+        </button>
+    </div>
+
 
             <button type="submit">Salvar Alterações</button>
         </form>
 
-        <p><a href="admin.php">Voltar ao painel</a></p>
+        <p><a href="home.php">HOME</a></p>
 
         <a href="confirmar-exclusao.php" class="btn-excluir">Excluir Perfil</a>
     </div>
+
+
+    <script>
+function toggleSenha() {
+    const campo = document.getElementById("senha");
+    if (campo.type === "password") {
+        campo.type = "text";
+    } else {
+        campo.type = "password";
+    }
+}
+</script>
 </body>
 </html>
+

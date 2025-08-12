@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'contador_visitas.php';
 
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
@@ -12,6 +13,10 @@ $conn = new mysqli("localhost", "root", "", "felippe");
 $totalMensagens = $conn->query("SELECT COUNT(*) AS total FROM emails")->fetch_assoc()['total'];
 $respondidas = $conn->query("SELECT COUNT(*) AS total FROM emails WHERE respondida = 1")->fetch_assoc()['total'];
 $naoRespondidas = $conn->query("SELECT COUNT(*) AS total FROM emails WHERE respondida = 0")->fetch_assoc()['total'];
+
+// Contador de visitas
+$visitasTotal = file_exists('visitas_total.txt') ? (int)file_get_contents('visitas_total.txt') : 0;
+$visitasDiarias = file_exists('visitas_diarias.txt') ? (int)file_get_contents('visitas_diarias.txt') : 0;
 
 // Para o gráfico: mensagens por data dos últimos 7 dias
 $dataChart = [];
@@ -37,7 +42,6 @@ while ($row = $resultChart->fetch_assoc()) {
 <title>Dashboard - Painel Administrativo</title>
 <link rel="shortcut icon" href="img/atalho.png" />
 <style>
-    /* Reset e base */
     * {
         margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -47,8 +51,6 @@ while ($row = $resultChart->fetch_assoc()) {
         background: #f9f9f9;
         color: #333;
     }
-
-    /* Layout */
     .container {
         display: flex;
         min-height: 100vh;
@@ -98,7 +100,6 @@ while ($row = $resultChart->fetch_assoc()) {
         color: #007d3e;
     }
 
-    /* Cards */
     .cards {
         display: flex;
         gap: 20px;
@@ -124,33 +125,35 @@ while ($row = $resultChart->fetch_assoc()) {
         color: #00a859;
     }
 
-    /* Gráfico */
     #chart-container {
         background: white;
         padding: 25px;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-
 </style>
-<!-- FontAwesome para ícones -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <div class="container">
-
     <nav class="sidebar">
-        <h2>Mercado</h2>
+        <h2>Tech Tecnologia</h2>
+        <a href="resetar_visitas_total.php" onclick="return confirm('Deseja realmente zerar o contador total?')">
+            <i class="fa fa-trash"></i> Resetar Visitas Total
+        </a>
+        <a href="home.php"><i class="fa fa-home"></i> Home</a>
         <a href="perfil.php"><i class="fa fa-user"></i> Perfil</a>
         <a href="admin.php"><i class="fa fa-envelope"></i> Mensagens</a>
+        <a href="respondidas.php"><i class="fa fa-message"></i> Mensagens Respondidas</a>
         <a href="dashboard.php" class="active"><i class="fa fa-chart-bar"></i> Dashboard</a>
+        <a href="email-recebido.php"><i class="fa fa-envelope"></i> Emails Recebidos</a>
+        <a href="cadastrosatuais.php"><i class="fa fa-user"></i> Usuários</a>
         <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
     </nav>
 
-    <main class="content">                
+    <main class="content">
         <h1>Olá, <?= ucwords(strtolower($_SESSION['usuario'])) ?>!</h1>
 
         <div class="cards">
@@ -159,45 +162,27 @@ while ($row = $resultChart->fetch_assoc()) {
                 <span><?= $totalMensagens ?></span>
             </div>
             <div class="card">
-                Mensagens Respondidas
+                Respondidas
                 <span><?= $respondidas ?></span>
             </div>
             <div class="card">
-                Mensagens Não Respondidas
+                Não Respondidas
                 <span><?= $naoRespondidas ?></span>
             </div>
+            <div class="card">
+                Visitas Hoje
+                <span><?= $visitasDiarias ?></span>
+            </div>
+            <div class="card">
+                Visitas Totais
+                <span><?= $visitasTotal ?></span>
+            </div>
         </div>
-        
 
         <div id="chart-container">
             <canvas id="mensagensChart"></canvas>
         </div>
-
-        <?php
-$mensagemSalvar = "";
-
-// Verifica se o formulário de edição foi enviado
-if (isset($_POST['novo_html'])) {
-    $novoConteudo = $_POST['novo_html'];
-    
-    $dataHora = date('Ymd_His');
-    $backupFile = "index_backup_{$dataHora}.html";
-
-    // Faz backup
-    copy('index.html', $backupFile);
-
-    // Salva novo conteúdo
-    file_put_contents('index.html', $novoConteudo);
-    $mensagemSalvar = "Página atualizada com sucesso! Backup criado como <strong>{$backupFile}</strong>";
-}
-
-
-// Carrega o conteúdo atual da index.html
-$conteudoIndex = htmlspecialchars(file_get_contents('index.html'));
-?>
-
     </main>
-
 </div>
 
 <script>

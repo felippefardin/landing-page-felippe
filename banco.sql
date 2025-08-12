@@ -115,3 +115,16 @@ CREATE TABLE disponibilidade (
     horario_inicio TIME NOT NULL,
     horario_fim TIME NOT NULL
 );
+
+CREATE TABLE email_cliente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100),
+    whatsapp VARCHAR(20)    
+    data_envio DATETIME  
+);
+
+CREATE TABLE configuracoes_pagina (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  chave VARCHAR(100) UNIQUE NOT NULL,
+  valor TEXT NOT NULL
+);

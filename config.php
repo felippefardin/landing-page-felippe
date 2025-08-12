@@ -6,6 +6,6 @@ define('DB_PASS', '');
 define('DB_NAME', 'felippe');
 
 // Configuração de e-mail
-define('EMAIL_FROM', 'felippefardin@gmail.com');
-define('EMAIL_TO', 'felippefardimn@gmail.com');
+define('EMAIL_FROM', 'contatotech.tecnologia@gmail.com');
+define('EMAIL_TO', 'contatotech.tecnologia@gmail.com');
 ?>
