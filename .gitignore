@@ -1,0 +1,22 @@
+# Arquivos de configuração sensíveis
+config.php
+.env
+
+# Pastas do Composer
+/vendor/
+/composer.lock
+
+# Cache, logs e uploads temporários
+/cache/
+/logs/
+/uploads/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# IDEs e editores
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
