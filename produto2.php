@@ -22,6 +22,16 @@
 
   gtag('config', 'G-RM3GH72GH4');
   </script>
+  <body>
+    <!-- VLibras widget -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div> 
+    
+  
      </head>    
 
       <style>
@@ -348,7 +358,7 @@ echo "<p style='margin-top: 10px; color: #555; font-size: 1rem;'>🔽 A cartilha
  
 </footer>
     <!-- Botão flutuante do WhatsApp -->
-    <a href="https://wa.me/5527996110031" 
+    <a href="https://wa.me/5527999642716" 
    class="whatsapp-float-btn" 
    target="_blank" 
    rel="noopener noreferrer" 
@@ -385,6 +395,8 @@ echo "<p style='margin-top: 10px; color: #555; font-size: 1rem;'>🔽 A cartilha
 </script>
       
         </script>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script> new window.VLibras.Widget('https://vlibras.gov.br/app'); </script>
         <script src="js/acessibilidade.js"></script>    
         <script src="script.js"></script>
         

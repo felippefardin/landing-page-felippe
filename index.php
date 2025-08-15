@@ -36,7 +36,14 @@ file_put_contents($arquivo, $visitas);
   gtag('config', 'G-RM3GH72GH4');
 </script>    
 </head>
-     <body>  
+     <body> 
+      <!-- VLibras widget -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div> 
      <style>
      
     .foto-container {
@@ -299,10 +306,7 @@ file_put_contents($arquivo, $visitas);
   transform: scale(1.05);
   box-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff;
 }
-
-
-  </style>    
-     
+  </style>      
     
 
 <button id="toggle-dark-mode" class="modo-toggle">
@@ -354,7 +358,7 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
    <section class="produto">
   <div class="produto-container">
     <div class="produto-imagem">
-      <img src="img/oferta.png" alt="Página de vendas otimizada por Tech Tecnologia" class="imagem-produto">                 
+      <img src="img/oferta2.png" alt="Página de vendas otimizada por Tech Tecnologia" class="imagem-produto">                 
     </div>
     <div class="produto-info">
       <h2>Criação de Landing Page Exclusiva para Seu Negócio</h2>
@@ -533,7 +537,7 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
  
 </footer>
     <!-- Botão flutuante do WhatsApp -->
-    <a href="https://wa.me/5527996110031" 
+    <a href="https://wa.me/5527999642716" 
    class="whatsapp-float-btn" 
    target="_blank" 
    rel="noopener noreferrer" 
@@ -629,6 +633,8 @@ window.addEventListener("load", function () {
     });
   });
         </script>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script> new window.VLibras.Widget('https://vlibras.gov.br/app'); </script>
         <script src="js/acessibilidade.js"></script>           
         <script src="script.js"></script>
         <script src="js/modal-email-captacao.js"></script>
