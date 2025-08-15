@@ -17,6 +17,13 @@
   <title>Sobre Mim | Tech Tecnologia</title>
 </head>
 <body>
+  <!-- VLibras widget -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
 
 <style>
     /* Header principal */
@@ -27,6 +34,7 @@ header {
     display: flex;
     justify-content: center;
 }
+
 
 /* Conteúdo dentro do header */
 .header-conteudo {
@@ -174,6 +182,60 @@ header {
         transform: translateX(5px);
     }
 }
+.footer-links-mercado {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .footer-links-mercado h3 {
+            color: #00f0ff;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .botoes-mercado {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .botao-mercado {
+            background-color: #0077cc;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 0 8px #00f0ff;
+        }
+
+        .botao-mercado:hover {
+            background-color: #00f0ff;
+            color: black;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff;
+        }
+
+        .btn-sobre-mim {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            padding: 6px 12px;
+            background-color: #222;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            border: 1px solid #555;
+            cursor: pointer;
+            box-shadow: 0 0 8px #00f0ff;
+            transition: all 0.3s ease;
+        }
 
 
 </style>
@@ -184,13 +246,13 @@ header {
 </button>
 
 <!-- Botão Voltar -->
-<a href="index.html" class="btn-voltar">
+<a href="index.php" class="btn-voltar">
   <i class="fa fa-arrow-left"></i> Voltar
 </a>
 
 <header>
   <div class="header-conteudo">
-    <img src="img/Slogo felippe.png" alt="Logo Tech Tecnologia" class="logo">
+    <img src="img/minhalogo.png" alt="Logo Tech Tecnologia" class="logo">
 
     <div class="header-textos">
       <h1>Tech Tecnologia</h1>
@@ -229,34 +291,73 @@ header {
 
 
 <section class="foto-container">
-  <img src="img/felippe2.png" alt="Exemplo de trabalho" class="foto">
-  <img src="img/felippecartoon.png" alt="Cartilha digital" class="foto">
-  <img src="img/felippe1.png" alt="Cartilha digital" class="foto">
+  <img src="img/felippe2.jpeg" alt="Exemplo de trabalho" class="foto">
+  <img src="img/felippecartoon.jpeg" alt="Cartilha digital" class="foto">
+  <img src="img/felippe1.jpeg" alt="Cartilha digital" class="foto">
 </section>
 
 <footer class="footer border">
-  <div class="footer-container">
-    <div class="footer-social">
-      <a href="https://www.facebook.com" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
-      <a href="https://www.instagram.com" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
-      <a href="https://www.twitter.com" target="_blank"><img src="img/twitter.png" alt="Twitter"></a>
-      <a href="https://www.linkedin.com/in/felippefardin/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn"></a>
-      <a href="https://www.youtube.com" target="_blank"><img src="img/youtube.png" alt="YouTube"></a>
-    </div>
-    <div class="footer-info">
-      <p>Endereço:<br>Vila Velha / ES</p>
-    </div>
-  </div>
-  <div class="footer-copy">
-    <p>&copy; Tech Tecnologia. Todos os direitos reservados.</p>
-  </div>
-</footer>
+        <div class="footer-container">
+            <div class="footer-social">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/twitter.png" alt="Twitter">
+                </a>
+                <a href="https://www.linkedin.com/in/felippefardin/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/youtube.png" alt="YouTube">
+                </a>
+            </div>
 
+            <div class="footer-info">
+                <p>Endereço: <br>
+                    Vila Velha/ES <br>
+                </p>
+                <a href="sobre.php" class="btn-sobre-mim">
+                    <i class="fas fa-user"></i> Sobre Mim
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-links-mercado">
+            <h3>Receba seus pagamentos com a MERCADO PAGO</h3>
+            <div class="botoes-mercado">
+                <a href="https://mpago.li/3177rXL" target="_blank" class="botao-mercado">
+                    <i class="fas fa-credit-card"></i> MINI NFC 2
+                </a>
+                <a href="https://mpago.li/1AUKHmw" target="_blank" class="botao-mercado">
+                    <i class="fas fa-credit-card"></i> POINT AIR 2
+                </a>
+                <a href="https://mpago.li/2q5guMR" target="_blank" class="botao-mercado">
+                    <i class="fas fa-credit-card"></i> POINT SMART 2
+                </a>
+                <a href="https://mpago.li/1giRaVp" target="_blank" class="botao-mercado">
+                    <i class="fas fa-mobile"></i> APP MERCADO PAGO
+                </a>
+                <a href="https://mpago.li/2qVdLDW" target="_blank" class="botao-mercado">
+                    <i class="fas fa-credit-card"></i> POINT PRO 3
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 <a href="https://wa.me/5527999642716" class="whatsapp-float-btn" target="_blank" aria-label="Fale conosco no WhatsApp">
   <img src="img/whatsapp-icon.png" alt="WhatsApp">
 </a>
 
 <script src="js/acessibilidade.js"></script>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script> new window.VLibras.Widget('https://vlibras.gov.br/app'); </script>
 <script src="script.js"></script>
 </body>
 </html>
