@@ -130,13 +130,11 @@
             box-shadow: 0 0 8px #00f0ff;
             transition: all 0.3s ease;
         }
-
-        /* Padronização da Seção de Ofertas */
+        /* Container Geral */
 .oferta-landing-page {
     padding: 80px 20px;
     background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
 }
 
 .container-oferta {
@@ -145,6 +143,7 @@
 }
 
 .header-oferta {
+    text-align: center;
     margin-bottom: 50px;
 }
 
@@ -162,13 +161,6 @@
     font-size: 36px;
     color: #222;
     margin: 15px 0;
-}
-
-.header-oferta p {
-    color: #666;
-    font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto;
 }
 
 /* Grid de Cards */
@@ -195,7 +187,7 @@
 }
 
 .icon-box {
-    font-size: 32px;
+    font-size: 30px;
     color: #0077cc;
     margin-bottom: 20px;
 }
@@ -209,16 +201,16 @@
 .card-servico p {
     font-size: 14px;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-/* Caixa de Preço e CTA */
+/* Área de Preço e CTA */
 .cta-container {
+    text-align: center;
     background: #222;
-    padding: 50px 40px;
+    padding: 40px;
     border-radius: 20px;
     color: #fff;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
 .preco-destaque p {
@@ -240,41 +232,31 @@
 }
 
 .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+    display: inline-block;
     margin-top: 25px;
-    padding: 18px 40px;
+    padding: 15px 40px;
     background: #0077cc;
-    color: #fff !important;
+    color: #fff;
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    font-size: 18px;
     transition: 0.3s;
 }
 
 .btn-primary:hover {
     background: #00f0ff;
-    color: #000 !important;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
-    transform: scale(1.05);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
 }
 
-.obs-texto {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #bbb;
-}
-
-/* Ajuste para o Modo Escuro */
+/* Dark Mode Adjustments */
 body.dark-mode .oferta-landing-page {
-    background: #1a1a1a !important;
+    background: #121212 !important;
 }
 body.dark-mode .header-oferta h2 { color: #fff; }
-body.dark-mode .card-servico { background: #252525; }
+body.dark-mode .card-servico { background: #1e1e1e; }
 body.dark-mode .card-servico h3 { color: #fff; }
-body.dark-mode .card-servico p { color: #aaa; }
+body.dark-mode .card-servico p { color: #bbb; }
     </style>
 
     <button id="toggle-dark-mode" class="modo-toggle" aria-label="Alternar modo escuro">
@@ -299,53 +281,61 @@ body.dark-mode .card-servico p { color: #aaa; }
             </div>
         </div>
     </header>
+<!-- 
+    <section class="video-destaque">
+        <div class="video-conteudo">
+            <h2>Assista ao Nosso Vídeo</h2>
+            <p>Veja como podemos transformar sua ideia em um projeto profissional e eficiente.</p>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="video/midia2.mp4" title="Vídeo Promocional" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section> -->
 
 <section class="oferta-landing-page">
     <div class="container-oferta">
         <div class="header-oferta">
-            <span class="badge">Desenvolvimento Web</span>
-            <h2>Landing Pages & Sites Profissionais</h2>
-            <p>Transforme sua presença digital com um site focado em converter visitantes em clientes reais.</p>
+            <span class="badge">Serviços Profissionais</span>
+            <h2>Suporte TI e Manutenção Especializada</h2>
+            <p>Garantimos o desempenho, a segurança e a estabilidade que você e sua empresa precisam.</p>
         </div>
 
         <div class="grid-servicos">
             <!-- Card 1 -->
             <div class="card-servico">
-                <div class="icon-box"><i class="fas fa-palette"></i></div>
-                <h3>Design Premium</h3>
-                <p>Layouts modernos, elegantes e totalmente personalizados para sua marca.</p>
+                <div class="icon-box"><i class="fas fa-desktop"></i></div>
+                <h3>Formatação & OS</h3>
+                <p>Instalação de Windows e Linux com otimização completa do sistema.</p>
             </div>
             <!-- Card 2 -->
             <div class="card-servico">
-                <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
-                <h3>100% Responsivo</h3>
-                <p>Seu site perfeito em celulares, tablets e computadores de qualquer tamanho.</p>
+                <div class="icon-box"><i class="fas fa-shield-virus"></i></div>
+                <h3>Segurança Digital</h3>
+                <p>Remoção de vírus, malwares e instalação de defesas robustas.</p>
             </div>
             <!-- Card 3 -->
             <div class="card-servico">
-                <div class="icon-box"><i class="fas fa-search-dollar"></i></div>
-                <h3>Otimizado (SEO)</h3>
-                <p>Estrutura preparada para o Google, ajudando seu negócio a aparecer no topo.</p>
+                <div class="icon-box"><i class="fas fa-microchip"></i></div>
+                <h3>Hardware & Upgrade</h3>
+                <p>Limpeza interna, troca de peças e upgrades (SSD/Memória).</p>
             </div>
             <!-- Card 4 -->
             <div class="card-servico">
-                <div class="icon-box"><i class="fas fa-bolt"></i></div>
-                <h3>Alta Performance</h3>
-                <p>Código limpo e carregamento ultra-rápido para não perder nenhum clique.</p>
+                <div class="icon-box"><i class="fas fa-network-wired"></i></div>
+                <h3>Redes & Suporte</h3>
+                <p>Configuração de roteadores, impressoras e suporte remoto ágil.</p>
             </div>
         </div>
 
         <div class="cta-container">
             <div class="preco-destaque">
-                <p>Landing Page Profissional a partir de</p>
+                <p>Formatação completa a partir de</p>
                 <span class="moeda">R$</span>
-                <span class="valor">1.200</span>
+                <span class="valor">150</span>
                 <span class="centavos">,00</span>
             </div>
-            <p class="obs-texto">Incluso integração com WhatsApp e formulários de contato.</p>
-            <a href="https://wa.me/5527999642716?text=Olá,%20quero%20uma%20landing%20page%20profissional." target="_blank" class="btn-primary">
-                <i class="fab fa-whatsapp"></i> Solicitar Orçamento Grátis
-            </a>
+            <p class="obs-texto">Atendemos Notebooks, Desktops e Contratos Empresariais.</p>
+            <a href="#formulario" class="btn-primary">Solicitar Orçamento Grátis</a>
         </div>
     </div>
 </section>

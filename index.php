@@ -381,6 +381,39 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
   </div>
 </section>
 
+<section class="produto">
+  <div class="produto-container reverse">
+    <div class="produto-imagem">
+      <img src="img/foldermanuntencaoesuportedois.png" alt="Serviços de suporte técnico e manutenção de computadores" class="imagem-produto">
+    </div>
+
+    <div class="produto-info">
+      <h2>Suporte TI e Manutenção de Computadores</h2>
+
+      <p>
+        Atendimento especializado para computadores e notebooks, com foco em
+        desempenho, segurança e estabilidade da sua máquina.
+      </p>
+
+      <ul style="margin-left: 20px; line-height: 1.8;">
+        <li>Formatação de Computador – R$ 150,00</li>
+        <li>Remoção de vírus e limpeza do sistema</li>
+        <li>Instalação de programas e drivers</li>
+        <li>Backup e recuperação de arquivos</li>
+        <li>Otimização e melhoria de desempenho</li>
+        <li>Suporte remoto e presencial</li>
+      </ul>
+
+      <p>
+        Solicite um orçamento e deixe seu computador mais rápido, seguro e funcionando corretamente.
+      </p>
+
+      <a href="produto3.php" class="btn-ver-mais">
+        Solicitar Orçamento
+      </a>
+    </div>
+  </div>
+</section>
 
     
     
@@ -388,7 +421,7 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
   <div class="wrapper-horizontal">
     <div class="foto-container">
       <img src="img/planodesuporte.png" alt="Foto 1" class="foto">
-      <!-- <img src="img/plano-intermediario.png" alt="Foto 2" class="foto"> -->
+      <!-- <img src="img/manutencaoesuporte.png" alt="Foto 2" class="foto"> -->
       <img src="img/conteudoseguros.png" alt="Foto 3" class="foto">
     </div>
     <div class="formulario" id="formulario">
