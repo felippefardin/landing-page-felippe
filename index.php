@@ -315,24 +315,56 @@ file_put_contents($arquivo, $visitas);
 
  
   
-    <header>        
-        <div class="header-conteudo">
-            <img src="img/minhalogo.png" alt="Logo Mercado" class="logo">
-    
-            <div class="header-textos">
-                <h1>Tech Tecnologia</h1>
-                <p class="slogan">Inovação em código, excelência em resultados</p>
-            </div>
-    
-           
-  <div class="container-botao cabecalho">
-    <a href="#formulario" class="btn-destaque">
-      Conhecer Agora <i class="fa fa-arrow-right seta-responsiva"></i>
-    </a>
-  </div>
+    <header>
 
+<div class="header-conteudo">
 
-    </header>
+    <img src="img/minhalogo.png"
+         alt="Logo Tech Tecnologia"
+         class="logo">
+
+    <div class="header-textos">
+
+        <h1>Suporte TI & Soluções Tecnológicas</h1>
+
+        <p class="slogan">
+            Manutenção de computadores, suporte técnico,
+            desenvolvimento web e segurança digital.
+        </p>
+
+        <div class="header-beneficios">
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Formatação Profissional
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Suporte Remoto
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Atendimento Rápido
+            </span>
+
+        </div>
+
+        <div class="container-botao cabecalho">
+
+            <a href="#formulario" class="btn-destaque">
+                Solicitar Orçamento
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</header>
 
     <section class="sobre">
         <h2>Sobre a Tech Tecnologia</h2>
@@ -363,7 +395,7 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
     <div class="produto-info">
       <h2>Criação de Landing Page Exclusiva para Seu Negócio</h2>
       <p>Clique e veja mais</p> 
-      <a href="produto1.php" class="btn-ver-mais">Assista</a>                 
+      <a href="produto1.php" class="btn-ver-mais">Ver mais</a>                 
     </div>
   </div>
 </section>
@@ -384,7 +416,7 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
 <section class="produto">
   <div class="produto-container reverse">
     <div class="produto-imagem">
-      <img src="img/foldermanuntencaoesuportedois.png" alt="Serviços de suporte técnico e manutenção de computadores" class="imagem-produto">
+      <img src="img/foldermanuntencaoesuporte.png" alt="Serviços de suporte técnico e manutenção de computadores" class="imagem-produto">
     </div>
 
     <div class="produto-info">

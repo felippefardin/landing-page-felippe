@@ -264,23 +264,61 @@ body.dark-mode .card-servico p { color: #bbb; }
         <span id="modo-label">Modo Dark</span>
     </button>
 
-    <header>
-        <a href="index.php" class="btn-voltar">
-            <i class="fa fa-arrow-left"></i> Voltar
-        </a>
-        <div class="header-conteudo">
-            <img src="img/minhalogo.png" alt="Logo Mercado" class="logo">
-            <div class="header-textos">
-                <h1>Tech Tecnologia</h1>
-                <p class="slogan">Inovação em código, excelência em resultados</p>
-            </div>
-            <div class="container-botao cabecalho">
-                <a href="#formulario" class="btn-destaque">
-                    Conhecer Agora <i class="fa fa-arrow-right seta-responsiva"></i>
-                </a>
-            </div>
+    <!-- Botão Voltar -->
+<a href="index.php" class="btn-voltar">
+  <i class="fa fa-arrow-left"></i> Voltar
+</a>
+
+ <header>
+
+<div class="header-conteudo">
+
+    <img src="img/minhalogo.png"
+         alt="Logo Tech Tecnologia"
+         class="logo">
+
+    <div class="header-textos">
+
+        <h1>Suporte TI & Soluções Tecnológicas</h1>
+
+        <p class="slogan">
+            Manutenção de computadores, suporte técnico,
+            desenvolvimento web e segurança digital.
+        </p>
+
+        <div class="header-beneficios">
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Formatação Profissional
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Suporte Remoto
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Atendimento Rápido
+            </span>
+
         </div>
-    </header>
+
+        <div class="container-botao cabecalho">
+
+            <a href="#formulario" class="btn-destaque">
+                Solicitar Orçamento
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</header>
 <!-- 
     <section class="video-destaque">
         <div class="video-conteudo">

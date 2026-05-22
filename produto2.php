@@ -3,209 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tech Tecnologia - Inovação em código, excelência em resultados. Suporte TI e Web Design.">
-    <meta name="keywords" content="produtos, ofertas, descontos, loja online, comprar, promoção, suporte ti, manutenção, landing page">
-    <meta name="author" content="Tech Tecnologia">
+    <meta name="description" content="Conheça os melhores produtos e ofertas exclusivas para você! Compre fácil e rápido com atendimento via WhatsApp.">
+    <meta name="keywords" content="produtos, ofertas, descontos, loja online, comprar, promoção">
+    <meta name="author" content="Sua Empresa">
     <meta name="robots" content="index, follow">
-
-    <!-- Links de Estilo Externos -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/acessibilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/video-produto1.css">
+    <link rel="stylesheet" href="css//video-produto1.css">
     <link rel="shortcut icon" href="img/shortcut icon.png">
-    
     <title>Tech Tecnologia</title>
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM3GH72GH4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-RM3GH72GH4');
     </script>
-
-    <style>
-        /* CONFIGURAÇÕES GERAIS E MODERNIZAÇÃO */
-        :root {
-            --primary: #0077cc;
-            --secondary: #00f0ff;
-            --dark-bg: #1a1a1a;
-            --light-bg: #f8f9fa;
-        }
-
-        /* Foto Container */
-        .foto-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            align-items: stretch;
-            padding: 20px;
-        }
-
-        .foto-container .foto {
-            width: 30%;
-            min-width: 200px;
-            border-radius: 10px;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .foto-container .foto:hover { transform: scale(1.05); }
-
-        /* Estilização das Seções Modernas (Cards) */
-        .oferta-landing-page {
-            padding: 80px 20px;
-            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .container-oferta {
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .badge {
-            background: #0077cc22;
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .grid-servicos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .card-servico {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            text-align: left;
-            border-bottom: 3px solid transparent;
-        }
-
-        .card-servico:hover {
-            transform: translateY(-10px);
-            border-bottom: 3px solid var(--primary);
-        }
-
-        .icon-box { font-size: 32px; color: var(--primary); margin-bottom: 15px; }
-
-        /* CTA Container */
-        .cta-container {
-            background: #222;
-            padding: 50px 40px;
-            border-radius: 20px;
-            color: #fff;
-            margin-top: 40px;
-        }
-
-        .valor { font-size: 60px; font-weight: 800; color: var(--secondary); }
-
-        /* Footer e Botões Mercado Pago */
-        .footer-links-mercado { margin-top: 30px; text-align: center; }
-        .botoes-mercado { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-        .botao-mercado {
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-            box-shadow: 0 0 8px var(--secondary);
-        }
-
-        .botao-mercado:hover {
-            background-color: var(--secondary);
-            color: black;
-            transform: scale(1.05);
-        }
-
-        .iframe-wrapper {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            margin-top: 30px;
-        }
-
-        /* Botão de Download com Super Destaque */
-.btn-destaque-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 30px;
-    padding: 22px 50px;
-    background: #00f0ff; /* Cor Neon para contraste */
-    color: #000 !important;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 22px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-    animation: pulsar-botao 2s infinite; /* Efeito de atenção */
-}
-
-.btn-destaque-download:hover {
-    background: #ffffff;
-    transform: scale(1.08);
-    box-shadow: 0 0 40px rgba(0, 240, 255, 0.8);
-    color: #0077cc !important;
-}
-
-.btn-destaque-download i {
-    font-size: 26px;
-}
-
-/* Animação de Pulsação */
-@keyframes pulsar-botao {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 20px rgba(0, 240, 255, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
-    }
-}
-
-/* Ajuste para mobile */
-@media (max-width: 600px) {
-    .btn-destaque-download {
-        font-size: 18px;
-        padding: 15px 30px;
-        width: 90%;
-        justify-content: center;
-    }
-}
-
-        /* Dark Mode */
-        body.dark-mode .oferta-landing-page { background: #1a1a1a !important; color: #fff; }
-        body.dark-mode .card-servico { background: #252525; color: #fff; }
-        body.dark-mode .card-servico p { color: #aaa; }
-    </style>
 </head>
-
 <body>
-    <!-- VLibras -->
+
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
@@ -213,28 +31,292 @@
         </div>
     </div>
 
-    <!-- Header -->
-    <header>
-        <div class="header-topo">
-            <button id="toggle-dark-mode" class="modo-toggle">
-                <i class="fa fa-moon" id="icon-dark"></i> <span id="modo-label">Modo Dark</span>
-            </button>
-            <a href="index.php" class="btn-voltar"><i class="fa fa-arrow-left"></i> Voltar</a>
-        </div>
+    <style>
+        .foto-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .foto-container .foto {
+            width: 35%;
+            min-width: 200px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, z-index 0s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .foto-container .foto:hover {
+            transform: scale(2.00);
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        /* DARK MODE - Seção Oferta Landing Page */
+        body.dark-mode .oferta-landing-page {
+            background-color: #1e1e1e !important;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .oferta-landing-page strong {
+            color: #fff;
+        }
+
+        body.dark-mode .oferta-landing-page strong[style*="color: #d10000"] {
+            color: #ff5555 !important;
+        }
+
+        .footer-links-mercado {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .footer-links-mercado h3 {
+            color: #00f0ff;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .botoes-mercado {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .botao-mercado {
+            background-color: #0077cc;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 0 8px #00f0ff;
+        }
+
+        .botao-mercado:hover {
+            background-color: #00f0ff;
+            color: black;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff;
+        }
+
+        .btn-sobre-mim {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            padding: 6px 12px;
+            background-color: #222;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            border: 1px solid #555;
+            cursor: pointer;
+            box-shadow: 0 0 8px #00f0ff;
+            transition: all 0.3s ease;
+        }
         
+        /* Container Geral */
+        .oferta-landing-page {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container-oferta {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .header-oferta {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .badge {
+            background: #0077cc22;
+            color: #0077cc;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .header-oferta h2 {
+            font-size: 36px;
+            color: #222;
+            margin: 15px 0;
+        }
+
+        /* Grid de Cards */
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card-servico {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: left;
+            border-bottom: 3px solid transparent;
+        }
+
+        .card-servico:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid #0077cc;
+        }
+
+        .icon-box {
+            font-size: 30px;
+            color: #0077cc;
+            margin-bottom: 20px;
+        }
+
+        .card-servico h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-servico p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Área de Preço e CTA */
+        .cta-container {
+            text-align: center;
+            background: #222;
+            padding: 40px;
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        .preco-destaque p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .iframe-wrapper {
+    margin-top: 30px; /* Altere esse valor para aumentar ou diminuir o espaço */
+}
+
+        .valor {
+            font-size: 60px;
+            font-weight: 800;
+            color: #00f0ff;
+        }
+
+        .moeda, .centavos {
+            font-size: 24px;
+            color: #00f0ff;
+            vertical-align: super;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 40px;
+            background: #0077cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #00f0ff;
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        }
+
+        /* AJUSTE: Correção do espaçamento das caixas do formulário */
+        .input-grupo {
+            margin-bottom: 22px !important;
+            text-align: left;
+        }
+
+        .input-grupo label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Dark Mode Adjustments */
+        body.dark-mode .oferta-landing-page {
+            background: #121212 !important;
+        }
+        body.dark-mode .header-oferta h2 { color: #fff; }
+        body.dark-mode .card-servico { background: #1e1e1e; }
+        body.dark-mode .card-servico h3 { color: #fff; }
+        body.dark-mode .card-servico p { color: #bbb; }
+    </style>
+
+    <button id="toggle-dark-mode" class="modo-toggle" aria-label="Alternar modo escuro">
+        <i class="fa fa-moon" id="icon-dark"></i>
+        <span id="modo-label">Modo Dark</span>
+    </button>
+
+    <a href="index.php" class="btn-voltar">
+      <i class="fa fa-arrow-left"></i> Voltar
+    </a>
+
+    <header>
         <div class="header-conteudo">
             <img src="img/minhalogo.png" alt="Logo Tech Tecnologia" class="logo">
             <div class="header-textos">
-                <h1>Tech Tecnologia</h1>
-                <p class="slogan">Inovação em código, excelência em resultados</p>
-            </div>
-            <div class="container-botao cabecalho">
-                <a href="#formulario" class="btn-destaque">Conhecer Agora <i class="fa fa-arrow-right"></i></a>
+                <h1>Suporte TI & Soluções Tecnológicas</h1>
+                <p class="slogan">
+                    Manutenção de computadores, suporte técnico, desenvolvimento web e segurança digital.
+                </p>
+
+                <div class="header-beneficios">
+                    <span>
+                        <i class="fas fa-check-circle"></i>
+                        Formatação Profissional
+                    </span>
+                    <span>
+                        <i class="fas fa-check-circle"></i>
+                        Suporte Remoto
+                    </span>
+                    <span>
+                        <i class="fas fa-check-circle"></i>
+                        Atendimento Rápido
+                    </span>
+                </div>
+
+                <div class="container-botao cabecalho">
+                    <a href="#formulario" class="btn-destaque">
+                        Solicitar Orçamento
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Seção Cartilha (Modernizada) -->
     <section class="oferta-landing-page">
         <div class="container-oferta">
             <div class="header-oferta">
@@ -257,45 +339,44 @@
                 <div class="card-servico">
                     <div class="icon-box"><i class="fas fa-mouse-pointer"></i></div>
                     <h3>Navegação</h3>
-                    <p>Dicas para usar navegadores e redes sociais sem riscos.</p>
+                    <p>Dicas para usar navegadores e redes sociais sem risks.</p>
                 </div>
             </div>
 
-           <div class="cta-container">
-    <p style="font-size: 1.2rem; opacity: 0.9;">Acesse o conteúdo completo gratuitamente</p>
-    <div style="margin: 10px 0;">
-        <span class="valor">PDF</span> <span class="periodo" style="color: #00f0ff;">Digital Gratuito</span>
-    </div>
-    
-    <!-- Botão com a nova classe de destaque -->
-    <a href="download_cartilha.php" target="_blank" class="btn-destaque-download">
-        <i class="fas fa-file-download"></i> Baixar Cartilha PDF Agora
-    </a>
+            <div class="cta-container">
+                <p style="font-size: 1.2rem; opacity: 0.9;">Acesse o conteúdo completo gratuitamente</p>
+                <div style="margin: 10px 0;">
+                    <span class="valor">PDF</span> <span class="periodo" style="color: #00f0ff;">Digital Gratuito</span>
+                </div>
+                
+                <a href="download_cartilha.php" target="_blank" class="btn-destaque-download">
+                    <i class="fas fa-file-download"></i> Baixar Cartilha PDF Agora
+                </a>
 
-    <?php
-    $contadorArquivo = "contador_downloads.txt";
-    $downloads = file_exists($contadorArquivo) ? (int)file_get_contents($contadorArquivo) : 0;
-    echo "<p class='obs-texto' style='margin-top: 25px; font-weight: bold;'> Junte-se aos $downloads usuários que já baixaram!</p>";
-    ?>
-</div>
-
-            <div class="iframe-wrapper">
-                <iframe src="docs/CartilhaSeguranca.pdf.pdf" width="100%" height="600px" style="border: none;"></iframe>
+                <?php
+                $contadorArquivo = "contador_downloads.txt";
+                $downloads = file_exists($contadorArquivo) ? (int)file_get_contents($contadorArquivo) : 0;
+                echo "<p class='obs-texto' style='margin-top: 25px; font-weight: bold;'> Junte-se aos $downloads usuários que já baixaram!</p>";
+                ?>
             </div>
+
+            <div class="iframe-wrapper mt-4">
+    <iframe src="docs/CartilhaSeguranca.pdf.pdf" width="100%" height="600px" style="border: none;"></iframe>
+</div>
         </div>
     </section>
 
-    <!-- Formulário de Contato -->
     <section class="foto-e-formulario" id="foto-e-formulario">
         <div class="formulario" id="formulario">
-            <h2>Vamos conversar? </h2>
-            <p class="sub-texto">Preencha e receba uma resposta</p>
+            <h2>Vamos conversar?</h2>
+            <p class="sub-texto" style="margin-bottom: 25px;">Preencha e receba uma resposta</p>
             <form id="form-contato" action="processa_formulario.php" method="POST">
+                
                 <div class="input-grupo com-icone">
                     <label for="nome">Nome completo</label>
                     <div class="input-wrapper">
-                        <input type="text" name="nome" placeholder="Seu nome completo">
-                        <i class="fas fa-envelope"></i>
+                        <input type="text" name="nome" placeholder="Seu nome completo" required>
+                        <i class="fas fa-user"></i>
                     </div>
                     <div class="mensagem"></div>
                 </div>
@@ -303,16 +384,16 @@
                 <div class="input-grupo com-icone">
                     <label for="email">Email</label>
                     <div class="input-wrapper">
-                        <input type="email" name="email" placeholder="Digite seu melhor email">
+                        <input type="email" name="email" placeholder="Digite seu melhor email" required>
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="mensagem"></div>
                 </div>
 
                 <div class="input-grupo com-icone">
-                    <label for="whatspp">Whatsapp</label>
+                    <label for="whatsapp">WhatsApp</label>
                     <div class="input-wrapper">
-                        <input type="text" name="whatsapp" placeholder="Digite seu whatsapp">
+                        <input type="text" name="whatsapp" placeholder="Digite seu whatsapp" required>
                         <i class="fas fa-phone"></i>
                     </div>
                     <div class="mensagem"></div>
@@ -321,28 +402,27 @@
                 <div class="input-grupo com-icone">
                     <label for="mensagem">Mensagem</label>
                     <div class="input-wrapper">
-                        <input type="text" name="mensagem" placeholder="Digite sua mensagem">
+                        <input type="text" name="mensagem" placeholder="Digite sua mensagem" required>
                         <i class="fas fa-comment-dots"></i>
                     </div>
                     <div class="mensagem"></div>
                 </div>
 
                 <div class="input-grupo">
-                    <label>
-                        <input type="checkbox" id="lgpd" name="lgpd" required>
+                    <label style="font-weight: normal; cursor: pointer;">
+                        <input type="checkbox" id="lgpd" name="lgpd" required style="margin-right: 5px;">
                         Declaro que li e aceito os <a href="termos-lgpd.html" target="_blank">Termos da LGPD</a>.
                     </label>
-                    <div class="mensagem" id="mensagem-lgpd" style="color: red; display: none;">
+                    <div class="mensagem" id="mensagem-lgpd" style="color: red; display: none; margin-top: 5px;">
                         Você precisa aceitar os termos para continuar.
                     </div>
                 </div>
 
-                <button type="submit" class="botao-enviar">Enviar agora</button>
+                <button type="submit" class="botao-enviar" style="margin-top: 10px;">Enviar agora</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer border">
         <div class="footer-container">
             <div class="footer-social">
@@ -369,16 +449,13 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
     <a href="https://wa.me/5527999642716" class="whatsapp-float-btn" target="_blank">
         <img src="img/whatsapp-icon.png" alt="WhatsApp">
     </a>
 
-    <!-- Scripts -->
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
     <script>
-        // Validação simples e efeito de envio
         document.getElementById('form-contato').addEventListener('submit', function(e) {
             const checkbox = document.getElementById('lgpd');
             const botao = document.querySelector('.botao-enviar');

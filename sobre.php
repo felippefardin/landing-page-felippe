@@ -16,7 +16,7 @@
   <link rel="shortcut icon" href="img/shortcut icon.png">
   <title>Sobre Mim | Tech Tecnologia</title>
 </head>
-<body>
+<body> 
   <!-- VLibras widget -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -250,23 +250,56 @@ header {
   <i class="fa fa-arrow-left"></i> Voltar
 </a>
 
-<header>
-  <div class="header-conteudo">
-    <img src="img/minhalogo.png" alt="Logo Tech Tecnologia" class="logo">
+ <header>
+
+<div class="header-conteudo">
+
+    <img src="img/minhalogo.png"
+         alt="Logo Tech Tecnologia"
+         class="logo">
 
     <div class="header-textos">
-      <h1>Tech Tecnologia</h1>
-      <p class="slogan">Inovação em código, excelência em resultados</p>
+
+        <h1>Suporte TI & Soluções Tecnológicas</h1>
+
+        <p class="slogan">
+            Manutenção de computadores, suporte técnico,
+            desenvolvimento web e segurança digital.
+        </p>
+
+        <div class="header-beneficios">
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Formatação Profissional
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Suporte Remoto
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Atendimento Rápido
+            </span>
+
+        </div>
+
+        <div class="container-botao cabecalho">
+
+            <a href="#formulario" class="btn-destaque">
+                Solicitar Orçamento
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="container-botao cabecalho">
-      <a href="#formulario" class="btn-destaque">
-        Conhecer Agora <i class="fa fa-arrow-right seta-responsiva"></i>
-      </a>
-    </div>
-  </div>
+</div>
+
 </header>
-
 
 
 <section class="sobre">
