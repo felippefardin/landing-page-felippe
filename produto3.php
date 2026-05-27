@@ -486,7 +486,7 @@ body.dark-mode .card-servico p { color: #bbb; }
         </div>
 
         <div class="footer-copy">
-            <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Tech Tecnologia. Todos os direitos reservados.</p>
         </div>
     </footer>
 

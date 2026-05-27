@@ -426,24 +426,54 @@
     <footer class="footer border">
         <div class="footer-container">
             <div class="footer-social">
-                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-                <a href="https://www.linkedin.com/in/felippefardin/"><img src="img/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/twitter.png" alt="Twitter">
+                </a>
+                <a href="https://www.linkedin.com/in/felippefardin/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/youtube.png" alt="YouTube">
+                </a>
             </div>
+
             <div class="footer-info">
-                <p>Vila Velha/ES</p>
-                <a href="sobre.php" class="btn-sobre-mim"><i class="fas fa-user"></i> Sobre Mim</a>
+                <p>Endereço: <br>
+                    Vila Velha/ES <br>
+                </p>
+                <a href="sobre.php" class="btn-sobre-mim">
+                    <i class="fas fa-user"></i> Sobre Mim
+                </a>
             </div>
         </div>
 
         <div class="footer-links-mercado">
-            <h3>Pagamentos com MERCADO PAGO</h3>
+            <h3>Receba seus pagamentos com a MERCADO PAGO</h3>
             <div class="botoes-mercado">
-                <a href="https://mpago.li/3177rXL" class="botao-mercado"><i class="fas fa-credit-card"></i> MINI NFC 2</a>
-                <a href="https://mpago.li/1AUKHmw" class="botao-mercado"><i class="fas fa-credit-card"></i> POINT AIR 2</a>
-                <a href="https://mpago.li/1giRaVp" class="botao-mercado"><i class="fas fa-mobile"></i> APP MERCADO PAGO</a>
+                <a href="https://mpago.li/3177rXL" target="_blank" class="botao-mercado">
+                    <i class="fas fa-credit-card"></i> MINI NFC 2
+                </a>
+                <a href="https://mpago.li/1AUKHmw" target="_blank" class="botao-mercado">
+                    <i class="fas fa-credit-card"></i> POINT AIR 2
+                </a>
+                <a href="https://mpago.li/2q5guMR" target="_blank" class="botao-mercado">
+                    <i class="fas fa-credit-card"></i> POINT SMART 2
+                </a>
+                <a href="https://mpago.li/1giRaVp" target="_blank" class="botao-mercado">
+                    <i class="fas fa-mobile"></i> APP MERCADO PAGO
+                </a>
+                <a href="https://mpago.li/2qVdLDW" target="_blank" class="botao-mercado">
+                    <i class="fas fa-credit-card"></i> POINT PRO 3
+                </a>
             </div>
         </div>
+
         <div class="footer-copy">
             <p>&copy; 2025 Tech Tecnologia. Todos os direitos reservados.</p>
         </div>

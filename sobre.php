@@ -17,8 +17,7 @@
   <title>Sobre Mim | Tech Tecnologia</title>
 </head>
 <body> 
-  <!-- VLibras widget -->
-    <div vw class="enabled">
+  <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
             <div class="vw-plugin-top-wrapper"></div>
@@ -240,12 +239,10 @@ header {
 
 </style>
 
-<!-- Botão Acessibilidade - Modo Dark -->
 <button id="toggle-dark-mode" class="modo-toggle">
   <i class="fa fa-moon" id="icon-dark"></i> <span id="modo-label">Modo Dark</span>
 </button>
 
-<!-- Botão Voltar -->
 <a href="index.php" class="btn-voltar">
   <i class="fa fa-arrow-left"></i> Voltar
 </a>
@@ -304,17 +301,16 @@ header {
 
 <section class="sobre">
   <h2>Sobre Mim</h2>
-  <p>Olá! Me chamo <strong>Felippe Fardin</strong>, sou desenvolvedor formado em Análise e desenvolvimento de sistemas
-  pela Universidade Vila Velha e especializado na criação de <strong>landing pages, sites institucionais e lojas virtuais</strong>. Tenho paixão por transformar ideias em soluções digitais que realmente geram resultados.</p>
+  <p>Olá! Me chamo <strong>Felippe Fardin</strong>, sou desenvolvedor formado em Análise e desenvolvimento de sistemas pela Universidade Vila Velha, <strong>especialista em suporte de TI</strong> e especializado na criação de <strong>landing pages, sites institucionais e lojas virtuais</strong>. Tenho paixão por transformar ideias em soluções digitais completas e seguras, que realmente geram resultados.</p>
 
-  <p>Minha missão é unir <strong>design criativo, tecnologia moderna e foco em conversão</strong> para que cada projeto entregue valor real ao cliente. Trabalho de forma personalizada, entendendo as necessidades específicas de cada negócio para entregar uma solução eficiente, responsiva e visualmente impactante.</p>
+  <p>Minha missão é unir <strong>design criativo, tecnologia moderna, infraestrutura estável e foco em conversão</strong> para que cada projeto entregue valor real ao cliente. Trabalho de forma personalizada, entendendo as necessidades específicas de cada negócio para entregar uma solution eficiente, responsiva e tecnicamente impecável.</p>
 
-  <p>Ao longo da minha jornada, quero ajudar diversas empresas a fortalecer sua presença online com projetos que transmitem <strong>confiança, profissionalismo e inovação</strong>.</p>
+  <p>Ao longo da minha jornada, quero ajudar diversas empresas a fortalecer sua presença online e <strong>garantir a continuidade dos seus serviços digitais</strong> com projetos que transmitem <strong>confiança, profissionalismo e inovação</strong>.</p>
 
   <ul>
     <li>Desenvolvimento web com HTML, CSS, JavaScript, PHP e MySQL</li>
     <li>Criação de páginas otimizadas para conversão</li>
-    <li>Manutenção de sites e suporte técnico personalizado</li>
+    <li><strong>Suporte de TI, manutenção de sites e suporte técnico personalizado</strong></li>
     <li>Integrações com APIs, e-mail marketing, formulários inteligentes e mais</li>
   </ul>
 
@@ -325,7 +321,13 @@ header {
 
 <section class="foto-container">
   <img src="img/felippe2.jpeg" alt="Exemplo de trabalho" class="foto">
-  <img src="img/felippecartoon.jpeg" alt="Cartilha digital" class="foto">
+  
+  <div class="card-foto-meio" style="flex: 1; min-width: 250px; background: linear-gradient(135deg, #192844 0%, #0e1b2e 100%); color: white; padding: 30px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <i class="fas fa-shield-alt" style="font-size: 40px; color: #00f0ff; margin-bottom: 15px;"></i>
+    <h3 style="font-size: 20px; margin-bottom: 10px; color: #fff;">Projeto Seguro</h3>
+    <p style="font-size: 14px; color: #e0e0e0; line-height: 1.5; margin: 0;">Garantia de código otimizado, suporte técnico pós-entrega e total conformidade com as boas práticas de segurança digital.</p>
+  </div>
+
   <img src="img/felippe1.jpeg" alt="Cartilha digital" class="foto">
 </section>
 

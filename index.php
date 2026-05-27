@@ -306,12 +306,61 @@ file_put_contents($arquivo, $visitas);
   transform: scale(1.05);
   box-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff;
 }
+
+.acessibilidade-container {
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 9999;
+
+    display: flex;
+    gap: 10px;
+}
+
+.acessibilidade-container button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #0d6efd;
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.acessibilidade-container button:hover {
+    transform: scale(1.05);
+    background: #0b5ed7;
+}
   </style>      
     
 
 <button id="toggle-dark-mode" class="modo-toggle">
   <i class="fa fa-moon" id="icon-dark"></i> <span id="modo-label">Modo Dark</span>
 </button>
+
+<div class="acessibilidade-container">
+    <button id="aumentar-fonte" aria-label="Aumentar tamanho da fonte">
+        A+
+    </button>
+
+    <button id="diminuir-fonte" aria-label="Diminuir tamanho da fonte">
+        A-
+    </button>
+
+    <button id="resetar-fonte" aria-label="Resetar tamanho da fonte">
+        A
+    </button>
+</div>
 
  
   
@@ -390,7 +439,7 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
    <section class="produto">
   <div class="produto-container">
     <div class="produto-imagem">
-      <img src="img/oferta2.png" alt="Página de vendas otimizada por Tech Tecnologia" class="imagem-produto">                 
+      <img src="img/imagemcriacao.png" alt="Página de vendas otimizada por Tech Tecnologia" class="imagem-produto">                 
     </div>
     <div class="produto-info">
       <h2>Criação de Landing Page Exclusiva para Seu Negócio</h2>
@@ -416,7 +465,7 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
 <section class="produto">
   <div class="produto-container reverse">
     <div class="produto-imagem">
-      <img src="img/foldermanuntencaoesuporte.png" alt="Serviços de suporte técnico e manutenção de computadores" class="imagem-produto">
+      <img src="img/foldermanuntencaoesuportedois.png" alt="Serviços de suporte técnico e manutenção de computadores" class="imagem-produto">
     </div>
 
     <div class="produto-info">
@@ -623,6 +672,7 @@ Para garantir que seu site esteja <strong>sempre atualizado, seguro e funcionand
     </form>
   </div>
 </div>
+<script src="assets/js/acessibilidade.js"></script>
 </body>
 </html>     
 <script>        
