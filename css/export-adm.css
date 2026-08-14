@@ -1,0 +1,30 @@
+ .exportar-button {
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .excel {
+            background: #0077cc;
+        }
+
+        .excel:hover {
+            background: #006bb3;
+        }
+
+        .pdf {
+            background: #cc0000;
+        }
+
+        .pdf:hover {
+            background: #b30000;
+        }
+
+        .csv {
+            background: #00a859;
+        }
+
+        .csv:hover {
+            background: #009848;
+        }

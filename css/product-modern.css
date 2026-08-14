@@ -1,0 +1,181 @@
+:root {
+  --product-navy: #071b35;
+  --product-blue: #075bd8;
+  --product-cyan: #00b8d9;
+  --product-surface: #f4f7fb;
+  --product-border: #dce7f3;
+  --product-text: #142033;
+}
+
+body.public-page { background: var(--product-surface); color: var(--product-text); }
+body.public-page > .btn-voltar { display: none; }
+
+body.public-page header {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(44px, 7vw, 84px) 24px;
+  color: #fff;
+  background: linear-gradient(125deg, #06162c 0%, #074b9f 60%, #007f9c 100%);
+  border: 0;
+}
+
+body.public-page .header-conteudo {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+body.public-page .header-conteudo .logo { width: min(300px, 34vw); }
+body.public-page .header-textos { max-width: 700px; }
+body.public-page .header-textos h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.08;
+  color: #fff;
+}
+body.public-page .header-textos .slogan { margin: 20px 0; font-size: 1.18rem; line-height: 1.65; color: #e8f5ff; }
+body.public-page .header-beneficios { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+body.public-page .header-beneficios span { display: inline-flex; align-items: center; gap: 7px; }
+body.public-page .header-beneficios i { color: #7de8ff; }
+
+body.public-page .btn-destaque,
+body.public-page .btn-primary,
+body.public-page .btn-destaque-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 999px;
+  color: #073b80;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+  font-size: 1.04rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+body.public-page .btn-destaque:hover,
+body.public-page .btn-primary:hover,
+body.public-page .btn-destaque-download:hover { color: #06162c; background: #7de8ff; transform: translateY(-2px); }
+
+body.public-page .oferta-landing-page,
+body.public-page .video-destaque,
+body.public-page .foto-e-formulario {
+  width: min(1120px, calc(100% - 32px));
+  max-width: 1120px;
+  margin: 28px auto;
+  padding: clamp(28px, 5vw, 58px);
+  box-sizing: border-box;
+  border: 1px solid var(--product-border);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(7,27,53,.09);
+}
+
+body.public-page .container-oferta { max-width: 100%; padding: 0; }
+body.public-page .header-oferta { max-width: 760px; margin: 0 auto 34px; text-align: center; }
+body.public-page .header-oferta h2,
+body.public-page .video-conteudo h2 { color: var(--product-navy); font-size: clamp(1.7rem, 4vw, 2.5rem); }
+body.public-page .badge { display: inline-block; padding: 7px 13px; color: #064a76; background: #dff7ff; border-radius: 999px; font-weight: 800; }
+
+body.public-page .grid-servicos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+body.public-page .card-servico {
+  min-width: 0;
+  padding: 24px 20px;
+  color: var(--product-text);
+  text-align: left;
+  border: 1px solid var(--product-border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 9px 25px rgba(7,27,53,.07);
+}
+body.public-page .card-servico h3 { color: var(--product-navy); }
+body.public-page .icon-box { color: var(--product-blue); font-size: 1.8rem; }
+
+body.public-page .cta-container {
+  margin-top: 32px;
+  padding: 28px;
+  text-align: center;
+  border-radius: 16px;
+  background: linear-gradient(125deg, #06162c, #074b9f 70%, #007f9c);
+  color: #fff;
+}
+body.public-page .preco-destaque,
+body.public-page .cta-container .obs-texto { color: #fff; }
+
+body.public-page .formulario { max-width: 650px; box-shadow: none; }
+body.public-page .input-grupo { max-width: 520px; }
+body.public-page .botao-enviar { max-width: 520px; background: var(--product-blue); border: 0; }
+body.public-page .botao-enviar:hover { background: var(--product-navy); border: 0; }
+body.public-page .video-wrapper,
+body.public-page .iframe-wrapper { overflow: hidden; border-radius: 16px; box-shadow: 0 12px 28px rgba(7,27,53,.13); }
+
+body.public-page footer.footer {
+  width: 100%;
+  margin: 48px 0 0;
+  padding: 36px 24px 24px;
+  box-sizing: border-box;
+  color: #fff;
+  background: linear-gradient(125deg, #06162c 0%, #074b9f 65%, #007f9c 100%);
+  border: 0;
+}
+body.public-page footer .footer-container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+body.public-page footer .footer-social { margin: 0; }
+body.public-page footer .footer-social a {
+  width: 46px;
+  height: 46px;
+  margin: 5px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 50%;
+}
+body.public-page footer .footer-info { color: #fff; text-align: right; }
+body.public-page footer .footer-copy { margin-top: 24px; }
+
+body.public-page .container-botao.cabecalho { padding: 18px 0 0; }
+body.public-page .container-botao.cabecalho .btn-destaque {
+  min-height: 52px;
+  padding: 14px 26px;
+  color: #073b80 !important;
+  background: #fff !important;
+  font-size: 1.08rem !important;
+  line-height: 1.25;
+  text-shadow: none;
+}
+
+@media (max-width: 920px) {
+  body.public-page .grid-servicos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.public-page .header-conteudo { flex-direction: column; text-align: center; }
+  body.public-page .header-beneficios { justify-content: center; }
+  body.public-page .header-conteudo .logo { width: min(240px, 70vw); }
+  body.public-page footer .footer-container { flex-direction: column; text-align: center; }
+  body.public-page footer .footer-info { text-align: center; }
+}
+
+@media (max-width: 600px) {
+  body.public-page header { min-height: auto; padding: 40px 18px; }
+  body.public-page .grid-servicos { grid-template-columns: 1fr; }
+  body.public-page .oferta-landing-page,
+  body.public-page .video-destaque,
+  body.public-page .foto-e-formulario { width: min(100% - 20px, 1120px); padding: 24px 16px; }
+}
