@@ -54,7 +54,7 @@ body.public-page .btn-destaque-download {
   border: 0;
   border-radius: 999px;
   color: #073b80;
-  background: #fff;
+  /* background: #fff; */
   box-shadow: 0 10px 24px rgba(0,0,0,.16);
   font-size: 1.04rem;
   font-weight: 800;
