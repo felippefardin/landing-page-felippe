@@ -1,34 +1,87 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once __DIR__ . '/src/bootstrap.php';
-include 'contador_visitas.php';
 
 require_auth();
 
-$conn = new mysqli("localhost", "root", "", "felippe");
+include_once __DIR__ . '/contador_visitas.php';
+
+$conn = db();
 
 // Consultas para os cards
-$totalMensagens = $conn->query("SELECT COUNT(*) AS total FROM emails")->fetch_assoc()['total'];
-$respondidas = $conn->query("SELECT COUNT(*) AS total FROM emails WHERE respondida = 1")->fetch_assoc()['total'];
-$naoRespondidas = $conn->query("SELECT COUNT(*) AS total FROM emails WHERE respondida = 0")->fetch_assoc()['total'];
+$result = $conn->query("
+    SELECT COUNT(*) AS total
+    FROM emails
+");
 
-// Contador de visitas
-$visitasTotal = file_exists('visitas_total.txt') ? (int)file_get_contents('visitas_total.txt') : 0;
-$visitasDiarias = file_exists('visitas_diarias.txt') ? (int)file_get_contents('visitas_diarias.txt') : 0;
+if (!$result) {
+    die('Erro total de mensagens: ' . $conn->error);
+}
 
-// Para o gráfico: mensagens por data dos últimos 7 dias
+$totalMensagens = (int) $result->fetch_assoc()['total'];
+
+$result = $conn->query("
+    SELECT COUNT(*) AS total
+    FROM emails
+    WHERE respondida = 1
+");
+
+if (!$result) {
+    die('Erro mensagens respondidas: ' . $conn->error);
+}
+
+$respondidas = (int) $result->fetch_assoc()['total'];
+
+$result = $conn->query("
+    SELECT COUNT(*) AS total
+    FROM emails
+    WHERE respondida = 0
+");
+
+if (!$result) {
+    die('Erro mensagens não respondidas: ' . $conn->error);
+}
+
+$naoRespondidas = (int) $result->fetch_assoc()['total'];
+
+
+// CONTADOR DE VISITAS
+$arquivoTotal = __DIR__ . '/visitas_total.txt';
+$arquivoDiarias = __DIR__ . '/visitas_diarias.txt';
+
+$visitasTotal = file_exists($arquivoTotal)
+    ? (int) file_get_contents($arquivoTotal)
+    : 0;
+
+$visitasDiarias = file_exists($arquivoDiarias)
+    ? (int) file_get_contents($arquivoDiarias)
+    : 0;
+
+
+// GRÁFICO DOS ÚLTIMOS 7 DIAS
 $dataChart = [];
 $labels = [];
+
 $resultChart = $conn->query("
-    SELECT DATE(data_envio) as data, COUNT(*) as total
+    SELECT
+        DATE(data_envio) AS data,
+        COUNT(*) AS total
     FROM emails
     WHERE data_envio >= DATE_SUB(CURDATE(), INTERVAL 6 DAY)
     GROUP BY DATE(data_envio)
-    ORDER BY DATE(data_envio)
+    ORDER BY DATE(data_envio) ASC
 ");
+
+if (!$resultChart) {
+    die('Erro ao gerar gráfico: ' . $conn->error);
+}
 
 while ($row = $resultChart->fetch_assoc()) {
     $labels[] = $row['data'];
-    $dataChart[] = (int)$row['total'];
+    $dataChart[] = (int) $row['total'];
 }
 ?>
 

@@ -177,6 +177,13 @@ input[type="text"]:focus {
     text-decoration: underline;
 }
 
+.oauth-divider { display:flex; align-items:center; gap:.75rem; margin:1.15rem 0; color:#687386; font-size:.85rem; }
+.oauth-divider::before,.oauth-divider::after { content:""; height:1px; flex:1; background:#d8dee8; }
+.google-login-button { min-height:48px; display:flex; align-items:center; justify-content:center; gap:.75rem; padding:.7rem 1rem; border:1.5px solid #cbd3df; border-radius:12px; background:#fff; color:#202124; text-decoration:none; font-weight:700; transition:border-color .2s,box-shadow .2s,background .2s; }
+.google-login-button:hover { background:#f8fafc; border-color:#8e99aa; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+.google-login-button:focus-visible { outline:3px solid rgba(0,168,89,.3); outline-offset:2px; }
+.google-login-button svg { width:22px; height:22px; flex:none; }
+
 /* Acessibilidade: escondendo label, mas mantendo para leitores de tela */
 .sr-only {
     position: absolute !important;

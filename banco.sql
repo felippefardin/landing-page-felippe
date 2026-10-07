@@ -35,6 +35,10 @@ CREATE TABLE IF NOT EXISTS usuarios (
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
     celular VARCHAR(20) NOT NULL,
+    auth_provider VARCHAR(20) NOT NULL DEFAULT 'local',
+    google_sub VARCHAR(255) NULL,
+    email_verificado_em DATETIME NULL,
+    UNIQUE KEY ux_usuarios_google_sub (google_sub),
     whatsapp VARCHAR(20) NULL
 );
 

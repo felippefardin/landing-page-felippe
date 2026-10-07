@@ -1,42 +1,86 @@
 <?php
+
 // Arquivos
-$arquivoTotal = 'visitas_total.txt';
-$arquivoDiario = 'visitas_diarias.txt';
-$arquivoData = 'visitas_data.txt';
+$arquivoTotal = __DIR__ . '/visitas_total.txt';
+$arquivoDiario = __DIR__ . '/visitas_diarias.txt';
+$arquivoData = __DIR__ . '/visitas_data.txt';
 
-// Cria arquivos se não existem
-if (!file_exists($arquivoTotal)) file_put_contents($arquivoTotal, 0);
-if (!file_exists($arquivoDiario)) file_put_contents($arquivoDiario, 0);
-if (!file_exists($arquivoData)) file_put_contents($arquivoData, date('Y-m-d'));
+// Cria arquivos se não existirem
+if (!file_exists($arquivoTotal)) {
+    file_put_contents($arquivoTotal, '0');
+}
 
-// Função para IP
-function getIP() {
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) return $_SERVER['HTTP_CLIENT_IP'];
-    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) return $_SERVER['HTTP_X_FORWARDED_FOR'];
-    else return $_SERVER['REMOTE_ADDR'];
+if (!file_exists($arquivoDiario)) {
+    file_put_contents($arquivoDiario, '0');
+}
+
+if (!file_exists($arquivoData)) {
+    file_put_contents($arquivoData, date('Y-m-d'));
+}
+
+// Função para obter o IP
+if (!function_exists('getIP')) {
+    function getIP()
+    {
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            return $_SERVER['HTTP_CLIENT_IP'];
+        }
+
+        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            return trim(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0]);
+        }
+
+        return $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+    }
 }
 
 // Verifica se é um novo dia
 $dataHoje = date('Y-m-d');
 $dataSalva = trim(file_get_contents($arquivoData));
+
 if ($dataHoje !== $dataSalva) {
-    file_put_contents($arquivoDiario, 0);
+    file_put_contents($arquivoDiario, '0');
     file_put_contents($arquivoData, $dataHoje);
 }
 
-// Lógica de cookie por IP
+// Identifica visitante
 $ip = getIP();
-$cookie_name = 'visitante_contador_' . md5($ip);
-if (!isset($_COOKIE[$cookie_name])) {
-    // Conta total
-    $total = (int)file_get_contents($arquivoTotal) + 1;
-    file_put_contents($arquivoTotal, $total);
 
-    // Conta diária
-    $diario = (int)file_get_contents($arquivoDiario) + 1;
-    file_put_contents($arquivoDiario, $diario);
+$cookieName = 'visitante_contador_' . md5($ip);
 
-    // Define cookie por 24h
-    setcookie($cookie_name, '1', time() + 86400, '/');
+// Só conta se ainda não houver cookie
+if (!isset($_COOKIE[$cookieName])) {
+
+    // Total
+    $total = (int) file_get_contents($arquivoTotal);
+    $total++;
+
+    file_put_contents(
+        $arquivoTotal,
+        (string) $total,
+        LOCK_EX
+    );
+
+    // Diário
+    $diario = (int) file_get_contents($arquivoDiario);
+    $diario++;
+
+    file_put_contents(
+        $arquivoDiario,
+        (string) $diario,
+        LOCK_EX
+    );
+
+    // Cookie válido por 24 horas
+    setcookie(
+        $cookieName,
+        '1',
+        [
+            'expires' => time() + 86400,
+            'path' => '/',
+            'httponly' => true,
+            'samesite' => 'Lax'
+        ]
+    );
 }
 ?>

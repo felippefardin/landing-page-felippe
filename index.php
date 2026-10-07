@@ -396,7 +396,7 @@ file_put_contents($arquivo, $visitas);
         <h1>Suporte Técnico e Criação de Sites em Vila Velha</h1>
 
         <p class="slogan">
-            Atendimento direto para computadores, landing pages, sites e segurança digital — com suporte remoto e presencial.
+            Atendimento direto para computadores, landing pages, sites e segurança digital com suporte.
         </p>
 
         <div class="header-beneficios">
