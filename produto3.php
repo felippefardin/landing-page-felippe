@@ -17,6 +17,7 @@
     <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
     <title>Tech Tecnologia</title>
 
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM3GH72GH4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -32,6 +33,7 @@
 <body>
 <?php require __DIR__ . '/includes/public-nav.php'; ?>
 
+    <!-- VLibras widget -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
@@ -136,150 +138,133 @@
             box-shadow: 0 0 8px #00f0ff;
             transition: all 0.3s ease;
         }
-        
         /* Container Geral */
-        .oferta-landing-page {
-            padding: 80px 20px;
-            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .container-oferta {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .header-oferta {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .badge {
-            background: #0077cc22;
-            color: #0077cc;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .header-oferta h2 {
-            font-size: 36px;
-            color: #222;
-            margin: 15px 0;
-        }
-
-        /* Grid de Cards */
-        .grid-servicos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .card-servico {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            text-align: left;
-            border-bottom: 3px solid transparent;
-        }
-
-        .card-servico:hover {
-            transform: translateY(-10px);
-            border-bottom: 3px solid #0077cc;
-        }
-
-        .icon-box {
-            font-size: 30px;
-            color: #0077cc;
-            margin-bottom: 20px;
-        }
-
-        .card-servico h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .card-servico p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        /* Área de Preço e CTA */
-        .cta-container {
-            text-align: center;
-            background: #222;
-            padding: 40px;
-            border-radius: 20px;
-            color: #fff;
-        }
-
-        .preco-destaque p {
-            font-size: 18px;
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }
-
-        .iframe-wrapper {
-    margin-top: 30px; /* Altere esse valor para aumentar ou diminuir o espaço */
+.oferta-landing-page {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-        .valor {
-            font-size: 60px;
-            font-weight: 800;
-            color: #00f0ff;
-        }
+.container-oferta {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-        .moeda, .centavos {
-            font-size: 24px;
-            color: #00f0ff;
-            vertical-align: super;
-        }
+.header-oferta {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
-        .btn-primary {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 40px;
-            background: #0077cc;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.badge {
+    background: #0077cc22;
+    color: #0077cc;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-        .btn-primary:hover {
-            background: #00f0ff;
-            color: #000;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-        }
+.header-oferta h2 {
+    font-size: 36px;
+    color: #222;
+    margin: 15px 0;
+}
 
-        /* AJUSTE: Correção do espaçamento das caixas do formulário */
-        .input-grupo {
-            margin-bottom: 22px !important;
-            text-align: left;
-        }
+/* Grid de Cards */
+.grid-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
 
-        .input-grupo label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
+.card-servico {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: left;
+    border-bottom: 3px solid transparent;
+}
 
-        /* Dark Mode Adjustments */
-        body.dark-mode .oferta-landing-page {
-            background: #121212 !important;
-        }
-        body.dark-mode .header-oferta h2 { color: #fff; }
-        body.dark-mode .card-servico { background: #1e1e1e; }
-        body.dark-mode .card-servico h3 { color: #fff; }
-        body.dark-mode .card-servico p { color: #bbb; }
+.card-servico:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid #0077cc;
+}
+
+.icon-box {
+    font-size: 30px;
+    color: #0077cc;
+    margin-bottom: 20px;
+}
+
+.card-servico h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-servico p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Área de Preço e CTA */
+.cta-container {
+    text-align: center;
+    background: #222;
+    padding: 40px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.preco-destaque p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.valor {
+    font-size: 60px;
+    font-weight: 800;
+    color: #00f0ff;
+}
+
+.moeda, .centavos {
+    font-size: 24px;
+    color: #00f0ff;
+    vertical-align: super;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 40px;
+    background: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #00f0ff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .oferta-landing-page {
+    background: #121212 !important;
+}
+body.dark-mode .header-oferta h2 { color: #fff; }
+body.dark-mode .card-servico { background: #1e1e1e; }
+body.dark-mode .card-servico h3 { color: #fff; }
+body.dark-mode .card-servico p { color: #bbb; }
     </style>
 
     <button id="toggle-dark-mode" class="modo-toggle" aria-label="Alternar modo escuro">
@@ -287,102 +272,127 @@
         <span id="modo-label">Modo Dark</span>
     </button>
 
-    <a href="index.php" class="btn-voltar">
-      <i class="fa fa-arrow-left"></i> Voltar
-    </a>
+    <!-- Botão Voltar -->
+<a href="index.php" class="btn-voltar">
+  <i class="fa fa-arrow-left"></i> Voltar
+</a>
 
-    <header id="inicio" class="site-header">
-        <div class="header-conteudo">
-            <img src="img/logotipofelippe.png" alt="Logo Tech Tecnologia" class="logo">
-            <div class="header-textos">
-                <h1>Segurança Digital com Orientações Simples e Práticas</h1>
-                <p class="slogan">Aprenda a reconhecer golpes, proteger seus dados e navegar com mais segurança.</p>
+ <header id="inicio" class="site-header">
 
-                <div class="header-beneficios">
-                    <span>
-                        <i class="fas fa-check-circle"></i>
-                        Formatação Profissional
-                    </span>
-                    <span>
-                        <i class="fas fa-check-circle"></i>
-                        Suporte Remoto
-                    </span>
-                    <span>
-                        <i class="fas fa-check-circle"></i>
-                        Atendimento Rápido
-                    </span>
-                </div>
+<div class="header-conteudo">
 
-                <div class="container-botao cabecalho">
-                    <a href="#formulario" class="btn-destaque">
-                Falar com um especialista
+    <img src="img/logotipofelippe.png"
+         alt="Logo Tech Tecnologia"
+         class="logo">
+
+    <div class="header-textos">
+
+        <h1>Suporte Técnico e Manutenção de Computadores em Vila Velha</h1>
+
+        <p class="slogan">Atendimento remoto e presencial para deixar seu computador rápido, seguro e confiável.</p>
+
+        <div class="header-beneficios">
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Formatação Profissional
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Suporte Remoto
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Atendimento Rápido
+            </span>
+
+        </div>
+
+        <div class="container-botao cabecalho">
+
+            <a href="#formulario" class="btn-destaque">
+                Solicitar orçamento gratuito
                 <i class="fa fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+            </a>
+
         </div>
-    </header>
 
-    <section class="oferta-landing-page">
-        <div class="container-oferta">
-            <div class="header-oferta">
-                <span class="badge">Educação Digital</span>
-                <h2>Cartilha de Segurança na Internet</h2>
-                <p>Guia essencial para navegar com tranquilidade. Ideal para idosos e iniciantes no mundo digital.</p>
-            </div>
+    </div>
 
-            <div class="grid-servicos">
-                <div class="card-servico">
-                    <div class="icon-box"><i class="fas fa-user-shield"></i></div>
-                    <h3>Proteção</h3>
-                    <p>Como criar senhas seguras e proteger seus dados pessoais.</p>
-                </div>
-                <div class="card-servico">
-                    <div class="icon-box"><i class="fas fa-search-location"></i></div>
-                    <h3>Identifique Golpes</h3>
-                    <p>Reconheça links falsos e tentativas de fraude por e-mail ou WhatsApp.</p>
-                </div>
-                <div class="card-servico">
-                    <div class="icon-box"><i class="fas fa-mouse-pointer"></i></div>
-                    <h3>Navegação</h3>
-                    <p>Dicas para usar navegadores e redes sociais sem risks.</p>
-                </div>
-            </div>
-
-            <div class="cta-container">
-                <p style="font-size: 1.2rem; opacity: 0.9;">Acesse o conteúdo completo gratuitamente</p>
-                <div style="margin: 10px 0;">
-                    <span class="valor">PDF</span> <span class="periodo" style="color: #00f0ff;">Digital Gratuito</span>
-                </div>
-                
-                <a href="download_cartilha.php" target="_blank" class="btn-destaque-download">
-                    <i class="fas fa-file-download"></i> Baixar Cartilha PDF Agora
-                </a>
-
-                <?php
-                $contadorArquivo = "contador_downloads.txt";
-                $downloads = file_exists($contadorArquivo) ? (int)file_get_contents($contadorArquivo) : 0;
-                echo "<p class='obs-texto' style='margin-top: 25px; font-weight: bold;'> Junte-se aos $downloads usuários que já baixaram!</p>";
-                ?>
-            </div>
-
-            <div class="iframe-wrapper mt-4">
-    <iframe src="docs/CartilhaSeguranca.pdf.pdf" width="100%" height="600px" style="border: none;"></iframe>
 </div>
-        </div>
-    </section>
 
-    <section class="foto-e-formulario" id="foto-e-formulario">
+</header>
+<!-- 
+    <section class="video-destaque">
+        <div class="video-conteudo">
+            <h2>Assista ao Nosso Vídeo</h2>
+            <p>Veja como podemos transformar sua ideia em um projeto profissional e eficiente.</p>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="video/midia2.mp4" title="Vídeo Promocional" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section> -->
+
+<section class="oferta-landing-page">
+    <div class="container-oferta">
+        <div class="header-oferta">
+            <span class="badge">Serviços Profissionais</span>
+            <h2>Suporte TI e Manutenção Especializada</h2>
+            <p>Garantimos o desempenho, a segurança e a estabilidade que você e sua empresa precisam.</p>
+        </div>
+
+        <div class="grid-servicos">
+            <!-- Card 1 -->
+            <div class="card-servico">
+                <div class="icon-box"><i class="fas fa-desktop"></i></div>
+                <h3>Formatação & OS</h3>
+                <p>Instalação de Windows e Linux com otimização completa do sistema.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card-servico">
+                <div class="icon-box"><i class="fas fa-shield-virus"></i></div>
+                <h3>Segurança Digital</h3>
+                <p>Remoção de vírus, malwares e instalação de defesas robustas.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card-servico">
+                <div class="icon-box"><i class="fas fa-microchip"></i></div>
+                <h3>Hardware & Upgrade</h3>
+                <p>Limpeza interna, troca de peças e upgrades (SSD/Memória).</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="card-servico">
+                <div class="icon-box"><i class="fas fa-network-wired"></i></div>
+                <h3>Redes & Suporte</h3>
+                <p>Configuração de roteadores, impressoras e suporte remoto ágil.</p>
+            </div>
+        </div>
+
+        <div class="cta-container">
+            <div class="preco-destaque">
+                <p>Formatação completa a partir de</p>
+                <span class="moeda">R$</span>
+                <span class="valor">150</span>
+                <span class="centavos">,00</span>
+            </div>
+            <p class="obs-texto">Atendemos Notebooks, Desktops e Contratos Empresariais.</p>
+            <a href="#formulario" class="btn-primary">Solicitar Orçamento Grátis</a>
+        </div>
+    </div>
+</section>
+
+        <section class="foto-e-formulario" id="foto-e-formulario">
         <div class="formulario" id="formulario">
-            <h2>Vamos conversar?</h2>
-            <p class="sub-texto" style="margin-bottom: 25px;">Preencha e receba uma resposta</p>
+            <h2>Vamos conversar? </h2>
+            <p class="sub-texto">Preencha e receba uma resposta</p>
             <form id="form-contato" action="processa_formulario.php" method="POST">
-                
                 <div class="input-grupo com-icone">
                     <label for="nome">Nome completo</label>
                     <div class="input-wrapper">
-                        <input type="text" name="nome" placeholder="Seu nome completo" required>
-                        <i class="fas fa-user"></i>
+                        <input type="text" name="nome" placeholder="Seu nome completo">
+                        <i class="fas fa-envelope"></i>
                     </div>
                     <div class="mensagem"></div>
                 </div>
@@ -390,16 +400,16 @@
                 <div class="input-grupo com-icone">
                     <label for="email">Email</label>
                     <div class="input-wrapper">
-                        <input type="email" name="email" placeholder="Digite seu melhor email" required>
+                        <input type="email" name="email" placeholder="Digite seu melhor email">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="mensagem"></div>
                 </div>
 
                 <div class="input-grupo com-icone">
-                    <label for="whatsapp">WhatsApp</label>
+                    <label for="whatspp">Whatsapp</label>
                     <div class="input-wrapper">
-                        <input type="text" name="whatsapp" placeholder="Digite seu whatsapp" required>
+                        <input type="text" name="whatsapp" placeholder="Digite seu whatsapp">
                         <i class="fas fa-phone"></i>
                     </div>
                     <div class="mensagem"></div>
@@ -408,23 +418,23 @@
                 <div class="input-grupo com-icone">
                     <label for="mensagem">Mensagem</label>
                     <div class="input-wrapper">
-                        <input type="text" name="mensagem" placeholder="Digite sua mensagem" required>
+                        <input type="text" name="mensagem" placeholder="Digite sua mensagem">
                         <i class="fas fa-comment-dots"></i>
                     </div>
                     <div class="mensagem"></div>
                 </div>
 
                 <div class="input-grupo">
-                    <label style="font-weight: normal; cursor: pointer;">
-                        <input type="checkbox" id="lgpd" name="lgpd" required style="margin-right: 5px;">
+                    <label>
+                        <input type="checkbox" id="lgpd" name="lgpd" required>
                         Declaro que li e aceito os <a href="termos-lgpd.html" target="_blank">Termos da LGPD</a>.
                     </label>
-                    <div class="mensagem" id="mensagem-lgpd" style="color: red; display: none; margin-top: 5px;">
+                    <div class="mensagem" id="mensagem-lgpd" style="color: red; display: none;">
                         Você precisa aceitar os termos para continuar.
                     </div>
                 </div>
 
-                <button type="submit" class="botao-enviar" style="margin-top: 10px;">Enviar agora</button>
+                <button type="submit" class="botao-enviar">Enviar agora</button>
             </form>
         </div>
     </section>
@@ -487,26 +497,48 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/5527999642716" class="whatsapp-float-btn" target="_blank">
+    <!-- Botão flutuante do WhatsApp -->
+    <a href="https://wa.me/5527999642716"
+       class="whatsapp-float-btn"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Fale conosco no WhatsApp">
         <img src="img/whatsapp-icon.png" alt="WhatsApp">
     </a>
 
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
     <script>
         document.getElementById('form-contato').addEventListener('submit', function(e) {
+            e.preventDefault(); // impede o envio imediato do formulário
+
             const checkbox = document.getElementById('lgpd');
+            const mensagemLGPD = document.getElementById('mensagem-lgpd');
             const botao = document.querySelector('.botao-enviar');
+
             if (!checkbox.checked) {
-                e.preventDefault();
-                document.getElementById('mensagem-lgpd').style.display = 'block';
+                mensagemLGPD.style.display = 'block';
                 return;
+            } else {
+                mensagemLGPD.style.display = 'none';
             }
+
             botao.innerHTML = "Enviando... ⏳";
             botao.disabled = true;
+
+            setTimeout(() => {
+                botao.innerHTML = "🚀 Enviar agora";
+                botao.disabled = false;
+                this.submit(); // envia o formulário após 3 segundos
+            }, 3000);
         });
+    </script>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
     <script src="js/acessibilidade.js?v=2"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
+

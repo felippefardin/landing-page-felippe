@@ -305,11 +305,9 @@ body.dark-mode .card-servico p { color: #aaa; }
 
     <div class="header-textos">
 
-        <h1>Felippe Andreata | Desenvolvedor Web | Cybersecurity | Tecnologia</h1>
+        <h1>Landing Pages e Sites Profissionais para o Seu Negócio</h1>
 
-        <p class="slogan">
-            Atendimento direto para computadores, landing pages, sites e segurança digital com suporte.
-        </p>
+        <p class="slogan">Projetos rápidos, responsivos e preparados para transformar visitantes em novos contatos.</p>
 
         <div class="header-beneficios">
 
