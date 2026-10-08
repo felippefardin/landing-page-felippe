@@ -21,7 +21,7 @@
       <div class="about-hero__copy">
         <span class="about-eyebrow"><i class="fa-solid fa-code"></i> Tecnologia com atendimento próximo</span>
         <h1 id="about-title">Soluções digitais que funcionam de verdade para o seu negócio.</h1>
-        <p class="about-lead">Sou <strong>Felippe Fardin</strong>, desenvolvedor formado em Análise e Desenvolvimento de Sistemas e fundador da Tech Tecnologia. Transformo necessidades reais em sites, sistemas e suporte técnico com segurança, clareza e continuidade.</p>
+        <p class="about-lead">Sou <strong>Felippe Fardin</strong>, desenvolvedor formado em Análise e Desenvolvimento de Sistemas e fundador e Pos-graduado em Cybersecurity. Transformo necessidades reais em sites, sistemas e suporte com segurança, clareza e continuidade.</p>
         <div class="about-actions"><a class="about-button about-button--primary" href="index.php#formulario"><i class="fa-solid fa-paper-plane"></i> Solicitar orçamento</a><a class="about-button about-button--secondary" href="https://wa.me/5527999642716" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Conversar no WhatsApp</a></div>
         <ul class="about-trust"><li><i class="fa-solid fa-circle-check"></i> Atendimento personalizado</li><li><i class="fa-solid fa-circle-check"></i> Soluções responsivas</li><li><i class="fa-solid fa-circle-check"></i> Suporte pós-entrega</li></ul>
       </div>
@@ -32,7 +32,7 @@
 
     <section class="about-section about-section--soft" aria-labelledby="services-title"><div class="about-shell"><div class="about-heading"><span class="about-section-label">Como posso ajudar</span><h2 id="services-title">Soluções completas em um único parceiro</h2><p>Da presença digital ao suporte cotidiano, com linguagem simples e acompanhamento próximo.</p></div><div class="about-cards">
       <article class="about-card"><i class="fa-solid fa-laptop-code"></i><h3>Sites e sistemas</h3><p>Landing pages, sites institucionais, lojas virtuais e sistemas desenvolvidos com PHP, MySQL, HTML, CSS e JavaScript.</p></article>
-      <article class="about-card"><i class="fa-solid fa-headset"></i><h3>Suporte de TI</h3><p>Manutenção, formatação, suporte remoto e presencial, orientação técnica e prevenção de falhas.</p></article>
+      <!-- <article class="about-card"><i class="fa-solid fa-headset"></i><h3>Suporte de TI</h3><p>Manutenção, formatação, suporte remoto e presencial, orientação técnica e prevenção de falhas.</p></article> -->
       <article class="about-card"><i class="fa-solid fa-chart-line"></i><h3>Conversão e automação</h3><p>Formulários inteligentes, integrações, automações e melhorias pensadas para gerar oportunidades.</p></article>
       <article class="about-card"><i class="fa-solid fa-shield-halved"></i><h3>Segurança e continuidade</h3><p>Boas práticas de proteção, atualizações, cópias de segurança e suporte pós-entrega.</p></article>
     </div></div></section>
