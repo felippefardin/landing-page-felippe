@@ -1,12 +1,6 @@
 <?php
-session_start();
-
-
-$conn = new mysqli ("localhost", "root", "", "felippe");
-
-if ($conn->connect_error) {
-    die("Erro na conexão com o banco de dados: " . $conn->connect_error);
-}
+require_once __DIR__ . '/src/bootstrap.php';
+$conn = db();
 
 $erro = "";
 

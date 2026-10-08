@@ -1,6 +1,6 @@
 <?php
-session_start();
-$conn = new mysqli("localhost", "root", "", "felippe");
+require_once __DIR__ . '/src/bootstrap.php';
+$conn = db();
 
 $mensagem = "";
 

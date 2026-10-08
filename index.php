@@ -23,7 +23,7 @@ file_put_contents($arquivo, $visitas);
     <meta property="og:url" content="https://bugcriativo.page.gd/">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="4be8f947ce798c28" />      
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20261008">
     <link rel="stylesheet" href="css/acessibilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/modal-captacao.css">
@@ -375,18 +375,9 @@ file_put_contents($arquivo, $visitas);
 
  
   
-    <nav class="site-nav" aria-label="Navegação principal">
-      <a class="site-nav__brand" href="#inicio">Tech Tecnologia</a>
-      <div class="site-nav__links">
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#formulario">Contato</a>
-        <a class="site-nav__login" href="login.php">Área do cliente</a>
-      </div>
-    </nav>
+    <?php require __DIR__ . '/includes/public-nav.php'; ?>
 
-    <header id="inicio">
+    <header id="inicio" class="site-header">
 
 <div class="header-conteudo">
 
@@ -478,7 +469,7 @@ file_put_contents($arquivo, $visitas);
   </div>
 </section>
 
-<section class="produto">
+<!-- <section class="produto">
   <div class="produto-container reverse">
     <div class="produto-imagem">
       <img src="img/foldermanuntencaoesuportedois.png" alt="Serviços de suporte técnico e manutenção de computadores" class="imagem-produto">
@@ -510,7 +501,7 @@ file_put_contents($arquivo, $visitas);
       </a>
     </div>
   </div>
-</section>
+</section> -->
 
     
     

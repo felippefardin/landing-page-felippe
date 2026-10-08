@@ -1,15 +1,6 @@
 <?php
-// Dados do banco de dados
-$host = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "felippe";
-
-// Conexão
-$conn = new mysqli($host, $usuario, $senha, $banco);
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
+require_once __DIR__ . '/src/bootstrap.php';
+$conn = db();
 
 // Recebe e valida o e-mail
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';

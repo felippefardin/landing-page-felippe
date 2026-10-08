@@ -7,7 +7,7 @@
     <meta name="keywords" content="produtos, ofertas, descontos, loja online, comprar, promoção">
     <meta name="author" content="Sua Empresa">
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20261008">
     <link rel="stylesheet" href="css/acessibilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css//video-produto1.css">
@@ -30,6 +30,7 @@
     <script src="js/public-shell.js?v=20260814b" defer></script>
 </head>
 <body>
+<?php require __DIR__ . '/includes/public-nav.php'; ?>
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -290,27 +291,34 @@
       <i class="fa fa-arrow-left"></i> Voltar
     </a>
 
-    <header>
+    <header id="inicio" class="site-header">
         <div class="header-conteudo">
             <img src="img/logotipofelippe.png" alt="Logo Tech Tecnologia" class="logo">
             <div class="header-textos">
-                <h1>Segurança Digital com Orientações Simples e Práticas</h1>
-                <p class="slogan">Aprenda a reconhecer golpes, proteger seus dados e navegar com mais segurança.</p>
+                 <h1>Felippe Andreata | Desenvolvedor Web | Cybersecurity | Tecnologia</h1>
 
-                <div class="header-beneficios">
-                    <span>
-                        <i class="fas fa-check-circle"></i>
-                        Formatação Profissional
-                    </span>
-                    <span>
-                        <i class="fas fa-check-circle"></i>
-                        Suporte Remoto
-                    </span>
-                    <span>
-                        <i class="fas fa-check-circle"></i>
-                        Atendimento Rápido
-                    </span>
-                </div>
+        <p class="slogan">
+            Atendimento direto para computadores, landing pages, sites e segurança digital com suporte.
+        </p>
+
+        <div class="header-beneficios">
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Formatação Profissional
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Suporte Remoto
+            </span>
+
+            <span>
+                <i class="fas fa-check-circle"></i>
+                Atendimento Rápido
+            </span>
+
+        </div>
 
                 <div class="container-botao cabecalho">
                     <a href="#formulario" class="btn-destaque">

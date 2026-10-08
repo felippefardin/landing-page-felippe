@@ -14,6 +14,7 @@
   <script src="js/acessibilidade-global.js?v=20260814f" defer></script><script src="js/public-shell.js?v=20260824" defer></script>
 </head>
 <body>
+  <?php require __DIR__ . '/includes/public-nav.php'; ?>
   <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
   <main id="conteudo-principal">
     <section class="about-hero" aria-labelledby="about-title"><div class="about-shell about-hero__grid">

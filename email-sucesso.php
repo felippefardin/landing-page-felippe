@@ -1,6 +1,6 @@
 <?php
-
-$conn = new mysqli("localhost", "root", "", "felippe");
+require_once __DIR__ . '/src/bootstrap.php';
+$conn = db();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST['email'])) {

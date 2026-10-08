@@ -1,9 +1,6 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "felippe");
-
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+require_once __DIR__ . '/src/bootstrap.php';
+$conn = db();
 
 $nome = $_POST['nome'] ?? '';
 $email = $_POST['email'] ?? '';

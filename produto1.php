@@ -7,7 +7,7 @@
     <meta name="keywords" content="produtos, ofertas, descontos, loja online, comprar, promoção">
     <meta name="author" content="Sua Empresa">
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20261008">
     <link rel="stylesheet" href="css/acessibilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css//video-produto1.css">
@@ -31,6 +31,7 @@
     <script src="js/public-shell.js?v=20260814b" defer></script>
 </head>
 <body>
+<?php require __DIR__ . '/includes/public-nav.php'; ?>
 
     <!-- VLibras widget -->
     <div vw class="enabled">
@@ -294,7 +295,7 @@ body.dark-mode .card-servico p { color: #aaa; }
   <i class="fa fa-arrow-left"></i> Voltar
 </a>
 
- <header>
+ <header id="inicio" class="site-header">
 
 <div class="header-conteudo">
 
@@ -304,9 +305,11 @@ body.dark-mode .card-servico p { color: #aaa; }
 
     <div class="header-textos">
 
-        <h1>Landing Pages e Sites Profissionais para o Seu Negócio</h1>
+        <h1>Felippe Andreata | Desenvolvedor Web | Cybersecurity | Tecnologia</h1>
 
-        <p class="slogan">Projetos rápidos, responsivos e preparados para transformar visitantes em novos contatos.</p>
+        <p class="slogan">
+            Atendimento direto para computadores, landing pages, sites e segurança digital com suporte.
+        </p>
 
         <div class="header-beneficios">
 
