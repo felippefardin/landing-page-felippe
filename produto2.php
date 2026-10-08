@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="css/acessibilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css//video-produto1.css">
-    <link rel="shortcut icon" href="img/shortcut icon.png">
+    <link rel='icon' type='image/png' sizes='32x32' href='img/favicon-32x32.png?v=20261007'>
+    <link rel='icon' type='image/png' sizes='192x192' href='img/favicon-192x192.png?v=20261007'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico?v=20261007'>
+    <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
     <title>Tech Tecnologia</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM3GH72GH4"></script>
@@ -289,7 +292,7 @@
 
     <header>
         <div class="header-conteudo">
-            <img src="img/minhalogo.png" alt="Logo Tech Tecnologia" class="logo">
+            <img src="img/logotipofelippe.png" alt="Logo Tech Tecnologia" class="logo">
             <div class="header-textos">
                 <h1>Segurança Digital com Orientações Simples e Práticas</h1>
                 <p class="slogan">Aprenda a reconhecer golpes, proteger seus dados e navegar com mais segurança.</p>
@@ -444,6 +447,8 @@
                     <img src="img/youtube.png" alt="YouTube">
                 </a>
             </div>
+
+            <img src="img/monograma.png" alt="Monograma Felippe Andreata" class="footer-monogram">
 
             <div class="footer-info">
                 <p>Endereço: <br>

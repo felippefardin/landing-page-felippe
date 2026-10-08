@@ -51,7 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluir'])) {
 <head>
     <meta charset="UTF-8">
     <title>Mensagens Respondidas</title>
-    <link rel="shortcut icon" href="img/atalho.png">
+    <link rel='icon' type='image/png' sizes='32x32' href='img/favicon-32x32.png?v=20261007'>
+    <link rel='icon' type='image/png' sizes='192x192' href='img/favicon-192x192.png?v=20261007'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico?v=20261007'>
+    <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
     <style>
         body {
             font-family: Arial, sans-serif;

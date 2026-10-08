@@ -7,6 +7,10 @@ csrf_token();
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel='icon' type='image/png' sizes='32x32' href='img/favicon-32x32.png?v=20261007'>
+    <link rel='icon' type='image/png' sizes='192x192' href='img/favicon-192x192.png?v=20261007'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico?v=20261007'>
+    <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
   <meta charset="UTF-8">
   <title>Painel Principal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +40,13 @@ csrf_token();
     header h1 {
       color: #000;
       font-size: 2rem;
+    }
+
+    .header-logo {
+      display: block;
+      width: min(300px, 80vw);
+      height: auto;
+      margin: 0 auto 12px;
     }
 
     main {
@@ -99,6 +110,15 @@ csrf_token();
       color: #aaa;
     }
 
+    .footer-monogram {
+      display: block;
+      width: 32px;
+      height: 32px;
+      margin: 0 auto 6px;
+      object-fit: contain;
+      opacity: 0.85;
+    }
+
     @media (max-width: 600px) {
       .botao-painel {
         width: 100%;
@@ -112,6 +132,7 @@ csrf_token();
 <body>
 
 <header>
+<img src="img/logotipofelippe.png" alt="Logo Tech Tecnologia" class="header-logo">
 <h1>Bem vindo ao Painel Principal, <?= ucwords(strtolower($_SESSION['usuario'])) ?>!</h1>
 </header>
 
@@ -131,6 +152,7 @@ csrf_token();
 </main>
 
 <footer>
+  <img src="img/monograma.png" alt="Monograma Felippe Andreata" class="footer-monogram">
   <p>&copy; 2025 Tech Tecnologia | Todos os direitos reservados.</p>
 </footer>
 

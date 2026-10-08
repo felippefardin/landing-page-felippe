@@ -98,6 +98,10 @@ $resultado = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel='icon' type='image/png' sizes='32x32' href='img/favicon-32x32.png?v=20261007'>
+    <link rel='icon' type='image/png' sizes='192x192' href='img/favicon-192x192.png?v=20261007'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico?v=20261007'>
+    <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
   <meta charset="UTF-8">
   <title>Lista de E-mails Capturados</title>
   <link rel="stylesheet" href="css/estilo-adm.css">

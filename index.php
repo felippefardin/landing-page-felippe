@@ -28,7 +28,10 @@ file_put_contents($arquivo, $visitas);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/modal-captacao.css">
     <link rel="stylesheet" href="css/index-modern.css?v=20260814">
-    <link rel="shortcut icon" href="img/shortcut icon.png">        
+    <link rel='icon' type='image/png' sizes='32x32' href='img/favicon-32x32.png?v=20261007'>
+    <link rel='icon' type='image/png' sizes='192x192' href='img/favicon-192x192.png?v=20261007'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico?v=20261007'>
+    <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
     <title>Landing Pages, Sites e Lojas Virtuais | Tech Tecnologia</title>
 
       <!-- Google tag (gtag.js) -->
@@ -387,13 +390,13 @@ file_put_contents($arquivo, $visitas);
 
 <div class="header-conteudo">
 
-    <img src="img/minhalogo.png"
+    <img src="img/logotipofelippe.png"
          alt="Logo Tech Tecnologia"
          class="logo">
 
     <div class="header-textos">
 
-        <h1>Suporte Técnico e Criação de Sites em Vila Velha</h1>
+        <h1>Felippe Andreata | Desenvolvedor Web | Cybersecurity | Tecnologia</h1>
 
         <p class="slogan">
             Atendimento direto para computadores, landing pages, sites e segurança digital com suporte.
@@ -602,7 +605,6 @@ file_put_contents($arquivo, $visitas);
     
 
     <footer class="footer border">
-            
   <div class="footer-container">
   <div class="footer-social">
   <a href="https://www.facebook.com" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -621,6 +623,8 @@ file_put_contents($arquivo, $visitas);
     <img src="img/youtube.png" alt="YouTube">
   </a>
 </div>
+
+    <img src="img/monograma.png" alt="Monograma Felippe Andreata" class="footer-monogram">
 
     <div class="footer-info">
    <p>Endereço: <br>

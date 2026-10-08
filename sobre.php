@@ -5,7 +5,10 @@
   <meta name="description" content="Conheça Felippe Fardin e a Tech Tecnologia: desenvolvimento web, suporte de TI e soluções digitais para empresas e profissionais.">
   <meta name="author" content="Felippe Fardin"><meta name="robots" content="index, follow">
   <title>Sobre Felippe Fardin | Tech Tecnologia</title>
-  <link rel="shortcut icon" href="img/shortcut icon.png">
+    <link rel='icon' type='image/png' sizes='32x32' href='img/favicon-32x32.png?v=20261007'>
+    <link rel='icon' type='image/png' sizes='192x192' href='img/favicon-192x192.png?v=20261007'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico?v=20261007'>
+    <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/public-modern.css?v=20260824"><link rel="stylesheet" href="css/acessibilidade-global.css?v=20260814f"><link rel="stylesheet" href="css/sobre-modern.css?v=20260824">
   <script src="js/acessibilidade-global.js?v=20260814f" defer></script><script src="js/public-shell.js?v=20260824" defer></script>

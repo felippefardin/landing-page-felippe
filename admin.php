@@ -61,7 +61,10 @@ $totalPaginas = ceil($totalRegistros / $limite);
 <head>
     <meta charset="UTF-8">
     <title>Mensagens Não Respondidas</title>
-    <link rel="shortcut icon" href="img/shortcut icon.png">
+    <link rel='icon' type='image/png' sizes='32x32' href='img/favicon-32x32.png?v=20261007'>
+    <link rel='icon' type='image/png' sizes='192x192' href='img/favicon-192x192.png?v=20261007'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico?v=20261007'>
+    <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
     <link rel="stylesheet" href="css/export-adm.css">
     <link rel="stylesheet" href="css/estilo-adm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
