@@ -1,5 +1,5 @@
 <nav class="site-nav public-nav" aria-label="Navegação principal">
-  <a class="site-nav__brand public-nav__brand" href="index.php#inicio">Tech Tecnologia</a>
+  <a class="site-nav__brand public-nav__brand" href="index.php#inicio"></a>
   <div class="site-nav__links public-nav__links">
     <a href="index.php#inicio">Início</a>
     <a href="index.php#servicos">Serviços</a>

@@ -1,6 +1,25 @@
 <?php
 require_once __DIR__ . '/src/bootstrap.php';
 
+// Datas gravadas como horário local de Brasília (sem converter valores do banco).
+date_default_timezone_set('America/Sao_Paulo');
+
+function formatarDataCadastro($valor): string {
+    if (!is_string($valor) || trim($valor) === '' || str_starts_with($valor, '0000-00-00')) {
+        return 'Data não informada';
+    }
+
+    // Rejeita dados inválidos em vez de exibir 31/12/1969.
+    $data = DateTimeImmutable::createFromFormat('!Y-m-d H:i:s', trim($valor));
+    $erros = DateTimeImmutable::getLastErrors();
+    if ($data === false || ($erros !== false && ($erros['warning_count'] > 0 || $erros['error_count'] > 0))) {
+        return 'Data não informada';
+    }
+
+    return $data->format('d/m/Y H:i');
+}
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -245,7 +264,7 @@ $resultado = $conn->query($sql);
           <tr>
             <td><?= $row['id'] ?></td>
             <td><?= htmlspecialchars($row['email']) ?></td>
-            <td><?= date('d/m/Y H:i', strtotime($row['data_envio'])) ?></td>
+            <td><?= htmlspecialchars(formatarDataCadastro($row['data_envio'] ?? null), ENT_QUOTES, 'UTF-8') ?></td>
             <td><button class="excluir-btn" onclick="abrirModal(<?= $row['id'] ?>)">Excluir</button></td>
           </tr>
         <?php endwhile; ?>
