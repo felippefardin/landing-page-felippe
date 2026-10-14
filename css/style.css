@@ -142,7 +142,7 @@ h1 {
     cursor: pointer;
     transition: 0.3s;
     width: 1000px; 
-    max-width: 100%; /
+    max-width: 100%;
 }
 
 .botao-enviar:hover {
@@ -425,19 +425,11 @@ html body.public-page footer.footer .footer-social a {
     height: 38px;
     margin: 2px 6px 2px 0;
     padding: 0;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    line-height: 1;
 }
 
 html body.public-page footer.footer .footer-social img {
     width: 24px;
     height: 24px;
-    display: block;
-    margin: 0;
 }
 
 html body.public-page footer.footer .footer-monogram {
@@ -683,18 +675,18 @@ html body.public-page footer.footer .footer-copy p {
         box-sizing: border-box;
     }
 
-    /* Botão com estilo base */
+    /* Botão com estilo base - corrigido para o modo claro */
     .btn-destaque {
         font-size: 35px;
         padding: 14px 28px;
-        background-color: #fff;
-        color: white;
-        border: 5px solid white;
-        border-radius: 5px;
+        background: linear-gradient(135deg, #0077cc 0%, #0056b3 100%);
+        color: #ffffff;
+        border: 2px solid #004a99;
+        border-radius: 12px;
         text-decoration: none;
         font-weight: bold;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 18px rgba(0, 119, 204, 0.28);
     }
 
     /* Responsivo: celular e telas médias */
@@ -906,3 +898,178 @@ html body.public-page footer.footer .footer-copy p {
 
 
 
+
+
+html body.public-page footer.footer .footer-social a { border-radius: 50%; }
+
+
+
+/* ===========================================================
+   CONTATO PADRONIZADO: index.php, produto1.php e produto2.php
+   Mantém a estrutura horizontal de imagens + formulário.
+   =========================================================== */
+.foto-e-formulario {
+    box-sizing: border-box;
+    width: min(1180px, calc(100% - 32px));
+    max-width: 1180px;
+    margin: 28px auto;
+    padding: 30px 24px;
+}
+.foto-e-formulario *, .foto-e-formulario *::before, .foto-e-formulario *::after {
+    box-sizing: border-box;
+}
+.foto-e-formulario .wrapper-horizontal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 1fr);
+    align-items: center;
+    gap: clamp(20px, 3vw, 44px);
+    width: 100%;
+}
+.foto-e-formulario .foto-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 0;
+    padding: 0 10px;
+}
+.foto-e-formulario .foto-container .foto {
+    position: static;
+    flex: 1 1 200px;
+    width: min(100%, 300px);
+    min-width: 0;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    transition: transform .3s ease;
+}
+.foto-e-formulario .foto-container .foto:hover {
+    transform: scale(1.05);
+}
+.foto-e-formulario .formulario {
+    width: 100%;
+    max-width: 600px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #fff;
+    color: #202124;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+}
+.foto-e-formulario .formulario h2 { margin: 0 0 12px; }
+.foto-e-formulario .formulario .sub-texto { margin: 0 0 22px; }
+.foto-e-formulario #form-contato { width: 100%; max-width: 600px; }
+.foto-e-formulario #form-contato .input-grupo {
+    width: 100%;
+    max-width: 440px;
+    margin-bottom: 15px !important;
+    text-align: left;
+}
+.foto-e-formulario #form-contato .input-wrapper { width: 100%; max-width: none; }
+.foto-e-formulario #form-contato .input-wrapper input,
+.foto-e-formulario #form-contato .input-wrapper textarea {
+    width: 100%;
+    padding: 11px 12px 11px 38px;
+    min-height: 44px;
+}
+.foto-e-formulario #form-contato .input-wrapper textarea {
+    resize: vertical;
+    min-height: 116px;
+    font: inherit;
+}
+.foto-e-formulario #form-contato .input-grupo:last-of-type label {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+.foto-e-formulario #form-contato #lgpd {
+    flex: 0 0 auto;
+    width: auto;
+    margin: 4px 4px 0 0;
+}
+.foto-e-formulario #form-contato .botao-enviar {
+    width: 100%;
+    max-width: 440px;
+}
+body.dark-mode .foto-e-formulario .formulario {
+    background: #1e1e1e;
+    color: #f4f4f4;
+}
+body.dark-mode .foto-e-formulario .formulario h2,
+body.dark-mode .foto-e-formulario .formulario label,
+body.dark-mode .foto-e-formulario .formulario .sub-texto { color: #f4f4f4; }
+body.dark-mode .foto-e-formulario .input-wrapper input,
+body.dark-mode .foto-e-formulario .input-wrapper textarea {
+    background: #2b2b2b;
+    color: #fff;
+    border-color: #777;
+}
+body.dark-mode .foto-e-formulario .input-wrapper input::placeholder,
+body.dark-mode .foto-e-formulario .input-wrapper textarea::placeholder { color: #c7c7c7; }
+body.dark-mode .foto-e-formulario .input-wrapper i { color: #b8c8d7; }
+@media (max-width: 900px) {
+    .foto-e-formulario .wrapper-horizontal { grid-template-columns: 1fr; }
+    .foto-e-formulario .foto-container { order: 0; }
+    .foto-e-formulario .formulario { order: 1; }
+}
+@media (max-width: 600px) {
+    .foto-e-formulario {
+        width: calc(100% - 20px);
+        padding: 18px 12px;
+    }
+    .foto-e-formulario .foto-container { gap: 12px; padding: 0; }
+    .foto-e-formulario .foto-container .foto {
+        flex: 1 1 125px;
+        width: calc(50% - 8px);
+        min-width: 0;
+        max-width: 240px;
+    }
+    .foto-e-formulario .formulario { padding: 24px 16px; }
+    .foto-e-formulario #form-contato .botao-enviar { width: 100%; }
+}
+
+
+/* LGPD no formulário de contato: checkbox alinhado à frase */
+.foto-e-formulario #form-contato .grupo-lgpd .lgpd-linha {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+.foto-e-formulario #form-contato .grupo-lgpd .lgpd-linha input[type="checkbox"] {
+    appearance: auto;
+    -webkit-appearance: checkbox;
+    display: block;
+    flex: 0 0 18px;
+    width: 18px !important;
+    height: 18px;
+    min-width: 18px;
+    padding: 0 !important;
+    margin: 2px 0 0 !important;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.foto-e-formulario #form-contato .grupo-lgpd .lgpd-linha label {
+    display: block !important;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    cursor: pointer;
+}
+.foto-e-formulario #form-contato .grupo-lgpd .lgpd-linha a {
+    display: inline;
+    text-decoration: underline;
+}

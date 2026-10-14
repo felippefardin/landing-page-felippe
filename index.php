@@ -16,14 +16,14 @@ file_put_contents($arquivo, $visitas);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Desenvolvemos landing pages, sites e e-commerces que geram resultados. Inove com performance, segurança e design personalizado.">
     <meta name="author" content="Tech Tecnologia">
-    <link rel="canonical" href="https://bugcriativo.page.gd/">
+   	<link rel="canonical" href="https://felippeandreatadev.page.gd/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Landing Pages, Sites e Lojas Virtuais | Tech Tecnologia">
     <meta property="og:description" content="Landing pages, sites e e-commerces com foco em resultados, performance e segurança.">
-    <meta property="og:url" content="https://bugcriativo.page.gd/">
+    <link rel="canonical" href="https://felippeandreatadev.page.gd/">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="4be8f947ce798c28" />      
-    <link rel="stylesheet" href="css/style.css?v=20261008">
+    <link rel="stylesheet" href="css/style.css?v=20261014-contato">
     <link rel="stylesheet" href="css/acessibilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/modal-captacao.css">
@@ -274,6 +274,11 @@ file_put_contents($arquivo, $visitas);
 .footer-social a.youtube img.glow-click {
   filter: drop-shadow(0 0 10px #ff0000) drop-shadow(0 0 20px #ff0000);
 }
+         html body.public-page footer.footer .footer-social img {
+    width: 24px;
+    height: 24px;
+    margin-top: 8px;
+}
 
 /* Margem para descer os ícones */
 .footer-social {
@@ -352,6 +357,28 @@ file_put_contents($arquivo, $visitas);
     transform: scale(1.05);
     background: #0b5ed7;
 }
+
+/* Modal de captação: visibilidade e camadas controladas pela própria index */
+#emailModal[hidden] { display: none !important; }
+#emailModal.modal-overlay.is-open {
+    display: flex !important;
+    position: fixed;
+    inset: 0;
+    z-index: 100100;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.72);
+}
+#emailModal .modal-box {
+    position: relative;
+    width: min(100%, 440px);
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
   </style>      
     
 
@@ -520,7 +547,7 @@ file_put_contents($arquivo, $visitas);
         <label for="nome">Nome completo</label>
         <div class="input-wrapper">
           <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required>
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-user"></i>
         </div>
         <div class="mensagem"></div>
       </div>
@@ -555,7 +582,7 @@ file_put_contents($arquivo, $visitas);
 <div class="input-grupo">
   <label>
     <input type="checkbox" id="lgpd" name="lgpd" required>
-    Declaro que li e aceito os <a href="termos-lgpd.html" target="_blank">Termos da LGPD</a>.
+    Declaro que li e aceito os <a href="termos-lgpd.html" target="_blank" rel="noopener noreferrer">Termos da LGPD</a>.
   </label>
   <div class="mensagem" id="mensagem-lgpd" style="color: red; display: none;">
     Você precisa aceitar os termos para continuar.
@@ -564,6 +591,7 @@ file_put_contents($arquivo, $visitas);
 
       <button type="submit" class="botao-enviar">Enviar agora</button>
     </form>
+  </div>
   </div>
 </section>
     </main>
@@ -726,7 +754,41 @@ file_put_contents($arquivo, $visitas);
         <script> new window.VLibras.Widget('https://vlibras.gov.br/app'); </script>
         <script src="js/acessibilidade.js?v=2"></script>
         <script src="script.js"></script>
-        <script src="js/modal-email-captacao.js?v=20260814"></script>
+        <!-- Controle único do modal: aguarda o HTML, abre em 2s e fecha pelo X, fundo ou Esc -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('emailModal');
+            if (!modal) return;
+
+            const fechar = modal.querySelector('[data-modal-close]');
+            let focoAnterior = null;
+
+            function abrirModal() {
+                focoAnterior = document.activeElement;
+                modal.removeAttribute('hidden');
+                modal.classList.add('is-open');
+                fechar?.focus();
+            }
+
+            function fecharModal() {
+                modal.classList.remove('is-open');
+                modal.setAttribute('hidden', '');
+                focoAnterior?.focus?.();
+            }
+
+            fechar?.addEventListener('click', fecharModal);
+            modal.addEventListener('click', function (event) {
+                if (event.target === modal) fecharModal();
+            });
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && !modal.hasAttribute('hidden')) {
+                    fecharModal();
+                }
+            });
+
+            setTimeout(abrirModal, 2000);
+        });
+        </script>
         <script src="js/index-modern.js?v=20260814"></script>
         </body>
         </html>

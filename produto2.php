@@ -7,10 +7,10 @@
     <meta name="keywords" content="produtos, ofertas, descontos, loja online, comprar, promoção">
     <meta name="author" content="Sua Empresa">
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="css/style.css?v=20261008">
+    <link rel="stylesheet" href="css/style.css?v=20261014-contato">
     <link rel="stylesheet" href="css/acessibilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css//video-produto1.css">
+    <link rel="stylesheet" href="css/video-produto1.css">
     <link rel='icon' type='image/png' sizes='32x32' href='img/favicon-32x32.png?v=20261007'>
     <link rel='icon' type='image/png' sizes='192x192' href='img/favicon-192x192.png?v=20261007'>
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico?v=20261007'>
@@ -30,7 +30,6 @@
     <script src="js/public-shell.js?v=20260814b" defer></script>
 </head>
 <body>
-<?php require __DIR__ . '/includes/public-nav.php'; ?>
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -291,7 +290,7 @@
       <i class="fa fa-arrow-left"></i> Voltar
     </a>
 
-    <header id="inicio" class="site-header">
+    <header>
         <div class="header-conteudo">
             <img src="img/logotipofelippe.png" alt="Logo Tech Tecnologia" class="logo">
             <div class="header-textos">
@@ -373,61 +372,67 @@
     </section>
 
     <section class="foto-e-formulario" id="foto-e-formulario">
-        <div class="formulario" id="formulario">
-            <h2>Vamos conversar?</h2>
-            <p class="sub-texto" style="margin-bottom: 25px;">Preencha e receba uma resposta</p>
-            <form id="form-contato" action="processa_formulario.php" method="POST">
-                
-                <div class="input-grupo com-icone">
-                    <label for="nome">Nome completo</label>
-                    <div class="input-wrapper">
-                        <input type="text" name="nome" placeholder="Seu nome completo" required>
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="mensagem"></div>
-                </div>
-
-                <div class="input-grupo com-icone">
-                    <label for="email">Email</label>
-                    <div class="input-wrapper">
-                        <input type="email" name="email" placeholder="Digite seu melhor email" required>
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="mensagem"></div>
-                </div>
-
-                <div class="input-grupo com-icone">
-                    <label for="whatsapp">WhatsApp</label>
-                    <div class="input-wrapper">
-                        <input type="text" name="whatsapp" placeholder="Digite seu whatsapp" required>
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="mensagem"></div>
-                </div>
-
-                <div class="input-grupo com-icone">
-                    <label for="mensagem">Mensagem</label>
-                    <div class="input-wrapper">
-                        <input type="text" name="mensagem" placeholder="Digite sua mensagem" required>
-                        <i class="fas fa-comment-dots"></i>
-                    </div>
-                    <div class="mensagem"></div>
-                </div>
-
-                <div class="input-grupo">
-                    <label style="font-weight: normal; cursor: pointer;">
-                        <input type="checkbox" id="lgpd" name="lgpd" required style="margin-right: 5px;">
-                        Declaro que li e aceito os <a href="termos-lgpd.html" target="_blank">Termos da LGPD</a>.
-                    </label>
-                    <div class="mensagem" id="mensagem-lgpd" style="color: red; display: none; margin-top: 5px;">
-                        Você precisa aceitar os termos para continuar.
-                    </div>
-                </div>
-
-                <button type="submit" class="botao-enviar" style="margin-top: 10px;">Enviar agora</button>
-            </form>
+  <div class="wrapper-horizontal">
+    <div class="foto-container">
+      <img src="img/planodesuporte.png" alt="Plano de suporte técnico da Tech Tecnologia" class="foto" loading="lazy">
+      <!-- <img src="img/manutencaoesuporte.png" alt="Foto 2" class="foto"> -->
+      <img src="img/conteudoseguros.png" alt="Orientações para uso seguro da tecnologia" class="foto" loading="lazy">
+    </div>
+    <div class="formulario" id="formulario">
+    <h2>Vamos conversar? </h2>
+    <p class="sub-texto">Preencha e receba uma resposta</p>
+    <form id="form-contato" action="processa_formulario.php" method="POST">
+      <div class="input-grupo com-icone">
+        <label for="nome">Nome completo</label>
+        <div class="input-wrapper">
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required>
+          <i class="fas fa-user"></i>
         </div>
-    </section>
+        <div class="mensagem"></div>
+      </div>
+
+      <div class="input-grupo com-icone">
+        <label for="email">Email</label>
+        <div class="input-wrapper">
+          <input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" autocomplete="email" required>
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="mensagem"></div>
+      </div>
+
+      <div class="input-grupo com-icone">
+        <label for="whatsapp">WhatsApp</label>
+        <div class="input-wrapper">
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(27) 99999-9999" autocomplete="tel" inputmode="tel" required>
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="mensagem"></div>
+      </div>
+
+      <div class="input-grupo com-icone">
+        <label for="mensagem">Mensagem</label>
+        <div class="input-wrapper">
+          <textarea id="mensagem" name="mensagem" placeholder="Conte brevemente como podemos ajudar" rows="5" required></textarea>
+          <i class="fas fa-comment-dots"></i>
+        </div>
+        <div class="mensagem"></div>
+      </div>
+
+<div class="input-grupo">
+  <label>
+    <input type="checkbox" id="lgpd" name="lgpd" required>
+    Declaro que li e aceito os <a href="termos-lgpd.html" target="_blank" rel="noopener noreferrer">Termos da LGPD</a>.
+  </label>
+  <div class="mensagem" id="mensagem-lgpd" style="color: red; display: none;">
+    Você precisa aceitar os termos para continuar.
+  </div>
+</div>
+
+      <button type="submit" class="botao-enviar">Enviar agora</button>
+    </form>
+  </div>
+  </div>
+</section>
 
     <footer class="footer border">
         <div class="footer-container">
