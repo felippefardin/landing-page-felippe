@@ -1,0 +1,35 @@
+/* Hiring process, genuine feedback and accessible native FAQ. */
+.work-section { padding: 76px 24px; background: #fff; color: #142033; }
+.work-section--soft { background: #f0f5fb; }
+.work-wrap { width: 100%; max-width: 1140px; margin: 0 auto; }
+.work-eyebrow { display: inline-block; margin-bottom: 12px; color: #0756bd; font-size: .8rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.work-section h2 { margin: 0 0 16px; color: #102849; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; }
+.work-intro { max-width: 680px; margin: 0 0 32px; color: #475569; font-size: 1.06rem; line-height: 1.75; }
+.work-steps { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; padding: 0; margin: 32px 0; list-style: none; }
+.work-steps li, .work-feedback-card { padding: 26px; border: 1px solid #d9e3f0; border-radius: 18px; background: #f8fafc; }
+.work-number { display: inline-grid; place-items: center; width: 48px; height: 48px; margin-bottom: 20px; border-radius: 14px; background: #dbeafe; color: #17429a; font-size: 1.15rem; font-weight: 800; }
+.work-section h3 { margin: 0 0 12px; color: #142e51; font-size: 1.1rem; line-height: 1.45; }
+.work-section p { line-height: 1.75; }
+.work-steps p, .work-feedback-card p { margin: 0 0 16px; color: #475569; }
+.work-link { display: inline-block; color: #0756bd; font-weight: 700; line-height: 1.6; text-underline-offset: 4px; }
+.work-link:hover { color: #003d86; text-decoration: underline; }
+.work-feedback { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.work-feedback-card { position: relative; background: #fff; border-top: 4px solid #1679d3; }
+.work-quote { display: block; height: 48px; color: #0756bd; font-size: 4rem; line-height: 1; }
+.work-faq { max-width: 900px; margin-top: 30px; }
+.work-faq details { margin-bottom: 12px; border: 1px solid #d9e3f0; border-radius: 12px; background: #f8fafc; overflow: hidden; }
+.work-faq summary { padding: 20px 24px; color: #142e51; cursor: pointer; font-size: 1rem; font-weight: 700; line-height: 1.5; }
+.work-faq summary::marker { color: #0756bd; }
+.work-faq details[open] summary { border-bottom: 1px solid #d9e3f0; }
+.work-faq p { padding: 18px 24px 22px; margin: 0; color: #475569; }
+.work-last { margin-top: 28px; }
+html.accessibility-dark body .work-section { background: #0f172a !important; }
+html.accessibility-dark body .work-section--soft { background: #172033 !important; }
+html.accessibility-dark body :is(.work-steps li,.work-feedback-card,.work-faq details) { background: #1e293b !important; border-color: #64748b !important; color: #e2e8f0 !important; }
+html.accessibility-dark body .work-faq summary { color: #f8fafc !important; border-color: #64748b; }
+html.accessibility-dark body :is(.work-number,.work-eyebrow) { color: #bfdbfe !important; }
+html.accessibility-dark body .work-number { background: #172554; }
+html.accessibility-dark body .work-quote { color: #93c5fd !important; }
+html.accessibility-dark body .work-faq summary::marker { color: #93c5fd; }
+@media(max-width: 960px) { .work-steps { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width: 640px) { .work-section { padding: 48px 20px; } .work-steps,.work-feedback { grid-template-columns: 1fr; gap: 16px; } .work-faq summary { padding: 18px; } .work-faq p { padding: 16px 18px; } }

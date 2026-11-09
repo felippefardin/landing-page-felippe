@@ -31,7 +31,6 @@
     <script src="js/public-shell.js?v=20260814b" defer></script>
 </head>
 <body>
-<?php require __DIR__ . '/includes/public-nav.php'; ?>
 
     <!-- VLibras widget -->
     <div vw class="enabled">
@@ -277,7 +276,7 @@ body.dark-mode .card-servico p { color: #bbb; }
   <i class="fa fa-arrow-left"></i> Voltar
 </a>
 
- <header id="inicio" class="site-header">
+ <header>
 
 <div class="header-conteudo">
 
@@ -357,11 +356,11 @@ body.dark-mode .card-servico p { color: #bbb; }
                 <p>Remoção de vírus, malwares e instalação de defesas robustas.</p>
             </div>
             <!-- Card 3 -->
-            <div class="card-servico">
+            <!--<div class="card-servico">
                 <div class="icon-box"><i class="fas fa-microchip"></i></div>
                 <h3>Hardware & Upgrade</h3>
                 <p>Limpeza interna, troca de peças e upgrades (SSD/Memória).</p>
-            </div>
+            </div> -->
             <!-- Card 4 -->
             <div class="card-servico">
                 <div class="icon-box"><i class="fas fa-network-wired"></i></div>

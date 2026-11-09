@@ -1,0 +1,46 @@
+/* High contrast download area, limited to the security guide page. */
+body.security-product-page .cta-container {
+  padding: clamp(28px,5vw,48px) 24px;
+  border-radius: 20px;
+  text-align: center;
+}
+body.security-product-page .cta-container p { color: #f8fafc; line-height: 1.65; }
+body.security-product-page .cta-container .btn-destaque-download,
+html.accessibility-dark body.security-product-page .cta-container .btn-destaque-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 52px;
+  padding: 14px 24px;
+  margin: 12px 0 0;
+  background: #fff !important;
+  background-image: none !important;
+  color: #073b80 !important;
+  border: 2px solid #fff !important;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.5;
+  text-decoration: none;
+  opacity: 1;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+body.security-product-page .cta-container .btn-destaque-download:hover,
+html.accessibility-dark body.security-product-page .cta-container .btn-destaque-download:hover {
+  background: #cffafe !important;
+  color: #082f49 !important;
+  border-color: #67e8f9 !important;
+}
+body.security-product-page .cta-container .btn-destaque-download i { color: inherit !important; }
+body.security-product-page .cta-container .btn-destaque-download:focus-visible {
+  outline: 3px solid #fbbf24 !important;
+  outline-offset: 5px !important;
+}
+body.security-product-page .cta-container .obs-texto { margin-top: 24px; font-size: .95rem; }
+@media(max-width:480px) {
+  body.security-product-page .cta-container { padding: 28px 16px; }
+  body.security-product-page .cta-container .btn-destaque-download { width: 100%; padding: 14px 16px; }
+}

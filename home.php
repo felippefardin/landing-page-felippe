@@ -138,6 +138,7 @@ csrf_token();
 
 <main>
   <div class="painel-botoes">
+    <a href="avaliacoes.php" class="botao-painel"><i class="fas fa-star"></i> Avaliação</a>
     <a href="admin.php" class="botao-painel"><i class="fas fa-bell"></i> Mensagens não respondidas</a>
     <a href="cadastrosatuais.php" class="botao-painel"><i class="fas fa-list"></i> Cadastros atuais</a>
     <a href="dashboard.php" class="botao-painel"><i class="fas fa-chart-line"></i> Dashboard</a>
@@ -153,7 +154,7 @@ csrf_token();
 
 <footer>
   <img src="img/monograma.png" alt="Monograma Felippe Andreata" class="footer-monogram">
-  <p>&copy; 2025 Tech Tecnologia | Todos os direitos reservados.</p>
+  <p>&copy; 2026 Tecnologia | Todos os direitos reservados.</p>
 </footer>
 
 </body>

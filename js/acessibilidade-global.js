@@ -16,6 +16,7 @@
     document.documentElement.style.fontSize = fontSize + '%';
     document.documentElement.classList.toggle('accessibility-dark', localStorage.getItem(THEME_KEY) === 'ativo');
     document.body?.classList.toggle('dark-mode', localStorage.getItem(THEME_KEY) === 'ativo');
+    document.body?.classList.toggle('a11y-dark', localStorage.getItem(THEME_KEY) === 'ativo');
   }
 
   applyPreferences();
@@ -34,7 +35,7 @@
     const status = toolbar.querySelector('.accessibility-toolbar__status');
     const dark = document.documentElement.classList.contains('accessibility-dark');
     status.textContent = fontSize + '%';
-    toolbar.querySelector('[data-action="theme"]').textContent = dark ? '☀' : '☾';
+    toolbar.querySelector('[data-action="theme"]').textContent = dark ? '\u2600' : '\u263E';
     toolbar.querySelector('[data-action="theme"]').setAttribute('aria-pressed', String(dark));
   }
 
@@ -88,7 +89,21 @@
     theme.dataset.action = 'theme';
 
     toolbar.append(decrease, reset, increase, status, theme);
-    document.body.append(toolbar);
+    function mountToolbar() {
+      const nav = document.querySelector('.site-nav, .public-nav');
+      const header = nav || document.querySelector('body > header:not(.accessibility-header)');
+      if (!header) return false;
+      header.append(toolbar);
+      document.querySelector('.accessibility-header')?.remove();
+      return true;
+    }
+    if (!mountToolbar()) {
+      const fallback = document.createElement('header');
+      fallback.className = 'accessibility-header';
+      fallback.append(toolbar);
+      document.body.prepend(fallback);
+    }
+    requestAnimationFrame(mountToolbar);
     updateToolbar(toolbar);
   }
 
@@ -123,12 +138,18 @@
 
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = 'css/acessibilidade-global.css?v=20260814f';
+  stylesheet.href = 'css/acessibilidade-global.css?v=20261109-header2';
   document.head.append(stylesheet);
 
   document.addEventListener('DOMContentLoaded', () => {
     applyPreferences();
     createToolbar();
     loadVlibras();
+    if (!document.querySelector('script[data-site-languages]')) {
+      const languages = document.createElement('script');
+      languages.src = 'js/idiomas.js?v=20261109';
+      languages.dataset.siteLanguages = 'true';
+      document.head.append(languages);
+    }
   }, { once: true });
 })();

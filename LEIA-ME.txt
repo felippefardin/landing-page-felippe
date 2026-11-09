@@ -1,0 +1,10 @@
+AVALIAÇÕES
+
+1. Faça backup do projeto e copie todo o conteúdo desta pasta para a pasta original.
+2. Faça login e abra Avaliação no painel: a tabela será criada automaticamente, sem alterar as existentes.
+3. Se o banco não permitir criar a tabela, importe migrations/20261109_avaliacoes.sql no phpMyAdmin.
+4. Atualize a página inicial com Ctrl+F5.
+
+O novo modal substitui o pop-up automático de desconto para evitar sobreposição. O formulário de contato permanece. Os envios são pendentes e só ficam públicos após aprovação; desativar retira do site sem apagar. Excluir remove definitivamente após confirmação. O painel segue a mesma permissão de acesso das áreas administrativas existentes: usuários autenticados.
+
+A proteção contra envios repetidos limita a um envio por minuto por sessão; não substitui uma proteção externa contra robôs.

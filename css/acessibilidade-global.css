@@ -153,3 +153,120 @@ body :is(a, button, input, textarea, select):focus-visible {
     display: none !important;
   }
 }
+
+/* Unified dark palette. Loaded by the accessibility control on every page. */
+html.accessibility-dark {
+  --public-surface: #0f172a;
+  --public-text: #f1f5f9;
+  --public-navy: #e2e8f0;
+  --public-blue: #93c5fd;
+  --public-cyan: #67e8f9;
+}
+html.accessibility-dark body { background: #0f172a !important; color: #f1f5f9 !important; }
+html.accessibility-dark body :is(main, section, article, aside, header, footer, nav,
+  .container, .content, .card, .box, .produto, .produto-container, .formulario,
+  .modal-box, .modal-content, .modal-conteudo, .recuperar-senha, .email-card,
+  .about-card, .about-process li, .about-portrait-card, .about-portrait-info,
+  .project-card, .projects-toolbar, .projects-search, .projects-empty,
+  .projects-hero__visual span, .projects-hero__visual strong,
+  .card-servico, .cta-container, .oferta-landing-page, .cartilha-seguranca,
+  .trust-strip, .benefit-grid > *, .dropdown-content, .mensagem, .mensagem-erro) {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #64748b !important;
+}
+html.accessibility-dark body :is(.site-header, .cabecalho, .about-hero,
+  .projects-hero, .about-cta, .projects-cta, .public-footer, .footer) {
+  background: linear-gradient(125deg, #0b1220, #123457) !important;
+  color: #f8fafc !important;
+}
+html.accessibility-dark body :is(h1,h2,h3,h4,h5,h6,p,li,label,td,th,caption,
+  dt,dd,strong,small,blockquote,figcaption,legend,summary,
+  .sub-texto,.slogan,.signup-text,.oauth-divider,.project-card__category,
+  .about-lead,.about-intro__text,.obs-texto,.periodo,.valor,.moeda,.centavos) {
+  color: #e2e8f0 !important;
+}
+html.accessibility-dark body :is(h1,h2,h3,h4,h5,h6) { color: #f8fafc !important; }
+html.accessibility-dark body a { color: #93c5fd !important; }
+html.accessibility-dark body a:hover { color: #cffafe !important; }
+html.accessibility-dark body :is(button, input[type="submit"], input[type="button"],
+  .btn, .btn-primary, .btn-login, .btn-destaque, .btn-ver-mais, .btn-voltar,
+  .btn-destaque-download, .btn-sobre-mim, .botao-enviar, .botao-mercado,
+  .botao-painel, .botao-logout, .about-button, .projects-primary-button,
+  .google-login-button, .exportar-button, .dropbtn, .acao-btn, .salvar-btn) {
+  background: #1d4ed8 !important;
+  color: #fff !important;
+  border-color: #93c5fd !important;
+}
+html.accessibility-dark body :is(button, .btn, .btn-primary, .btn-login,
+  .btn-destaque, .about-button, .projects-primary-button):hover {
+  background: #1e40af !important; color: #fff !important;
+}
+html.accessibility-dark body :is(button, .about-button, .projects-primary-button,
+  .btn, .btn-primary, .btn-destaque, .google-login-button) :is(span,strong,small) {
+  color: inherit !important;
+}
+html.accessibility-dark body :is(input:not([type="submit"]):not([type="button"]),textarea,select) {
+  background: #0f172a !important; color: #f8fafc !important;
+  border-color: #94a3b8 !important; caret-color: #f8fafc;
+}
+html.accessibility-dark body :is(input,textarea)::placeholder { color: #cbd5e1 !important; opacity: 1; }
+html.accessibility-dark body input:is([type="checkbox"],[type="radio"]) { accent-color: #60a5fa; }
+html.accessibility-dark body :is(input,textarea,select):disabled { color: #cbd5e1 !important; opacity: .75; }
+html.accessibility-dark body option { background: #0f172a; color: #f8fafc; }
+html.accessibility-dark body :is(.input-wrapper,.input-grupo,.icon-box,.project-card__icon) i { color: #93c5fd !important; }
+html.accessibility-dark body :is(.badge,.about-eyebrow,.projects-eyebrow,.about-section-label,.projects-section-label) {
+  background: #172554 !important; color: #bfdbfe !important; border-color: #60a5fa !important;
+}
+html.accessibility-dark body .projects-filters button.is-active,
+html.accessibility-dark body .sidebar a.active { background: #1e40af !important; color: #fff !important; }
+html.accessibility-dark body :is(table,tbody,tr,td) { background: #172033 !important; color: #e2e8f0 !important; border-color: #64748b !important; }
+html.accessibility-dark body :is(thead,th) { background: #243652 !important; color: #f8fafc !important; }
+html.accessibility-dark body tr:nth-child(even) td { background: #223047 !important; }
+html.accessibility-dark body tr:hover td { background: #2b405c !important; }
+html.accessibility-dark body :is(.error,.erro,.alert-danger,.mensagem-erro) { background: #450a0a !important; color: #fecaca !important; border-color: #f87171 !important; }
+html.accessibility-dark body :is(.success,.sucesso,.alert-success) { background: #052e20 !important; color: #bbf7d0 !important; border-color: #4ade80 !important; }
+html.accessibility-dark body .modal-overlay { background: rgba(2,6,23,.72) !important; }
+html.accessibility-dark body .modal-box { box-shadow: 0 24px 70px rgba(0,0,0,.55); border: 1px solid #64748b; }
+html.accessibility-dark body .modal-close { color: #f8fafc !important; }
+html.accessibility-dark body .footer-social a { background: #1e293b !important; color: #bfdbfe !important; }
+html.accessibility-dark body .whatsapp-float-btn,
+html.accessibility-dark body .whatsapp-float-btn:hover { background: #166534 !important; color: #fff !important; }
+/* Keep photographs, logos and third-party accessibility widgets unchanged. */
+html.accessibility-dark body img { filter: none; }
+html.accessibility-dark body .accessibility-toolbar { background: #0f172a !important; color: #fff !important; }
+html.accessibility-dark body .accessibility-toolbar__status { color: #fff !important; }
+
+/* Language picker shares the existing accessibility controls. */
+.accessibility-toolbar{flex-wrap:wrap;max-width:calc(100vw - 24px)}
+.language-control{display:flex;flex-direction:column;gap:5px;padding:2px 5px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.3;text-align:left}
+.language-control label{font-size:11px!important;font-weight:700;white-space:nowrap}
+.language-control select{box-sizing:border-box;max-width:190px;min-height:38px!important;padding:6px 24px 6px 9px!important;border:1px solid #64748b!important;border-radius:7px;background:#fff;color:#172033;font:14px/1.3 Arial,Helvetica,sans-serif!important;cursor:pointer}
+.language-control--standalone{position:fixed;left:12px;bottom:12px;z-index:2147483000;padding:10px;background:#fff;color:#172033;border:1px solid #64748b;border-radius:12px}
+html.accessibility-dark .language-control select{background:#0f172a!important;color:#f8fafc!important;border-color:#94a3b8!important}
+html.accessibility-dark .language-control--standalone{background:#0f172a;color:#f8fafc}
+@media(max-width:640px){.accessibility-toolbar{width:max-content;max-width:calc(100vw - 24px);justify-content:center}.accessibility-toolbar .language-control{flex:1 0 100%;box-sizing:border-box;align-items:center;flex-direction:row;justify-content:center;padding-top:8px;border-top:1px solid #94a3b8}.language-control select{max-width:180px}.whatsapp-float-btn{bottom:140px!important}}
+@media print{.language-control{display:none!important}}
+
+/* Accessibility controls now belong to the header instead of floating over it. */
+body .public-nav:has(#accessibility-toolbar),body .site-nav:has(#accessibility-toolbar){display:grid!important;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px 24px}
+body .public-nav:has(#accessibility-toolbar) .public-nav__brand{min-width:0;white-space:normal;font-size:clamp(.95rem,1.3vw,1.15rem)}
+body .public-nav:has(#accessibility-toolbar) .public-nav__links{min-width:0;flex-wrap:wrap;justify-content:flex-end;margin-left:0;gap:12px 18px}
+body #accessibility-toolbar{position:static!important;inset:auto!important;transform:none!important;grid-column:1/-1;justify-self:stretch;justify-content:flex-end;display:flex;flex-wrap:wrap;align-items:center;gap:6px;box-sizing:border-box;width:100%;max-width:none;padding:8px 0 0;margin:0;border:0;border-top:1px solid rgba(148,163,184,.3);border-radius:0;background:transparent!important;box-shadow:none;color:inherit;font:600 13px/1.2 Arial,Helvetica,sans-serif;z-index:auto}
+body #accessibility-toolbar button{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:32px;width:32px;height:32px;margin:0;padding:4px;border-radius:7px;background:#1d4ed8!important;color:#fff!important;border:1px solid #93c5fd!important;box-shadow:none;font:700 13px/1 Arial,Helvetica,sans-serif;cursor:pointer}
+body #accessibility-toolbar button:hover{background:#1e40af!important}
+body #accessibility-toolbar .accessibility-toolbar__status{min-width:38px;font-size:12px;color:inherit}
+body #accessibility-toolbar .language-control{flex:0 1 auto;display:flex;flex-direction:row;align-items:center;justify-content:flex-end;gap:8px;margin:0 0 0 8px;padding:0 0 0 12px;border:0;border-left:1px solid rgba(148,163,184,.5)}
+body #accessibility-toolbar .language-control label{font-size:11px!important;color:inherit!important}
+body #accessibility-toolbar .language-control select{min-height:32px!important;height:32px;min-width:145px;max-width:175px;padding:4px 22px 4px 8px!important;border-radius:7px;font:12px/1.2 Arial,Helvetica,sans-serif!important;background:#fff!important;color:#172033!important}
+body .public-nav #accessibility-toolbar{color:#e2e8f0}
+html.accessibility-dark body #accessibility-toolbar{background:transparent!important;color:#e2e8f0!important}
+html.accessibility-dark body #accessibility-toolbar .language-control select{background:#0f172a!important;color:#f8fafc!important}
+body .accessibility-header{display:flex;align-items:center;justify-content:flex-end;box-sizing:border-box;width:100%;padding:10px 24px;background:#071b35;color:#f8fafc;min-height:52px}
+body .accessibility-header #accessibility-toolbar{padding:0;border:0}
+@media(min-width:1500px){body .public-nav:has(#accessibility-toolbar){grid-template-columns:minmax(230px,1fr) auto auto;gap:20px}body .public-nav #accessibility-toolbar{grid-column:auto;width:auto;padding:0 0 0 18px;border-top:0;border-left:1px solid rgba(148,163,184,.3)}}
+@media(max-width:760px){body .public-nav:has(#accessibility-toolbar),body .site-nav:has(#accessibility-toolbar){grid-template-columns:minmax(0,1fr);gap:12px;padding:14px 18px}body .public-nav:has(#accessibility-toolbar) .public-nav__links{justify-content:flex-start;gap:10px 16px;width:100%;font-size:.9rem}body #accessibility-toolbar{justify-content:flex-start}body #accessibility-toolbar .language-control label{display:none}body #accessibility-toolbar .language-control{margin-left:2px;padding-left:8px}body #accessibility-toolbar .language-control select{min-width:130px;max-width:155px}body .accessibility-header{padding:10px 16px}}
+@media(max-width:360px){body #accessibility-toolbar{gap:4px}body #accessibility-toolbar button{width:29px;height:30px;min-width:29px;min-height:30px}body #accessibility-toolbar .accessibility-toolbar__status{min-width:34px}body #accessibility-toolbar .language-control select{min-width:112px;max-width:125px;font-size:11px!important}}
+/* Restore the WhatsApp position now that no floating toolbar occupies the bottom. */
+@media(max-width:640px){body .whatsapp-float-btn{bottom:20px!important}}
+@media print{body .accessibility-header{display:none!important}}

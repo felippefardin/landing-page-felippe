@@ -45,8 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login - Tech Tecnologia</title>
-    <link rel="stylesheet" href="css/login.css?v=20260814g" />
+    <title>Login - Felippe Andreata</title>
+    <link rel="stylesheet" href="css/login.css?v=20261016-green" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="js/acessibilidade-global.js?v=20260814f" defer></script>
 </head>

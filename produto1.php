@@ -17,7 +17,6 @@
     <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
     <title>Tech Tecnologia</title>
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM3GH72GH4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -29,11 +28,10 @@
     <link rel="stylesheet" href="css/public-modern.css?v=20260814c">
     <link rel="stylesheet" href="css/product-modern.css?v=20260814f">
     <script src="js/public-shell.js?v=20260814b" defer></script>
+    <link rel="stylesheet" href="css/produto1-fixes.css?v=20261109-contraste">
 </head>
-<body>
-<?php require __DIR__ . '/includes/public-nav.php'; ?>
+<body class="security-product-page">
 
-    <!-- VLibras widget -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
@@ -138,151 +136,150 @@
             box-shadow: 0 0 8px #00f0ff;
             transition: all 0.3s ease;
         }
+        
+        /* Container Geral */
+        .oferta-landing-page {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-        /* Padronização da Seção de Ofertas */
-.oferta-landing-page {
-    padding: 80px 20px;
-    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
+        .container-oferta {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .header-oferta {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .badge {
+            background: #0077cc22;
+            color: #0077cc;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .header-oferta h2 {
+            font-size: 36px;
+            color: #222;
+            margin: 15px 0;
+        }
+
+        /* Grid de Cards */
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card-servico {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: left;
+            border-bottom: 3px solid transparent;
+        }
+
+        .card-servico:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid #0077cc;
+        }
+
+        .icon-box {
+            font-size: 30px;
+            color: #0077cc;
+            margin-bottom: 20px;
+        }
+
+        .card-servico h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-servico p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Área de Preço e CTA */
+        .cta-container {
+            text-align: center;
+            background: #222;
+            padding: 40px;
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        .preco-destaque p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .iframe-wrapper {
+    margin-top: 30px; /* Altere esse valor para aumentar ou diminuir o espaço */
 }
 
-.container-oferta {
-    max-width: 1100px;
-    margin: 0 auto;
-}
+        .valor {
+            font-size: 60px;
+            font-weight: 800;
+            color: #00f0ff;
+        }
 
-.header-oferta {
-    margin-bottom: 50px;
-}
+        .moeda, .centavos {
+            font-size: 24px;
+            color: #00f0ff;
+            vertical-align: super;
+        }
 
-.badge {
-    background: #0077cc22;
-    color: #0077cc;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+        .btn-primary {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 40px;
+            background: #0077cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-.header-oferta h2 {
-    font-size: 36px;
-    color: #222;
-    margin: 15px 0;
-}
+        .btn-primary:hover {
+            background: #00f0ff;
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        }
 
-.header-oferta p {
-    color: #666;
-    font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto;
-}
+        /* AJUSTE: Correção do espaçamento das caixas do formulário */
+        .input-grupo {
+            margin-bottom: 22px !important;
+            text-align: left;
+        }
 
-/* Grid de Cards */
-.grid-servicos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
-    margin-bottom: 50px;
-}
+        .input-grupo label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
 
-.card-servico {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-    text-align: left;
-    border-bottom: 3px solid transparent;
-}
-
-.card-servico:hover {
-    transform: translateY(-10px);
-    border-bottom: 3px solid #0077cc;
-}
-
-.icon-box {
-    font-size: 32px;
-    color: #0077cc;
-    margin-bottom: 20px;
-}
-
-.card-servico h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.card-servico p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* Caixa de Preço e CTA */
-.cta-container {
-    background: #222;
-    padding: 50px 40px;
-    border-radius: 20px;
-    color: #fff;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-.preco-destaque p {
-    font-size: 18px;
-    opacity: 0.9;
-    margin-bottom: 10px;
-}
-
-.valor {
-    font-size: 60px;
-    font-weight: 800;
-    color: #00f0ff;
-}
-
-.moeda, .centavos {
-    font-size: 24px;
-    color: #00f0ff;
-    vertical-align: super;
-}
-
-.btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 25px;
-    padding: 18px 40px;
-    background: #0077cc;
-    color: #fff !important;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.btn-primary:hover {
-    background: #00f0ff;
-    color: #000 !important;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
-    transform: scale(1.05);
-}
-
-.obs-texto {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #bbb;
-}
-
-/* Ajuste para o Modo Escuro */
-body.dark-mode .oferta-landing-page {
-    background: #1a1a1a !important;
-}
-body.dark-mode .header-oferta h2 { color: #fff; }
-body.dark-mode .card-servico { background: #252525; }
-body.dark-mode .card-servico h3 { color: #fff; }
-body.dark-mode .card-servico p { color: #aaa; }
+        /* Dark Mode Adjustments */
+        body.dark-mode .oferta-landing-page {
+            background: #121212 !important;
+        }
+        body.dark-mode .header-oferta h2 { color: #fff; }
+        body.dark-mode .card-servico { background: #1e1e1e; }
+        body.dark-mode .card-servico h3 { color: #fff; }
+        body.dark-mode .card-servico p { color: #bbb; }
     </style>
 
     <button id="toggle-dark-mode" class="modo-toggle" aria-label="Alternar modo escuro">
@@ -290,110 +287,92 @@ body.dark-mode .card-servico p { color: #aaa; }
         <span id="modo-label">Modo Dark</span>
     </button>
 
-    <!-- Botão Voltar -->
-<a href="index.php" class="btn-voltar">
-  <i class="fa fa-arrow-left"></i> Voltar
-</a>
+    <a href="index.php" class="btn-voltar">
+      <i class="fa fa-arrow-left"></i> Voltar
+    </a>
 
- <header id="inicio" class="site-header">
+    <header>
+        <div class="header-conteudo">
+            <img src="img/logotipofelippe.png" alt="Logo Tech Tecnologia" class="logo">
+            <div class="header-textos">
+                <h1>Segurança Digital com Orientações Simples e Práticas</h1>
+                <p class="slogan">Aprenda a reconhecer golpes, proteger seus dados e navegar com mais segurança.</p>
 
-<div class="header-conteudo">
+                <div class="header-beneficios">
+                    <span>
+                        <i class="fas fa-check-circle"></i>
+                        Formatação Profissional
+                    </span>
+                    <span>
+                        <i class="fas fa-check-circle"></i>
+                        Suporte Remoto
+                    </span>
+                    <span>
+                        <i class="fas fa-check-circle"></i>
+                        Atendimento Rápido
+                    </span>
+                </div>
 
-    <img src="img/logotipofelippe.png"
-         alt="Logo Tech Tecnologia"
-         class="logo">
-
-    <div class="header-textos">
-
-        <h1>Landing Pages e Sites Profissionais para o Seu Negócio</h1>
-
-        <p class="slogan">Projetos rápidos, responsivos e preparados para transformar visitantes em novos contatos.</p>
-
-        <div class="header-beneficios">
-
-            <span>
-                <i class="fas fa-check-circle"></i>
-                Formatação Profissional
-            </span>
-
-            <span>
-                <i class="fas fa-check-circle"></i>
-                Suporte Remoto
-            </span>
-
-            <span>
-                <i class="fas fa-check-circle"></i>
-                Atendimento Rápido
-            </span>
-
-        </div>
-
-        <div class="container-botao cabecalho">
-
-            <a href="#formulario" class="btn-destaque">
-                Solicitar orçamento gratuito
+                <div class="container-botao cabecalho">
+                    <a href="#formulario" class="btn-destaque">
+                Falar com um especialista
                 <i class="fa fa-arrow-right"></i>
-            </a>
-
+                    </a>
+                </div>
+            </div>
         </div>
+    </header>
 
-    </div>
+    <section class="oferta-landing-page">
+        <div class="container-oferta">
+            <div class="header-oferta">
+                <span class="badge">Educação Digital</span>
+                <h2>Cartilha de Segurança na Internet</h2>
+                <p>Guia essencial para navegar com tranquilidade. Ideal para idosos e iniciantes no mundo digital.</p>
+            </div>
 
+            <div class="grid-servicos">
+                <div class="card-servico">
+                    <div class="icon-box"><i class="fas fa-user-shield"></i></div>
+                    <h3>Proteção</h3>
+                    <p>Como criar senhas seguras e proteger seus dados pessoais.</p>
+                </div>
+                <div class="card-servico">
+                    <div class="icon-box"><i class="fas fa-search-location"></i></div>
+                    <h3>Identifique Golpes</h3>
+                    <p>Reconheça links falsos e tentativas de fraude por e-mail ou WhatsApp.</p>
+                </div>
+                <div class="card-servico">
+                    <div class="icon-box"><i class="fas fa-mouse-pointer"></i></div>
+                    <h3>Navegação</h3>
+                    <p>Dicas para usar navegadores e redes sociais sem risks.</p>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <p style="font-size: 1.2rem; opacity: 0.9;">Acesse o conteúdo completo gratuitamente</p>
+                <div style="margin: 10px 0;">
+                    <span class="valor">PDF</span> <span class="periodo" style="color: #00f0ff;">Digital Gratuito</span>
+                </div>
+                
+                <a href="download_cartilha.php" target="_blank" class="btn-destaque-download">
+                    <i class="fas fa-file-download"></i> Baixar Cartilha PDF Agora
+                </a>
+
+                <?php
+                $contadorArquivo = "contador_downloads.txt";
+                $downloads = file_exists($contadorArquivo) ? (int)file_get_contents($contadorArquivo) : 0;
+                echo "<p class='obs-texto' style='margin-top: 25px; font-weight: bold;'> Junte-se aos $downloads usuários que já baixaram!</p>";
+                ?>
+            </div>
+
+            <div class="iframe-wrapper mt-4">
+    <iframe src="docs/CartilhaSeguranca.pdf.pdf" width="100%" height="600px" style="border: none;"></iframe>
 </div>
-
-</header>
-
-<section class="oferta-landing-page">
-    <div class="container-oferta">
-        <div class="header-oferta">
-            <span class="badge">Desenvolvimento Web</span>
-            <h2>Landing Pages & Sites Profissionais</h2>
-            <p>Transforme sua presença digital com um site focado em converter visitantes em clientes reais.</p>
         </div>
+    </section>
 
-        <div class="grid-servicos">
-            <!-- Card 1 -->
-            <div class="card-servico">
-                <div class="icon-box"><i class="fas fa-palette"></i></div>
-                <h3>Design Premium</h3>
-                <p>Layouts modernos, elegantes e totalmente personalizados para sua marca.</p>
-            </div>
-            <!-- Card 2 -->
-            <div class="card-servico">
-                <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
-                <h3>100% Responsivo</h3>
-                <p>Seu site perfeito em celulares, tablets e computadores de qualquer tamanho.</p>
-            </div>
-            <!-- Card 3 -->
-            <div class="card-servico">
-                <div class="icon-box"><i class="fas fa-search-dollar"></i></div>
-                <h3>Otimizado (SEO)</h3>
-                <p>Estrutura preparada para o Google, ajudando seu negócio a aparecer no topo.</p>
-            </div>
-            <!-- Card 4 -->
-            <div class="card-servico">
-                <div class="icon-box"><i class="fas fa-bolt"></i></div>
-                <h3>Alta Performance</h3>
-                <p>Código limpo e carregamento ultra-rápido para não perder nenhum clique.</p>
-            </div>
-        </div>
-
-        <div class="cta-container">
-            <div class="preco-destaque">
-                <p>Landing Page Profissional a partir de</p>
-                <span class="moeda">R$</span>
-                <span class="valor">1.200</span>
-                <span class="centavos">,00</span>
-            </div>
-            <p class="obs-texto">Incluso integração com WhatsApp e formulários de contato.</p>
-            <a href="https://wa.me/5527999642716?text=Olá,%20quero%20uma%20landing%20page%20profissional." target="_blank" class="btn-primary">
-                <i class="fab fa-whatsapp"></i> Solicitar Orçamento Grátis
-            </a>
-        </div>
-    </div>
-</section>
-
-        <section class="foto-e-formulario" id="foto-e-formulario">
+    <section class="foto-e-formulario" id="foto-e-formulario">
   <div class="wrapper-horizontal">
     <div class="foto-container">
       <img src="img/planodesuporte.png" alt="Plano de suporte técnico da Tech Tecnologia" class="foto" loading="lazy">
@@ -514,48 +493,26 @@ body.dark-mode .card-servico p { color: #aaa; }
         </div>
     </footer>
 
-    <!-- Botão flutuante do WhatsApp -->
-    <a href="https://wa.me/5527999642716"
-       class="whatsapp-float-btn"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Fale conosco no WhatsApp">
+    <a href="https://wa.me/5527999642716" class="whatsapp-float-btn" target="_blank">
         <img src="img/whatsapp-icon.png" alt="WhatsApp">
     </a>
 
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
     <script>
         document.getElementById('form-contato').addEventListener('submit', function(e) {
-            e.preventDefault(); // impede o envio imediato do formulário
-
             const checkbox = document.getElementById('lgpd');
-            const mensagemLGPD = document.getElementById('mensagem-lgpd');
             const botao = document.querySelector('.botao-enviar');
-
             if (!checkbox.checked) {
-                mensagemLGPD.style.display = 'block';
+                e.preventDefault();
+                document.getElementById('mensagem-lgpd').style.display = 'block';
                 return;
-            } else {
-                mensagemLGPD.style.display = 'none';
             }
-
             botao.innerHTML = "Enviando... ⏳";
             botao.disabled = true;
-
-            setTimeout(() => {
-                botao.innerHTML = "🚀 Enviar agora";
-                botao.disabled = false;
-                this.submit(); // envia o formulário após 3 segundos
-            }, 3000);
         });
-    </script>
-
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
     <script src="js/acessibilidade.js?v=2"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
-

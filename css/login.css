@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #00a859, #006633);
+    background: linear-gradient(135deg, #06162c, #075bd8 65%, #00b8d9);
     color: #222;
     display: flex;
     justify-content: center;
@@ -132,7 +132,7 @@ input[type="text"]:focus {
 }
 
 .btn-login {
-    background-color: #00a859;
+    background: linear-gradient(135deg, #00a859, #007f4e);
     border: none;
     color: white;
     padding: 14px 0;
@@ -144,7 +144,7 @@ input[type="text"]:focus {
 }
 
 .btn-login:hover {
-    background-color: #007f4e;
+    background: linear-gradient(135deg, #008f4c, #006633);
 }
 
 .links {

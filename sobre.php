@@ -9,8 +9,11 @@
     <link rel='icon' type='image/png' sizes='192x192' href='img/favicon-192x192.png?v=20261007'>
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico?v=20261007'>
     <link rel='apple-touch-icon' sizes='180x180' href='img/apple-touch-icon.png?v=20261007'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/public-modern.css?v=20260824"><link rel="stylesheet" href="css/acessibilidade-global.css?v=20260814f"><link rel="stylesheet" href="css/sobre-modern.css?v=20260824">
+  <link rel="stylesheet" href="css/public-modern.css?v=20260824"><link rel="stylesheet" href="css/acessibilidade-global.css?v=20260814f"><link rel="stylesheet" href="css/sobre-modern.css?v=20260824"><link rel="stylesheet" href="css/sobre-fixes.css?v=20261016">
   <script src="js/acessibilidade-global.js?v=20260814f" defer></script><script src="js/public-shell.js?v=20260824" defer></script>
 </head>
 <body>
@@ -25,7 +28,7 @@
         <div class="about-actions"><a class="about-button about-button--primary" href="index.php#formulario"><i class="fa-solid fa-paper-plane"></i> Solicitar orçamento</a><a class="about-button about-button--secondary" href="https://wa.me/5527999642716" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Conversar no WhatsApp</a></div>
         <ul class="about-trust"><li><i class="fa-solid fa-circle-check"></i> Atendimento personalizado</li><li><i class="fa-solid fa-circle-check"></i> Soluções responsivas</li><li><i class="fa-solid fa-circle-check"></i> Suporte pós-entrega</li></ul>
       </div>
-      <div class="about-portrait-card"><div class="about-portrait-wrap"><img src="img/felippe2.jpeg" alt="Felippe Fardin, desenvolvedor e especialista em suporte de TI"></div><div class="about-portrait-info"><strong>Felippe Fardin</strong><span>Desenvolvimento Web · Suporte de TI</span><small><i class="fa-solid fa-location-dot"></i> Vila Velha/ES · Atendimento remoto e presencial</small></div></div>
+      <div class="about-portrait-card"><div class="about-portrait-wrap"><img src="img/meuperfil.jpeg?v=20261016" alt="Felippe Fardin, desenvolvedor e especialista em suporte de TI"></div><div class="about-portrait-info"><strong>Felippe Fardin</strong><span>Desenvolvimento Web · Suporte</span><small><i class="fa-solid fa-location-dot"></i> Vila Velha/ES · Atendimento remoto e presencial</small></div></div>
     </div></section>
 
     <section class="about-section" aria-labelledby="mission-title"><div class="about-shell about-intro"><div><span class="about-section-label">Minha forma de trabalhar</span><h2 id="mission-title">Tecnologia sem complicação, com foco no resultado.</h2></div><div class="about-intro__text"><p>Minha missão é unir design claro, tecnologia moderna e infraestrutura estável para entregar projetos que transmitam confiança e facilitem a rotina de cada cliente.</p><p>Cada solução começa pela compreensão do problema. A partir daí, desenvolvo uma entrega personalizada, segura e preparada para evoluir junto com o negócio.</p></div></div></section>
