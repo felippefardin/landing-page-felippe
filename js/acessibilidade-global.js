@@ -138,13 +138,23 @@
 
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = 'css/acessibilidade-global.css?v=20261109-header2';
+  stylesheet.href = 'css/acessibilidade-global.css?v=20261109-login-layout';
   document.head.append(stylesheet);
 
   document.addEventListener('DOMContentLoaded', () => {
     applyPreferences();
     createToolbar();
     loadVlibras();
+    if (!document.querySelector('script[data-site-assistant]')) {
+      const chatStyle = document.createElement('link');
+      chatStyle.rel = 'stylesheet';
+      chatStyle.href = 'css/assistente.css?v=20261109-clean2';
+      document.head.append(chatStyle);
+      const chatScript = document.createElement('script');
+      chatScript.src = 'js/assistente.js?v=20261109-clean2';
+      chatScript.dataset.siteAssistant = 'true';
+      document.head.append(chatScript);
+    }
     if (!document.querySelector('script[data-site-languages]')) {
       const languages = document.createElement('script');
       languages.src = 'js/idiomas.js?v=20261109';

@@ -1,0 +1,25 @@
+<section class="memory-promo" id="desafio-memoria" aria-labelledby="memory-promo-title">
+  <div><span class="memory-eyebrow">UM DESAFIO PARA SUA MEMÓRIA</span><h2 id="memory-promo-title">Encontre os pares. Ganhe 50% no seu próximo projeto.</h2><p>São 50 cartas e 25 pares, em posições diferentes a cada partida. Complete o tabuleiro em até 80 jogadas para conquistar seu voucher.</p><p class="memory-summary">3 partidas por e-mail confirmado · Cupom válido por 7 dias · Uma utilização</p></div>
+  <div class="memory-promo-action"><div class="memory-card-preview" aria-hidden="true"><span>?</span><span>◆</span><span>◆</span></div><button class="memory-primary" id="memory-launch" type="button" disabled>Abrir jogo da memória</button><p>Gratuito. Desconto apenas no desenvolvimento.</p></div>
+</section>
+<dialog id="memory-dialog" class="memory-dialog" aria-labelledby="memory-title" data-no-translate translate="no">
+  <div class="memory-shell">
+    <div class="memory-heading"><div><span class="memory-eyebrow">DESAFIO TECH TECNOLOGIA</span><h2 id="memory-title">Jogo da memória</h2></div><button type="button" class="memory-close" id="memory-close" aria-label="Fechar jogo">×</button></div>
+    <p class="memory-status" id="memory-status" role="status" aria-live="polite"></p>
+    <div id="memory-account"></div>
+    <form id="memory-email-form" class="memory-form">
+      <h3>Confirme seu e-mail para jogar</h3><p>Enviamos um código de acesso. Se você vencer, o voucher chega nesse mesmo endereço.</p>
+      <label for="memory-email">Seu e-mail</label><input id="memory-email" type="email" autocomplete="email" maxlength="254" required>
+      <label class="memory-check"><input id="memory-consent" type="checkbox" required><span>Li as regras e concordo com o uso do meu e-mail para confirmação, registro das chances e envio do voucher. Isso não me cadastra em publicidade.</span></label>
+      <button type="submit" class="memory-primary">Receber código</button>
+    </form>
+    <form id="memory-code-form" class="memory-form" hidden><h3>Confira sua caixa de entrada</h3><label for="memory-code">Código de 6 dígitos</label><input id="memory-code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required><p>O código vale por 10 minutos. Confira também a pasta de spam.</p><button type="submit" class="memory-primary">Confirmar e-mail</button><button id="memory-back" type="button" class="memory-secondary">Voltar / solicitar outro código</button></form>
+    <div id="memory-play" hidden>
+      <div class="memory-score" aria-label="Progresso da partida"><span><strong id="memory-pairs">0 / 25</strong>Pares encontrados</span><span><strong id="memory-moves">0 / 80</strong>Jogadas usadas</span><span><strong id="memory-attempts">0 / 3</strong>Partidas usadas</span></div>
+      <div id="memory-result" class="memory-result" hidden></div>
+      <div id="memory-board" class="memory-board" role="group" aria-label="Tabuleiro com 50 cartas. Use Tab ou as setas para navegar."></div>
+      <div class="memory-controls"><button type="button" id="memory-start" class="memory-primary">Começar partida</button><button type="button" id="memory-abandon" class="memory-secondary" hidden>Encerrar esta partida</button><button type="button" id="memory-change" class="memory-text">Trocar e-mail</button><button type="button" id="memory-resend" class="memory-secondary" hidden>Reenviar voucher por e-mail</button><button type="button" id="memory-refresh" class="memory-text">Atualizar jogo</button></div>
+    </div>
+    <details class="memory-rules"><summary>Regras, validade e privacidade</summary><ul><li>Encontre os 25 pares entre 50 cartas em até 80 jogadas. Virar duas cartas conta como uma jogada. A posição das cartas muda em cada partida.</li><li>Até 3 partidas por e-mail nesta campanha. Fechar a janela ou atualizar a página preserva a partida. Encerrar uma partida consome essa chance. Não há limite de tempo.</li><li>Ao vencer, você recebe um cupom individual de 50%, válido por 7 dias a partir da vitória, para uma única contratação confirmada dentro desse prazo.</li><li>O desconto vale somente para o desenvolvimento de landing page, site ou sistema web, conforme escopo e valor da proposta. Não inclui domínio, hospedagem, licenças nem serviços externos. Não é cumulativo e não pode ser convertido em dinheiro.</li><li>Apresente o cupom e o e-mail confirmado ao Felippe antes de contratar. O cupom será validado no painel. O jogo não gera uma contratação automática.</li><li>Armazenamos seu e-mail, verificação, chances, progresso e situação do cupom para operar a campanha e prevenir abuso. O serviço de e-mail recebe o endereço e as mensagens necessárias. Nenhuma informação do jogo é enviada à IA.</li></ul><a href="termos-lgpd.html" target="_blank" rel="noopener">Privacidade e contato</a></details>
+  </div>
+</dialog>

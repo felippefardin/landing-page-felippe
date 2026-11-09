@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 
+// Use Brasilia time consistently in PHP and every database session.
+date_default_timezone_set('America/Sao_Paulo');
+
 function load_env_file(string $path): void
 {
     if (!is_file($path) || !is_readable($path)) {
@@ -53,6 +56,7 @@ function db(): mysqli
         env_value('DB_NAME', defined('DB_NAME') ? (string) DB_NAME : 'felippe')
     );
     $connection->set_charset('utf8mb4');
+    $connection->query("SET time_zone = '-03:00'");
     return $connection;
 }
 

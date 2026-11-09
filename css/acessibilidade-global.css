@@ -270,3 +270,53 @@ body .accessibility-header #accessibility-toolbar{padding:0;border:0}
 /* Restore the WhatsApp position now that no floating toolbar occupies the bottom. */
 @media(max-width:640px){body .whatsapp-float-btn{bottom:20px!important}}
 @media print{body .accessibility-header{display:none!important}}
+
+/* Authentication pages: header and form must not become side-by-side flex items. */
+html body:has(> .container input[type="password"]) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 0 !important;
+  gap: 0;
+}
+html body:has(> .container input[type="password"]) > .accessibility-header {
+  order: -2;
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 100%;
+  min-height: 58px;
+  padding: 12px 24px;
+}
+html body:has(> .container input[type="password"]) > #accessibility-toolbar {
+  order: -2;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 12px 24px;
+  color: #f8fafc !important;
+  background: #071b35 !important;
+  border: 0;
+}
+html body:has(> .container input[type="password"]) > .container {
+  flex: 0 0 auto;
+  align-self: center;
+  width: min(430px, calc(100% - 32px));
+  max-width: 430px;
+  margin: auto !important;
+  position: relative;
+}
+/* Real spacing on short screens and when accessibility font size is increased. */
+html body:has(> .container input[type="password"])::after {
+  content: '';
+  display: block;
+  flex: 0 0 24px;
+  width: 1px;
+}
+
+@media(max-width:520px) {
+  html body:has(> .container input[type="password"]) > .accessibility-header,
+  html body:has(> .container input[type="password"]) > #accessibility-toolbar { padding: 10px 12px; }
+  html body:has(> .container input[type="password"]) > .container { padding: 28px 22px; }
+}

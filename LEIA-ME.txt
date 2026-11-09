@@ -1,10 +1,27 @@
-AVALIAÇÕES
+﻿CORREÇÃO — ERRO AO INFORMAR O E-MAIL NO JOGO
 
-1. Faça backup do projeto e copie todo o conteúdo desta pasta para a pasta original.
-2. Faça login e abra Avaliação no painel: a tabela será criada automaticamente, sem alterar as existentes.
-3. Se o banco não permitir criar a tabela, importe migrations/20261109_avaliacoes.sql no phpMyAdmin.
-4. Atualize a página inicial com Ctrl+F5.
+O erro de atualização acontecia porque as tabelas do jogo não haviam sido importadas. A tela recebia uma falha ao carregar, mas ainda permitia enviar o formulário sem a confirmação de segurança.
 
-O novo modal substitui o pop-up automático de desconto para evitar sobreposição. O formulário de contato permanece. Os envios são pendentes e só ficam públicos após aprovação; desativar retira do site sem apagar. Excluir remove definitivamente após confirmação. O painel segue a mesma permissão de acesso das áreas administrativas existentes: usuários autenticados.
+O banco local felippe e o banco da hospedagem já receberam as tabelas nesta sessão. Suas chances não foram reiniciadas.
 
-A proteção contra envios repetidos limita a um envio por minuto por sessão; não substitui uma proteção externa contra robôs.
+Copie estes arquivos para a RAIZ do projeto original, preservando as subpastas:
+- memoria-api.php
+- src/memoria-desconto.php
+- js/memoria-desconto.js
+Depois atualize com Ctrl+F5. Não é necessário substituir a index, o .env ou o bootstrap.
+
+A versão corrigida também já foi aplicada à InfinityFree.
+
+Se instalar em outro banco/ambiente, importe migrations/memoria-desconto.sql no banco correto. O SQL apenas cria as tabelas novas caso não existam.
+
+CORREÇÕES
+- Aguarda a sessão de segurança carregar antes de permitir envio.
+- Mostra uma orientação clara se a migração estiver faltando.
+- Permite tentar carregar novamente sem perder as informações digitadas.
+- Renova a confirmação de segurança uma única vez se o servidor rejeitar o CSRF antes de executar a ação. Não repete jogadas automaticamente em falhas de conexão.
+- Mostra a categoria da falha SMTP sem expor credenciais.
+
+ENVIO DOS E-MAILS
+O teste no site online avançou e o provedor de e-mail informou limite de envios atingido. Isso é separado do erro de atualização. Novas tentativas não liberam a cota do provedor.
+O envio ficará disponível quando o provedor liberar a cota ou após configurar outro remetente/serviço SMTP autorizado no .env. Não desative a validação TLS nem coloque senhas no JavaScript.
+Os testes desta sessão não iniciaram nenhuma partida.

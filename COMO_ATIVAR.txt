@@ -1,0 +1,24 @@
+ASSISTENTE DO FELIPPE
+
+1. Faça backup e copie as pastas css, js e src e o arquivo assistente-api.php para o projeto. Mantenha o src/bootstrap.php e as credenciais existentes.
+2. Atualize as páginas com Ctrl+F5. O botão “Fale com o assistente” aparece nas páginas públicas. Sem chave, funciona como atendimento guiado com respostas prontas; não é IA generativa.
+3. Para ativar a IA, crie uma chave no Google AI Studio: https://aistudio.google.com/api-keys. Verifique os modelos e limites gratuitos na sua conta. Usar o plano gratuito não garante disponibilidade ilimitada nem que todo modelo esteja incluído.
+4. Faça uma cópia de felippe-assistente-secrets.example.php chamada felippe-assistente-secrets.php. Coloque sua chave em api_key e o modelo liberado na conta em model. O padrão é gemini-flash-latest e pode ser alterado.
+5. IMPORTANTE: coloque o arquivo COM A CHAVE FORA da pasta pública. No InfinityFree, ele deve ficar um nível acima de htdocs, ao lado dela: /felippeandreatadev.page.gd/felippe-assistente-secrets.php. Não envie a chave pelo chat e não a coloque no JavaScript. No projeto local, coloque esse arquivo um nível acima da pasta landing-page-felippe.
+6. Abra o site. Se a configuração for detectada e PHP tiver cURL, o assistente indicará IA Gemini. Marque a autorização para enviar mensagens ao Google e faça uma pergunta de teste. Sem marcar, o atendimento continua local e guiado.
+
+O nível gratuito do Gemini pode usar mensagens para melhorar produtos do Google. O aviso e o consentimento aparecem no assistente. Não envie dados sensíveis. As respostas podem conter erros; orçamento e prazo exigem confirmação de Felippe.
+
+LIMITES IMPLEMENTADOS
+- Até 30 solicitações de IA por sessão e pelo menos 5 segundos entre solicitações.
+- Até 100 tentativas por dia no servidor, configuráveis em daily_limit. O contador usa um arquivo temporário do servidor e pode ser reiniciado pela limpeza de temporários da hospedagem.
+- Histórico curto na sessão PHP; o visitante envia apenas sua pergunta atual. A sessão fornece o contexto recente ao provedor.
+- Proteção CSRF e mensagens exibidas como texto, sem executar HTML.
+- Se a API falhar ou atingir os limites, usa respostas guiadas e informa a mudança.
+- A integração não executa ações, não envia orçamentos, não altera cadastros e não acessa os dados do painel.
+
+Não foram testados chamadas reais ao Gemini nem limites da sua conta, pois a chave ainda não foi configurada. O InfinityFree precisa permitir HTTPS de saída para generativelanguage.googleapis.com e ter cURL habilitado. Se bloquear, o site mantém o atendimento guiado; a função de IA precisará de um backend compatível.
+
+O catálogo do assistente pode ser editado em src/assistente.php (contexto de IA) e js/assistente.js (respostas guiadas e idiomas). Ao adicionar serviços, atualize os dois.
+
+O arquivo de exemplo não tem chave real. Não copie este texto de instruções para a hospedagem se não precisar dele.

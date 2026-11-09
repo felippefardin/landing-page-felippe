@@ -1,0 +1,66 @@
+﻿JOGO DA MEMÓRIA — ATUALIZAÇÃO PARA LANDING-PAGE-FELIPPE
+
+REGRAS IMPLEMENTADAS
+- 50 cartas, 25 pares, embaralhadas no servidor a cada partida.
+- Até 80 jogadas por partida; virar duas cartas conta como uma jogada.
+- Até 3 partidas por e-mail confirmado nesta campanha. Gmail com pontos ou +apelidos compartilha as chances.
+- Acertar todos os pares na jogada 80 também conta como vitória.
+- Fechar ou atualizar a página não reinicia nem consome outra partida.
+- Encerrar manualmente uma partida a considera perdida.
+- Vitória gera um único voucher de 50%, válido por 7 dias exatos a partir da emissão, de uso único.
+- Desconto apenas no desenvolvimento, conforme proposta. Não inclui domínio, hospedagem, licenças ou serviços externos. Não cumulativo.
+
+INSTALAÇÃO
+1. Faça uma cópia de segurança da index atual e do banco.
+2. No phpMyAdmin, selecione o banco JÁ usado pelo projeto. Importe:
+   migrations/memoria-desconto.sql
+   São criadas somente duas tabelas novas. O arquivo não remove nem altera as tabelas existentes.
+3. Copie index.php, memoria-api.php, cupons-desconto.php e as pastas css, js, src e includes deste pacote para a RAIZ do projeto.
+   Na InfinityFree, a raiz é htdocs. NÃO envie a index para dentro de img.
+   Não substitua src/bootstrap.php, o .env, os arquivos do Gemini nem suas credenciais.
+   A index fornecida preserva a imagem de destaque, o layout amplo e os recursos da última versão preparada nesta conversa.
+4. Confira o SMTP já usado pelo projeto. Se necessário, acrescente/ajuste no .env existente:
+   SMTP_HOST=smtp.gmail.com
+   SMTP_PORT=587
+   SMTP_USERNAME=SEU_EMAIL
+   SMTP_PASSWORD=SUA_SENHA_DE_APLICATIVO
+   SMTP_FROM_EMAIL=SEU_EMAIL
+   SMTP_FROM_NAME=Tech Tecnologia
+   Não use a senha normal do Gmail. Se já há SMTP funcional, preserve sua configuração.
+   Nenhuma senha ou chave real está neste pacote. A validação TLS permanece habilitada.
+5. Abra pelo XAMPP/Apache (PHP 8.1+ com mysqli/mysqlnd e PHPMailer existente) e pressione Ctrl+F5.
+   Clique em Abrir jogo da memória, confirme o e-mail com o código e comece a partida.
+   O jogo não abre automaticamente e não interfere no modal de descontos existente.
+
+PAINEL DOS CUPONS
+Abra cupons-desconto.php depois de entrar no login do site.
+Por segurança, confirme também o e-mail do proprietário na janela do jogo; não é preciso jogar.
+O padrão é felippefardin@gmail.com. Para mudar, defina no .env:
+   DISCOUNT_ADMIN_EMAIL=seu-email-de-administrador
+O login atual guarda apenas o nome do usuário. Por isso o painel também exige a confirmação do e-mail do proprietário, evitando que outra pessoa com o mesmo nome administre seus cupons.
+Depois da confirmação, um link para o painel aparece na janela do jogo quando você está logado.
+Opcionalmente, acrescente dentro do menu Conta no admin.php:
+   <?php require __DIR__.'/includes/link-cupons.php'; ?>
+O painel permite buscar e filtrar participantes, ativos, utilizados, vencidos e desativados, reenviar o voucher, marcar como utilizado ou desativar.
+Apresente a proposta ao cliente e confirme o e-mail/cupom antes de marcar a utilização. Não há checkout ou contratação automática.
+Cupons vencem automaticamente por verificação da data, sem agendamento externo.
+
+ENVIO E LIMITES
+Código de acesso: validade de 10 minutos, até 5 erros; 1 minuto entre envios, até 3 envios por e-mail/dia. Limite adicional de 5 envios por IP/dia e 150 envios/dia na campanha para reduzir abuso do SMTP.
+Voucher: até 5 tentativas de envio, 1 minuto entre elas. Se o SMTP falhar, o cupom já estará salvo, disponível na tela e no painel. O reenvio usa o mesmo código e não renova a validade.
+Datas são gravadas em UTC e exibidas no horário de Brasília.
+E-mail, progresso e voucher são registrados para operar o jogo, sem inscrição automática em marketing. O jogo não envia informações ao Gemini.
+O controle é por e-mail; isso não comprova uma pessoa física única. O embaralhamento impede pesquisar uma resposta pronta, mas nenhum jogo web impede totalmente automação ou o registro das cartas já vistas.
+Não altere MEMORY_CAMPAIGN para tentar corrigir um problema: mudar esse identificador cria uma nova campanha e permite novas participações.
+
+SE VOCÊ ALTEROU A INDEX APÓS A ÚLTIMA VERSÃO
+Em vez de substituir sua index, preserve suas alterações: copie o conteúdo de includes/memoria-desconto.html para dentro de main, na posição desejada, e adicione antes de </head>:
+   <link rel="stylesheet" href="css/memoria-desconto.css?v=20261109-memory1">
+   <script src="js/memoria-desconto.js?v=20261109-memory1" defer></script>
+Mantenha os demais arquivos da atualização.
+
+VALIDAÇÃO
+Testes locais em PHP/MySQL: CSRF, código de acesso, cartas ocultas na API, estado persistente, limites de partidas e jogadas, vitória na jogada 80, falha de envio/reenvio sem perder o cupom, 7 dias de validade, acesso restrito ao painel e uso único.
+Conferência visual no navegador: 50 cartas, virada e fechamento automático, contadores, formulário de e-mail e tela de 390px sem rolagem horizontal.
+O transporte de e-mail nos testes foi simulado. O envio real depende do SMTP do seu ambiente e precisa ser conferido após instalar.
+Este pacote ainda NÃO foi aplicado à hospedagem e NÃO executou migrações no banco do seu projeto.

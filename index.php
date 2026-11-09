@@ -51,8 +51,44 @@ file_put_contents($arquivo, $visitas);
     <link rel="stylesheet" href="css/home-sections.css?v=20261109">
     <link rel="stylesheet" href="css/avaliacoes.css?v=20261109">
     <script src="js/avaliacoes.js?v=20261109-manual" defer></script>
+<style id="home-wide-layout">
+body.home-wide{--home-gutter:clamp(16px,2.2vw,48px);--home-gap:24px}
+body.home-wide #conteudo-principal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--home-gap);width:calc(100% - 2 * var(--home-gutter));max-width:none;margin:24px auto 40px;padding:0;box-sizing:border-box}
+body.home-wide #conteudo-principal>section{grid-column:1/-1;box-sizing:border-box;width:100%;max-width:none;min-width:0;margin:0;padding:clamp(24px,2.5vw,44px);border-radius:20px;scroll-margin-top:100px}
+body.home-wide #conteudo-principal>section.produto{grid-column:span 1;display:flex;padding:24px}
+body.home-wide #conteudo-principal .produto-container{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:center;gap:24px;width:100%;min-width:0;height:100%;padding:0;border:0;box-shadow:none;background:transparent;color:inherit;border-radius:0}
+body.home-wide #conteudo-principal .produto-imagem,body.home-wide #conteudo-principal .produto-info{min-width:0;width:100%;max-width:none;margin:0}
+body.home-wide #conteudo-principal .produto-imagem{display:flex;align-items:center;justify-content:center;min-height:280px}
+body.home-wide #conteudo-principal .produto-imagem img{display:block;width:100%!important;max-width:400px!important;height:280px!important;max-height:280px!important;object-fit:contain!important;border-radius:14px;margin:0 auto}
+body.home-wide #conteudo-principal .produto-info{align-items:flex-start;text-align:left;gap:16px;padding:8px 0;align-self:stretch;justify-content:center}
+body.home-wide #conteudo-principal .produto-info h2{margin:0;font-size:clamp(20px,1.45vw,28px);line-height:1.3}
+body.home-wide #conteudo-principal .produto-info p{margin:0;line-height:1.6}
+body.home-wide #conteudo-principal .btn-ver-mais{display:inline-flex;justify-content:center;align-items:center;max-width:100%;min-height:44px;box-sizing:border-box;padding:11px 18px;margin-top:8px;white-space:normal;text-align:center;line-height:1.4}
+body.home-wide #conteudo-principal .benefit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+body.home-wide #conteudo-principal .benefit-grid>article{height:100%;min-width:0;box-sizing:border-box;margin:0;padding:28px;text-align:left}
+body.home-wide #conteudo-principal .trust-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0 0;padding:20px;box-sizing:border-box}
+body.home-wide #conteudo-principal .work-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:0;margin:28px 0;align-items:stretch}
+body.home-wide #conteudo-principal .work-steps>li{min-width:0;height:100%;box-sizing:border-box}
+body.home-wide #conteudo-principal .sobre-intro,body.home-wide #conteudo-principal .work-section>p{max-width:850px;margin-inline:auto}
+body.home-wide #conteudo-principal .wrapper-horizontal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;width:100%;align-items:stretch}
+body.home-wide #conteudo-principal .foto-container,body.home-wide #conteudo-principal .formulario{width:100%;min-width:0;max-width:none;box-sizing:border-box;margin:0}
+body.home-wide #conteudo-principal .foto-container{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:0;align-content:center}
+body.home-wide #conteudo-principal .foto-container .foto{width:100%;max-width:none;height:auto;object-fit:contain}
+body.home-wide .header-conteudo{box-sizing:border-box;width:calc(100% - 2 * var(--home-gutter));max-width:none;margin-inline:auto;gap:clamp(32px,5vw,100px);padding:36px clamp(8px,2vw,36px)}
+body.home-wide .header-textos{min-width:0;flex:1}
+body.home-wide .header-textos h1{max-width:25ch;font-size:clamp(32px,3.3vw,66px);line-height:1.12}
+body.home-wide .header-textos p{max-width:70ch}
+body.home-wide .site-nav.public-nav{box-sizing:border-box;padding-inline:var(--home-gutter)}
+body.home-wide footer .footer-container{width:calc(100% - 2 * var(--home-gutter));max-width:none;box-sizing:border-box;margin-inline:auto}
+@media(max-width:1199px){body.home-wide #conteudo-principal>section.produto{grid-column:1/-1}body.home-wide #conteudo-principal .work-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){body.home-wide #conteudo-principal{grid-template-columns:minmax(0,1fr);gap:20px}body.home-wide #conteudo-principal>section{padding:24px 18px}body.home-wide #conteudo-principal>section.produto{padding:20px}body.home-wide #conteudo-principal .produto-container{grid-template-columns:minmax(0,1fr);gap:20px}body.home-wide #conteudo-principal .produto-imagem{min-height:0}body.home-wide #conteudo-principal .produto-imagem img{height:auto!important;max-height:340px!important}body.home-wide #conteudo-principal .produto-info{align-items:center;text-align:center}body.home-wide #conteudo-principal .benefit-grid,body.home-wide #conteudo-principal .work-steps,body.home-wide #conteudo-principal .trust-strip,body.home-wide #conteudo-principal .wrapper-horizontal{grid-template-columns:minmax(0,1fr)}body.home-wide .header-conteudo{padding:28px 0;gap:24px}body.home-wide .header-textos h1{font-size:clamp(30px,7vw,44px);max-width:none}body.home-wide #conteudo-principal .formulario{padding:20px 14px}body.home-wide #conteudo-principal .trust-strip{gap:14px}}
+body.home-wide #conteudo-principal .work-wrap{width:100%;max-width:none;margin:0}
+body.home-wide #conteudo-principal .work-faq{width:100%;max-width:none}
+</style>
+<link rel="stylesheet" href="css/memoria-desconto.css?v=20261109-memory1">
+<script src="js/memoria-desconto.js?v=20261109-memory1" defer></script>
 </head>
-<body>
+<body class="home-wide">
     <!-- VLibras widget -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -471,7 +507,7 @@ file_put_contents($arquivo, $visitas);
         <section class="produto" id="servicos">
             <div class="produto-container">
                 <div class="produto-imagem">
-                    <img src="img/imagemcriacao.png" alt="Página de vendas otimizada por Tech Tecnologia" class="imagem-produto">
+                    <img src="img/imagemdestaque.png?v=20261109-nova" alt="Seu negócio merece um site à altura: landing pages, sites e sistemas web" class="imagem-produto imagem-destaque-web" width="1374" height="1145" loading="lazy" decoding="async" style="display:block;width:100%;max-width:440px;height:auto;max-height:none;object-fit:contain;margin-inline:auto;border-radius:14px;">
                 </div>
 
                 <div class="produto-info">
@@ -530,7 +566,33 @@ file_put_contents($arquivo, $visitas);
           </div>
         </section> -->
 
-        <section class="work-section" id="como-funciona" aria-labelledby="work-title">
+        <section class="memory-promo" id="desafio-memoria" aria-labelledby="memory-promo-title">
+  <div><span class="memory-eyebrow">UM DESAFIO PARA SUA MEMÓRIA</span><h2 id="memory-promo-title">Encontre os pares. Ganhe 50% no seu próximo projeto.</h2><p>São 50 cartas e 25 pares, em posições diferentes a cada partida. Complete o tabuleiro em até 80 jogadas para conquistar seu voucher.</p><p class="memory-summary">3 partidas por e-mail confirmado · Cupom válido por 7 dias · Uma utilização</p></div>
+  <div class="memory-promo-action"><div class="memory-card-preview" aria-hidden="true"><span>?</span><span>◆</span><span>◆</span></div><button class="memory-primary" id="memory-launch" type="button" disabled>Abrir jogo da memória</button><p>Gratuito. Desconto apenas no desenvolvimento.</p></div>
+</section>
+<dialog id="memory-dialog" class="memory-dialog" aria-labelledby="memory-title" data-no-translate translate="no">
+  <div class="memory-shell">
+    <div class="memory-heading"><div><span class="memory-eyebrow">DESAFIO TECH TECNOLOGIA</span><h2 id="memory-title">Jogo da memória</h2></div><button type="button" class="memory-close" id="memory-close" aria-label="Fechar jogo">×</button></div>
+    <p class="memory-status" id="memory-status" role="status" aria-live="polite"></p>
+    <div id="memory-account"></div>
+    <form id="memory-email-form" class="memory-form">
+      <h3>Confirme seu e-mail para jogar</h3><p>Enviamos um código de acesso. Se você vencer, o voucher chega nesse mesmo endereço.</p>
+      <label for="memory-email">Seu e-mail</label><input id="memory-email" type="email" autocomplete="email" maxlength="254" required>
+      <label class="memory-check"><input id="memory-consent" type="checkbox" required><span>Li as regras e concordo com o uso do meu e-mail para confirmação, registro das chances e envio do voucher. Isso não me cadastra em publicidade.</span></label>
+      <button type="submit" class="memory-primary">Receber código</button>
+    </form>
+    <form id="memory-code-form" class="memory-form" hidden><h3>Confira sua caixa de entrada</h3><label for="memory-code">Código de 6 dígitos</label><input id="memory-code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required><p>O código vale por 10 minutos. Confira também a pasta de spam.</p><button type="submit" class="memory-primary">Confirmar e-mail</button><button id="memory-back" type="button" class="memory-secondary">Voltar / solicitar outro código</button></form>
+    <div id="memory-play" hidden>
+      <div class="memory-score" aria-label="Progresso da partida"><span><strong id="memory-pairs">0 / 25</strong>Pares encontrados</span><span><strong id="memory-moves">0 / 80</strong>Jogadas usadas</span><span><strong id="memory-attempts">0 / 3</strong>Partidas usadas</span></div>
+      <div id="memory-result" class="memory-result" hidden></div>
+      <div id="memory-board" class="memory-board" role="group" aria-label="Tabuleiro com 50 cartas. Use Tab ou as setas para navegar."></div>
+      <div class="memory-controls"><button type="button" id="memory-start" class="memory-primary">Começar partida</button><button type="button" id="memory-abandon" class="memory-secondary" hidden>Encerrar esta partida</button><button type="button" id="memory-change" class="memory-text">Trocar e-mail</button><button type="button" id="memory-resend" class="memory-secondary" hidden>Reenviar voucher por e-mail</button><button type="button" id="memory-refresh" class="memory-text">Atualizar jogo</button></div>
+    </div>
+    <details class="memory-rules"><summary>Regras, validade e privacidade</summary><ul><li>Encontre os 25 pares entre 50 cartas em até 80 jogadas. Virar duas cartas conta como uma jogada. A posição das cartas muda em cada partida.</li><li>Até 3 partidas por e-mail nesta campanha. Fechar a janela ou atualizar a página preserva a partida. Encerrar uma partida consome essa chance. Não há limite de tempo.</li><li>Ao vencer, você recebe um cupom individual de 50%, válido por 7 dias a partir da vitória, para uma única contratação confirmada dentro desse prazo.</li><li>O desconto vale somente para o desenvolvimento de landing page, site ou sistema web, conforme escopo e valor da proposta. Não inclui domínio, hospedagem, licenças nem serviços externos. Não é cumulativo e não pode ser convertido em dinheiro.</li><li>Apresente o cupom e o e-mail confirmado ao Felippe antes de contratar. O cupom será validado no painel. O jogo não gera uma contratação automática.</li><li>Armazenamos seu e-mail, verificação, chances, progresso e situação do cupom para operar a campanha e prevenir abuso. O serviço de e-mail recebe o endereço e as mensagens necessárias. Nenhuma informação do jogo é enviada à IA.</li></ul><a href="termos-lgpd.html" target="_blank" rel="noopener">Privacidade e contato</a></details>
+  </div>
+</dialog>
+
+<section class="work-section" id="como-funciona" aria-labelledby="work-title">
             <div class="work-wrap">
                 <span class="work-eyebrow">Da ideia à entrega</span>
                 <h2 id="work-title">Como funciona a contratação</h2>
@@ -828,3 +890,5 @@ file_put_contents($arquivo, $visitas);
 
 </body>
 </html>
+<link rel="stylesheet" href="css/assistente.css?v=20261109-gemini">
+<script src="js/assistente.js?v=20261109-gemini" defer></script>

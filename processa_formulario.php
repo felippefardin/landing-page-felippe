@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/src/bootstrap.php';
 $conn = db();
+// Apply Brasilia time to the connection that saves contact messages.
+$conn->query("SET time_zone = '-03:00'");
 
 $nome = $_POST['nome'] ?? '';
 $email = $_POST['email'] ?? '';
