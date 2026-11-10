@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             background-color: #c9302c;
         }
     </style>
-    <script src="js/acessibilidade-global.js?v=20260814f" defer></script>
+    <script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script>
 </head>
 <body>
     <div class="container">

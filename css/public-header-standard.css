@@ -1,0 +1,77 @@
+/* Shared public navigation: consistent brand and spacing on every page. */
+.public-nav,
+body.home-wide .public-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px 24px !important;
+  padding:16px max(20px, calc((100% - 1180px) / 2)) !important;
+  background:#10233d;
+}
+.public-nav .public-nav__brand,
+body.home-wide .public-nav .public-nav__brand {
+  display:flex;
+  flex-direction:column;
+  flex-shrink:0;
+  gap:0;
+  font-size:19px !important;
+  font-weight:800;
+  line-height:1.35;
+  color:#fff;
+  white-space:nowrap !important;
+  text-decoration:none;
+}
+.public-nav .public-nav__links,
+body.home-wide .public-nav .public-nav__links {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px 18px !important;
+  font-size:16px;
+}
+@media(max-width:767px) {
+  .public-nav,body.home-wide .public-nav {padding:12px 20px !important;gap:12px !important;}
+  .public-nav .public-nav__brand,body.home-wide .public-nav .public-nav__brand {font-size:17px !important;}
+  .public-nav .public-nav__links,body.home-wide .public-nav .public-nav__links {gap:10px 14px !important;font-size:14px;}
+}
+/* Keep brand, navigation and accessibility on the same desktop row. */
+@media(min-width:1200px) {
+  body .public-nav:has(#accessibility-toolbar),
+  body.home-wide .public-nav:has(#accessibility-toolbar) {
+    display:grid !important;
+    grid-template-columns:max-content minmax(0,1fr) max-content;
+    align-items:center;
+    gap:20px !important;
+    padding:14px max(22px, calc((100% - 1600px) / 2)) !important;
+  }
+  body .public-nav:has(#accessibility-toolbar) .public-nav__links,
+  body.home-wide .public-nav:has(#accessibility-toolbar) .public-nav__links {
+    display:flex;
+    flex-wrap:nowrap !important;
+    justify-content:flex-end;
+    align-items:center;
+    gap:16px !important;
+    white-space:nowrap;
+  }
+  body .public-nav:has(#accessibility-toolbar) #accessibility-toolbar {
+    grid-column:auto;
+    justify-self:end;
+    flex-wrap:nowrap;
+    width:auto;
+    padding:0 0 0 18px;
+    border-top:0;
+    border-left:1px solid rgba(148,163,184,.3);
+  }
+  body .public-nav #accessibility-toolbar .language-control {
+    flex-shrink:0;
+    white-space:nowrap;
+  }
+  body .public-nav .nav-builder-anchor {flex-shrink:0;}
+}
+@media(min-width:1200px) and (max-width:1399px) {
+  body .public-nav:has(#accessibility-toolbar),body.home-wide .public-nav:has(#accessibility-toolbar) {gap:12px !important;}
+  body .public-nav:has(#accessibility-toolbar) .public-nav__links,body.home-wide .public-nav:has(#accessibility-toolbar) .public-nav__links {gap:10px !important;font-size:14px;}
+  body .public-nav .public-nav__brand,body.home-wide .public-nav .public-nav__brand {font-size:17px !important;}
+  body .public-nav:has(#accessibility-toolbar) #accessibility-toolbar {padding-left:12px;}
+}

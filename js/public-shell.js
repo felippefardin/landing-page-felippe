@@ -35,7 +35,7 @@
       footer.className = 'public-footer';
       footer.innerHTML =
         socialMarkup +
-        '<p>Vila Velha/ES · Atendimento remoto e presencial</p>' +
+        '<p>Vila Velha/ES</p>' +
         '<p>&copy; 2026 Tech Tecnologia. Todos os direitos reservados.</p>';
       document.body.append(footer);
     } else if (!existingFooter.querySelector('.footer-social, .public-footer__social')) {

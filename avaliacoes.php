@@ -41,15 +41,15 @@ $flash=$_SESSION['review_flash']??'';unset($_SESSION['review_flash']);
 <!DOCTYPE html><html lang="pt-BR"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Avaliação | Painel</title><meta name="robots" content="noindex,nofollow">
-<link rel="stylesheet" href="css/avaliacoes.css?v=20261109">
-<script src="js/acessibilidade-global.js?v=20261109-dark2" defer></script>
+<link rel="stylesheet" href="css/avaliacoes.css?v=20261110-padrao">
+<script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script>
 <script src="js/avaliacoes.js?v=20261109" defer></script>
-</head><body class="review-admin"><header><a href="home.php">← Voltar ao painel</a><h1>Avaliação</h1><p>Aprove, desative, edite ou exclua os comentários enviados pelo site.</p></header>
-<main>
+</head><body class="review-admin"><header class="review-admin-header"><div class="review-admin-heading"><a class="review-admin-brand" href="home.php"><img src="img/logotipofelippe.png" alt="Felippe Andreata" width="240" height="80"></a><div><h1>Avaliações</h1><p>Gerencie os comentários enviados pelo site.</p></div></div><a class="review-back" href="home.php">&larr; Voltar ao painel</a></header>
+<main id="conteudo-principal" class="review-admin-main">
 <?php if ($error): ?><p class="error" role="alert"><?= review_escape($error) ?></p><?php endif; ?>
 <?php if ($flash): ?><p class="success" role="status"><?= review_escape($flash) ?></p><?php endif; ?>
 <form method="get" class="review-filter"><label for="review-filter">Situação</label><select name="status" id="review-filter"><?php foreach ([''=>'Todas','pendente'=>'Pendentes','aprovada'=>'Aprovadas','desativada'=>'Desativadas'] as $key=>$label): ?><option value="<?= $key ?>" <?= $filter===$key?'selected':'' ?>><?= $label ?></option><?php endforeach; ?></select><button>Filtrar</button></form>
-<p><?= $total ?> avaliação(ões). Só as aprovadas ficam visíveis na página inicial.</p>
+<p class="review-count"><?= $total ?> avaliação(ões). Só as aprovadas ficam visíveis na página inicial.</p>
 <?php foreach ($rows as $row): ?>
 <article class="review-card">
  <h2><?= review_escape($row['nome']) ?></h2><p><strong><?= (int)$row['estrelas'] ?>/5 estrelas</strong> · <?= review_escape($row['status']) ?> · <?= review_escape($row['criado_em']) ?></p>
@@ -65,5 +65,5 @@ $flash=$_SESSION['review_flash']??'';unset($_SESSION['review_flash']);
 </article>
 <?php endforeach; ?>
 <?php if (!$rows && !$error): ?><p>Nenhuma avaliação nesta situação.</p><?php endif; ?>
-<nav aria-label="Paginação"><?php if ($page>1): ?><a href="?pagina=<?= $page-1 ?>&amp;status=<?= review_escape($filter) ?>">← Anterior</a><?php endif; ?> <span>Página <?= $page ?> de <?= max(1,(int)ceil($total/20)) ?></span> <?php if($page*20<$total): ?><a href="?pagina=<?= $page+1 ?>&amp;status=<?= review_escape($filter) ?>">Próxima →</a><?php endif; ?></nav>
+<nav class="review-pagination" aria-label="Paginação"><?php if ($page>1): ?><a href="?pagina=<?= $page-1 ?>&amp;status=<?= review_escape($filter) ?>">← Anterior</a><?php endif; ?> <span>Página <?= $page ?> de <?= max(1,(int)ceil($total/20)) ?></span> <?php if($page*20<$total): ?><a href="?pagina=<?= $page+1 ?>&amp;status=<?= review_escape($filter) ?>">Próxima →</a><?php endif; ?></nav>
 </main></body></html>

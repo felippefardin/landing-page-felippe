@@ -127,7 +127,7 @@ csrf_token();
       }
     }
   </style>
-    <script src="js/acessibilidade-global.js?v=20260814f" defer></script>
+    <script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script>
 </head>
 <body>
 
@@ -138,6 +138,9 @@ csrf_token();
 
 <main>
   <div class="painel-botoes">
+    <a href="documentos-assinados.php" class="botao-painel"><i class="fas fa-file-signature"></i> Contratos assinados</a>
+    <a href="reembolsos.php" class="botao-painel"><i class="fas fa-undo"></i> Reembolsos</a>
+    <a href="validar-cupom.php" class="botao-painel"><i class="fas fa-ticket"></i> Validar cupom</a>
     <a href="avaliacoes.php" class="botao-painel"><i class="fas fa-star"></i> Avaliação</a>
     <a href="admin.php" class="botao-painel"><i class="fas fa-bell"></i> Mensagens não respondidas</a>
     <a href="cadastrosatuais.php" class="botao-painel"><i class="fas fa-list"></i> Cadastros atuais</a>

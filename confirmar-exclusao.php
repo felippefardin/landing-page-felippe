@@ -55,7 +55,7 @@ require_auth();
             background-color: #bbb;
         }
     </style>
-    <script src="js/acessibilidade-global.js?v=20260814f" defer></script>
+    <script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script>
 </head>
 <body>
     <div class="box">

@@ -90,6 +90,33 @@
 
     toolbar.append(decrease, reset, increase, status, theme);
     function mountToolbar() {
+      if (document.querySelector('script[data-accessibility-fixed]')) {
+        let fixedHeader = document.querySelector('.accessibility-header');
+        if (!fixedHeader) {
+          fixedHeader = document.createElement('header');
+          fixedHeader.className = 'accessibility-header';
+          fixedHeader.setAttribute('aria-label', 'Acessibilidade e idioma');
+          document.body.prepend(fixedHeader);
+        }
+        fixedHeader.append(toolbar);
+        if (!document.body.hasAttribute('data-accessibility-fixed')) {
+          const originalPadding = getComputedStyle(document.body).paddingTop;
+          document.body.style.setProperty('--accessibility-original-padding', originalPadding);
+          document.body.setAttribute('data-accessibility-fixed', '');
+          const updateHeight = () => {
+            document.body.style.setProperty('--accessibility-header-height', Math.ceil(fixedHeader.getBoundingClientRect().height) + 'px');
+            document.documentElement.style.setProperty('--accessibility-header-height', Math.ceil(fixedHeader.getBoundingClientRect().height) + 'px');
+          };
+          updateHeight();
+          if (typeof ResizeObserver !== 'undefined') {
+            const observer = new ResizeObserver(updateHeight);
+            observer.observe(fixedHeader);
+          } else {
+            window.addEventListener('resize', updateHeight);
+          }
+        }
+        return true;
+      }
       const nav = document.querySelector('.site-nav, .public-nav');
       const header = nav || document.querySelector('body > header:not(.accessibility-header)');
       if (!header) return false;
@@ -138,7 +165,7 @@
 
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = 'css/acessibilidade-global.css?v=20261109-login-layout';
+  stylesheet.href = 'css/acessibilidade-global.css?v=20261110-reviews-layout';
   document.head.append(stylesheet);
 
   document.addEventListener('DOMContentLoaded', () => {

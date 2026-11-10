@@ -1,0 +1,40 @@
+/* Compact only the homepage header; retain the existing content and accessibility. */
+body.home-wide #inicio.site-header{min-height:0!important;height:auto;padding:26px 0!important}
+body.home-wide #inicio.site-header .header-conteudo{width:calc(100% - 2 * var(--home-gutter));max-width:none;padding:0!important;gap:clamp(24px,4vw,64px);flex-wrap:nowrap;align-items:center}
+body.home-wide #inicio.site-header .logo{display:block;width:clamp(150px,17vw,230px)!important;max-width:28%;height:auto;flex:0 0 auto}
+body.home-wide #inicio.site-header .header-textos{flex:1;max-width:1000px;gap:12px}
+body.home-wide #inicio.site-header .header-textos h1{font-size:clamp(25px,2.3vw,38px)!important;line-height:1.18;max-width:42ch;margin:0}
+body.home-wide #inicio.site-header .header-textos .slogan{font-size:clamp(15px,1.15vw,18px);line-height:1.55;margin:0;max-width:76ch}
+body.home-wide #inicio.site-header .header-beneficios{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;margin:0}
+body.home-wide #inicio.site-header .header-cta{margin:0;gap:12px}
+body.home-wide #inicio.site-header .btn-destaque{padding:11px 18px;font-size:15px;min-height:42px;margin:0}
+body.home-wide .public-nav{padding-block:10px!important;gap:10px 20px!important}
+
+body.home-wide .public-nav .public-nav__links{gap:10px 16px!important;font-size:14px}
+body.home-wide .public-nav .nav-builder-anchor{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:7px 12px;border:1px solid #67e8f9;border-radius:8px;background:#133b56;color:#a5f3fc!important;font-weight:700;text-decoration:none;white-space:nowrap}
+body.home-wide .public-nav .nav-builder-anchor:hover{background:#1d4ed8;color:#fff!important}
+.nav-builder-anchor svg{display:block;width:19px;height:19px;flex:none}
+body.home-wide #criador-de-paginas{scroll-margin-top:150px}
+body.home-wide #criador-de-paginas:target{outline:3px solid #67e8f9;outline-offset:4px}
+@media(max-width:767px){body.home-wide #inicio.site-header{padding:22px 0!important}body.home-wide #inicio.site-header .header-conteudo{flex-direction:column;gap:18px;text-align:center}body.home-wide #inicio.site-header .logo{width:160px!important;max-width:65%}body.home-wide #inicio.site-header .header-textos{align-items:center;gap:12px}body.home-wide #inicio.site-header .header-textos h1{font-size:clamp(24px,5.4vw,30px)!important;max-width:28ch}body.home-wide #inicio.site-header .header-beneficios{justify-content:center;font-size:12px;gap:8px 12px}body.home-wide .public-nav .public-nav__links{gap:8px 12px!important;font-size:13px}body.home-wide .public-nav .nav-builder-anchor{padding:6px 10px;min-height:34px}body.home-wide #criador-de-paginas{scroll-margin-top:210px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+body.home-wide #inicio.site-header .container-botao.cabecalho{margin:0;padding:0;background:transparent;border:0;box-shadow:none}
+
+/* Center the hero CTA label and arrow within the pill. */
+body.home-wide #inicio.site-header .container-botao.cabecalho > .btn-destaque {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px;
+  box-sizing: border-box;
+  line-height: 1.3 !important;
+  text-align: center;
+  vertical-align: middle;
+}
+body.home-wide #inicio.site-header .container-botao.cabecalho > .btn-destaque > i {
+  flex: 0 0 auto;
+  margin: 0;
+  line-height: 1;
+  align-self: center;
+}

@@ -64,7 +64,7 @@ function exibirMensagem($tipo, $mensagem, $voltar = 'admin.php') {
                 background-color: #0056b3;
             }
         </style>
-    <script src='js/acessibilidade-global.js?v=20260814f' defer></script>
+    <script src='js/acessibilidade-global.js?v=20261110-reviews-layout' data-accessibility-fixed defer></script>
 </head>
     <body>
         <div class='mensagem'>

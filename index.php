@@ -86,7 +86,9 @@ body.home-wide #conteudo-principal .work-wrap{width:100%;max-width:none;margin:0
 body.home-wide #conteudo-principal .work-faq{width:100%;max-width:none}
 </style>
 <link rel="stylesheet" href="css/memoria-desconto.css?v=20261109-memory1">
-<script src="js/memoria-desconto.js?v=20261109-memory1" defer></script>
+<script src="js/memoria-desconto.js?v=20261110-20261109-memory1" defer></script>
+<link rel="stylesheet" href="css/criador-oferta.css?v=20261110-destaque">
+<link rel="stylesheet" href="css/home-header-compact.css?v=20261110-botao-centralizado">
 </head>
 <body class="home-wide">
     <!-- VLibras widget -->
@@ -444,7 +446,7 @@ body.home-wide #conteudo-principal .work-faq{width:100%;max-width:none}
         </button>
     </div>
 
-    <?php require __DIR__ . '/includes/public-nav.php'; ?>
+    <?php $showBuilderLink=true; require __DIR__ . '/includes/public-nav.php'; ?>
 
     <header id="inicio" class="site-header">
         <div class="header-conteudo">
@@ -566,9 +568,27 @@ body.home-wide #conteudo-principal .work-faq{width:100%;max-width:none}
           </div>
         </section> -->
 
+        <section class="builder-offer" id="criador-de-paginas" aria-labelledby="builder-offer-title">
+  <div class="builder-offer__copy">
+    <span class="builder-offer__label">Experimente o criador de páginas</span>
+    <h2 id="builder-offer-title">Seu negócio merece um site.<br><em>Crie o seu agora.</em></h2>
+    <p class="builder-offer__lead">Escolha um modelo, coloque a sua marca e veja sua página ganhar forma. Você personaliza, confere a prévia e só paga quando decidir finalizar.</p>
+    <ul class="builder-offer__benefits"><li>Sem criar conta</li><li>Prévia em tempo real</li><li>Código PHP + banco SQL</li><li>Painel próprio</li></ul>
+    <a class="builder-offer__cta" href="criar-site.php">Quero criar meu site <span aria-hidden="true">→</span></a>
+    <p class="builder-offer__reassurance">Comece pelos modelos. Experimente antes de pagar.</p>
+  </div>
+  <a class="builder-offer__visual" href="criar-site.php" aria-label="Conhecer os modelos e começar a criar meu site">
+    <div class="builder-offer__window" aria-hidden="true">
+      <div class="builder-offer__windowbar"><span class="builder-offer__dots"><i></i><i></i><i></i></span><span>Imagine sua marca aqui</span></div>
+      <div class="builder-offer__mock"><div class="builder-offer__mocknav"><span>SUA MARCA</span><span>Sobre · Serviços · Contato</span></div><div class="builder-offer__mockhero"><div><strong>Sua ideia.<br>Seu negócio.<br>Seu novo site.</strong><span class="builder-offer__line"></span><span class="builder-offer__line builder-offer__line--short"></span><span class="builder-offer__mockbutton">Vamos conversar</span></div><div class="builder-offer__art">&lt;/&gt;</div></div><div class="builder-offer__mockcards"><span></span><span></span><span></span></div></div>
+      <div class="builder-offer__price"><span>Seu site por<br><strong>R$ 350</strong><small>Pagamento único pela página</small></span><span>Personalize.<br>Confira.<br>Publique na sua hospedagem.</span></div>
+    </div>
+  </a>
+  <p class="builder-offer__terms">Você recebe os arquivos após o pagamento confirmado. Requer hospedagem com PHP e MySQL, contratada à parte. Ajuda para publicar é opcional: R$ 150 por até 2 horas. Cupom válido somente sobre os R$ 350 da página.</p>
+</section>
         <section class="memory-promo" id="desafio-memoria" aria-labelledby="memory-promo-title">
-  <div><span class="memory-eyebrow">UM DESAFIO PARA SUA MEMÓRIA</span><h2 id="memory-promo-title">Encontre os pares. Ganhe 50% no seu próximo projeto.</h2><p>São 50 cartas e 25 pares, em posições diferentes a cada partida. Complete o tabuleiro em até 80 jogadas para conquistar seu voucher.</p><p class="memory-summary">3 partidas por e-mail confirmado · Cupom válido por 7 dias · Uma utilização</p></div>
-  <div class="memory-promo-action"><div class="memory-card-preview" aria-hidden="true"><span>?</span><span>◆</span><span>◆</span></div><button class="memory-primary" id="memory-launch" type="button" disabled>Abrir jogo da memória</button><p>Gratuito. Desconto apenas no desenvolvimento.</p></div>
+  <div><span class="memory-eyebrow">UM DESAFIO PARA SUA MEMÓRIA</span><h2 id="memory-promo-title">Encontre os pares e ganhe um vale-desconto surpresa no seu primeiro projeto.</h2><p>São 50 cartas e 25 pares, em posições diferentes a cada partida. Complete o tabuleiro em até 80 jogadas para conquistar seu voucher.</p><p class="memory-summary">3 partidas por e-mail confirmado · Cupom válido por 7 dias · Uma utilização</p></div>
+  <div class="memory-promo-action"><div class="memory-card-preview" aria-hidden="true"><span>?</span><span>◆</span><span>◆</span></div><button class="memory-primary" id="memory-launch" type="button" disabled>Abrir jogo da memória</button><p>Gratuito. Seu desconto surpresa chega por e-mail.</p></div>
 </section>
 <dialog id="memory-dialog" class="memory-dialog" aria-labelledby="memory-title" data-no-translate translate="no">
   <div class="memory-shell">
@@ -588,7 +608,7 @@ body.home-wide #conteudo-principal .work-faq{width:100%;max-width:none}
       <div id="memory-board" class="memory-board" role="group" aria-label="Tabuleiro com 50 cartas. Use Tab ou as setas para navegar."></div>
       <div class="memory-controls"><button type="button" id="memory-start" class="memory-primary">Começar partida</button><button type="button" id="memory-abandon" class="memory-secondary" hidden>Encerrar esta partida</button><button type="button" id="memory-change" class="memory-text">Trocar e-mail</button><button type="button" id="memory-resend" class="memory-secondary" hidden>Reenviar voucher por e-mail</button><button type="button" id="memory-refresh" class="memory-text">Atualizar jogo</button></div>
     </div>
-    <details class="memory-rules"><summary>Regras, validade e privacidade</summary><ul><li>Encontre os 25 pares entre 50 cartas em até 80 jogadas. Virar duas cartas conta como uma jogada. A posição das cartas muda em cada partida.</li><li>Até 3 partidas por e-mail nesta campanha. Fechar a janela ou atualizar a página preserva a partida. Encerrar uma partida consome essa chance. Não há limite de tempo.</li><li>Ao vencer, você recebe um cupom individual de 50%, válido por 7 dias a partir da vitória, para uma única contratação confirmada dentro desse prazo.</li><li>O desconto vale somente para o desenvolvimento de landing page, site ou sistema web, conforme escopo e valor da proposta. Não inclui domínio, hospedagem, licenças nem serviços externos. Não é cumulativo e não pode ser convertido em dinheiro.</li><li>Apresente o cupom e o e-mail confirmado ao Felippe antes de contratar. O cupom será validado no painel. O jogo não gera uma contratação automática.</li><li>Armazenamos seu e-mail, verificação, chances, progresso e situação do cupom para operar a campanha e prevenir abuso. O serviço de e-mail recebe o endereço e as mensagens necessárias. Nenhuma informação do jogo é enviada à IA.</li></ul><a href="termos-lgpd.html" target="_blank" rel="noopener">Privacidade e contato</a></details>
+    <details class="memory-rules"><summary>Regras, validade e privacidade</summary><ul><li>Encontre os 25 pares entre 50 cartas em até 80 jogadas. Virar duas cartas conta como uma jogada. A posição das cartas muda em cada partida.</li><li>Até 3 partidas por e-mail nesta campanha. Fechar a janela ou atualizar a página preserva a partida. Encerrar uma partida consome essa chance. Não há limite de tempo.</li><li>Ao vencer, você recebe um vale-desconto surpresa individual para seu primeiro projeto, válido por 7 dias a partir da vitória, para uma única contratação confirmada dentro desse prazo.</li><li>O percentual do desconto será informado no e-mail do prêmio e aplicado sobre o valor final do seu primeiro projeto, conforme a proposta aprovada. Não é cumulativo e não pode ser convertido em dinheiro.</li><li>Apresente o cupom e o e-mail confirmado ao Felippe antes de contratar. O cupom será validado no painel. O jogo não gera uma contratação automática.</li><li>Armazenamos seu e-mail, verificação, chances, progresso e situação do cupom para operar a campanha e prevenir abuso. O serviço de e-mail recebe o endereço e as mensagens necessárias. Nenhuma informação do jogo é enviada à IA.</li></ul><a href="termos-lgpd.html" target="_blank" rel="noopener">Privacidade e contato</a></details>
   </div>
 </dialog>
 

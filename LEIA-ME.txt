@@ -1,27 +1,13 @@
-﻿CORREÇÃO — ERRO AO INFORMAR O E-MAIL NO JOGO
+CRIADOR DE PÁGINAS — PACOTE COMPLETO DE ATUALIZAÇÃO
 
-O erro de atualização acontecia porque as tabelas do jogo não haviam sido importadas. A tela recebia uma falha ao carregar, mas ainda permitia enviar o formulário sem a confirmação de segurança.
+Leia INSTALACAO-CRIADOR.md antes de instalar.
 
-O banco local felippe e o banco da hospedagem já receberam as tabelas nesta sessão. Suas chances não foram reiniciadas.
+Contém editor, preços fixos, suporte opcional, cupom, termo por código de e-mail, integração de pagamento, entrega ZIP/PDF e arquivo de documentos no painel.
+A entrega do cliente agora inclui PHP, banco.sql, painel próprio para textos e mensagens e instruções de instalação em hospedagem com PHP e MySQL. Não contém credenciais da sua plataforma. Inclui os ajustes anteriores desta conversa.
 
-Copie estes arquivos para a RAIZ do projeto original, preservando as subpastas:
-- memoria-api.php
-- src/memoria-desconto.php
-- js/memoria-desconto.js
-Depois atualize com Ctrl+F5. Não é necessário substituir a index, o .env ou o bootstrap.
+Não contém credenciais, não ativa cobranças por padrão e requer hospedagem compatível com webhook e cron.
+O plano gratuito da InfinityFree não deve ser usado para vendas automáticas sem resolver suas limitações.
 
-A versão corrigida também já foi aplicada à InfinityFree.
+Faça backup, mantenha as subpastas e importe a migração indicada. Não substitua seu .env por um arquivo de exemplo. As pastas dompdf e PHPMailer já existentes no projeto devem permanecer.
 
-Se instalar em outro banco/ambiente, importe migrations/memoria-desconto.sql no banco correto. O SQL apenas cria as tabelas novas caso não existam.
-
-CORREÇÕES
-- Aguarda a sessão de segurança carregar antes de permitir envio.
-- Mostra uma orientação clara se a migração estiver faltando.
-- Permite tentar carregar novamente sem perder as informações digitadas.
-- Renova a confirmação de segurança uma única vez se o servidor rejeitar o CSRF antes de executar a ação. Não repete jogadas automaticamente em falhas de conexão.
-- Mostra a categoria da falha SMTP sem expor credenciais.
-
-ENVIO DOS E-MAILS
-O teste no site online avançou e o provedor de e-mail informou limite de envios atingido. Isso é separado do erro de atualização. Novas tentativas não liberam a cota do provedor.
-O envio ficará disponível quando o provedor liberar a cota ou após configurar outro remetente/serviço SMTP autorizado no .env. Não desative a validação TLS nem coloque senhas no JavaScript.
-Os testes desta sessão não iniciaram nenhuma partida.
+Testes locais foram feitos com banco isolado e simulações de pagamento/e-mail. Ainda é necessário homologar com o provedor e a hospedagem reais antes de ativar vendas.

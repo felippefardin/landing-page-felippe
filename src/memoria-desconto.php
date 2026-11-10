@@ -77,7 +77,7 @@ function memory_mail(string $to,string $subject,string $body): void {
     }
 }
 function memory_rules(): string {
-    return "50% de desconto somente no desenvolvimento de landing page, site ou sistema web, conforme escopo e valor da proposta. Domínio, hospedagem, licenças e serviços externos não estão incluídos. Cupom individual vinculado a este e-mail, não cumulativo, sem conversão em dinheiro e válido para uma única contratação confirmada até a data indicada. Limite de 3 partidas por e-mail nesta campanha, 80 jogadas por partida. Uma jogada corresponde a virar duas cartas. Vence quem encontrar os 25 pares dentro do limite. Sem limite de tempo por partida.";
+    return "15% de desconto sobre o valor final do seu primeiro projeto, conforme a proposta aprovada. Cupom individual vinculado a este e-mail, não cumulativo, sem conversão em dinheiro e válido para uma única contratação confirmada até a data indicada. Limite de 3 partidas por e-mail nesta campanha, 80 jogadas por partida. Uma jogada corresponde a virar duas cartas. Vence quem encontrar os 25 pares dentro do limite. Sem limite de tempo por partida.";
 }
 function memory_player(mysqli $db,int $id,bool $lock=false): array {
     $row=memory_sql($db,'SELECT * FROM promo_memory_players WHERE id=? AND campaign=?'.($lock?' FOR UPDATE':''),'is',[$id,MEMORY_CAMPAIGN])->get_result()->fetch_assoc();
@@ -144,7 +144,7 @@ function memory_send_coupon(mysqli $db,int $id): bool {
     $zone=new DateTimeZone('America/Sao_Paulo');
     $expires=(new DateTimeImmutable($row['expires_at'],new DateTimeZone('UTC')))->setTimezone($zone)->format('d/m/Y \à\s H:i');
     try {
-        memory_mail($row['email'],'Seu voucher de 50% — Tech Tecnologia',"Parabéns! Você encontrou os 25 pares.\n\nCupom: ".$row['coupon']."\nDesconto: 50% no desenvolvimento do projeto.\nVálido até: ".$expires." (horário de Brasília).\n\n".memory_rules()."\n\nSolicite sua proposta: https://felippeandreatadev.page.gd/index.php#formulario\nApresente este cupom e o e-mail confirmado ao Felippe antes de fechar a contratação.");
+        memory_mail($row['email'],'Seu vale-desconto surpresa: 15% — Tech Tecnologia',"Parabéns! Você encontrou os 25 pares.\n\nCupom: ".$row['coupon']."\nDesconto: 15% sobre o valor final do seu primeiro projeto.\nVálido até: ".$expires." (horário de Brasília).\n\n".memory_rules()."\n\nSolicite sua proposta: https://felippeandreatadev.page.gd/index.php#formulario\nApresente este cupom e o e-mail confirmado ao Felippe antes de fechar a contratação.");
         memory_sql($db,'UPDATE promo_memory_players SET mail_sent=1 WHERE id=?','i',[$id]);return true;
     } catch(Throwable $e) {error_log('Memory voucher email unavailable: '.get_class($e));return false;}
 }

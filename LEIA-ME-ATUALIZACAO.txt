@@ -1,0 +1,21 @@
+CÓDIGO ATUALIZADO — PACOTE CONSOLIDADO
+
+1. Faça uma cópia de segurança do projeto atual.
+2. Extraia este ZIP e copie os arquivos para a raiz do seu projeto, mantendo todas as subpastas e substituindo os arquivos correspondentes.
+3. Não apague os demais arquivos do projeto. Este pacote reúne arquivos alterados e novos; usa as bibliotecas e imagens já existentes.
+4. Não substitua o seu .env nem as suas credenciais por exemplos.
+5. Atualize o navegador com Ctrl+F5.
+
+AJUSTES CONFERIDOS
+- O botão Criador de páginas foi retirado da área logada. Contratos, cupons e demais atalhos existentes foram mantidos.
+- O criador é público e retorna para index.php, inclusive se houver uma sessão ativa.
+- O cabeçalho da index ficou mais compacto.
+- O ícone Criar site do cabeçalho leva à caixa de apresentação na própria index. O botão dessa caixa abre o editor.
+- Caixa do criador com largura total e chamada visual destacada.
+- Contratos usam a sessão do administrador e permitem visualizar ou baixar PDF, sem confirmação pelo jogo.
+- Acessibilidade ajustada nas páginas internas e avaliações padronizadas.
+- Jogo com vale-desconto surpresa de 15% sobre a página; suporte opcional de R$ 150 fica fora do desconto.
+- Gerador entrega PHP, SQL, painel e instruções; página de R$ 350, suporte de R$ 150 opcional e desmarcado.
+
+PAGAMENTOS
+As vendas continuam dependentes das credenciais reais e de hospedagem compatível com webhook e cron. Este pacote não ativa pagamentos nem efetua cobrança. Leia INSTALACAO-CRIADOR.md para instalar as tabelas e configurar o módulo. Preserve as pastas dompdf e PHPMailer já existentes.

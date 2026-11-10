@@ -179,7 +179,7 @@ input[type=text], input[type=email], input[type=password] { width: 100%; padding
           display: block;
         }
 </style>
-    <script src="js/acessibilidade-global.js?v=20260814f" defer></script>
+    <script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script>
 </head>
 <body>
 

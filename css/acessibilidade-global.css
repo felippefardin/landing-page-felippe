@@ -320,3 +320,45 @@ html body:has(> .container input[type="password"])::after {
   html body:has(> .container input[type="password"]) > #accessibility-toolbar { padding: 10px 12px; }
   html body:has(> .container input[type="password"]) > .container { padding: 28px 22px; }
 }
+
+/* Keep private-page controls above the content, with space for every wrapped row. */
+body[data-accessibility-fixed] {
+  padding-top: calc(var(--accessibility-original-padding, 0px) + var(--accessibility-header-height, 58px)) !important;
+}
+html:has(body[data-accessibility-fixed]) { scroll-padding-top: var(--accessibility-header-height, 100px); }
+html body[data-accessibility-fixed] > .accessibility-header {
+  position: fixed !important;
+  inset: 0 0 auto 0 !important;
+  z-index: 2147483000 !important;
+  display: flex !important;
+  justify-content: flex-end;
+  width: 100%;
+  max-height: 100dvh;
+  overflow-y: auto;
+  margin: 0;
+  padding: 10px 24px;
+  border: 0;
+  border-bottom: 1px solid #334155;
+  background: #071b35 !important;
+  color: #f8fafc !important;
+  box-shadow: 0 3px 14px rgba(0,0,0,.2);
+  transform: none !important;
+}
+body[data-accessibility-fixed] > .accessibility-header #accessibility-toolbar {
+  position: static !important;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: #f8fafc !important;
+}
+@media (max-width: 760px) {
+  html body[data-accessibility-fixed] > .accessibility-header { padding: 10px 12px; }
+}
+@media print {
+  body[data-accessibility-fixed] { padding-top: var(--accessibility-original-padding, 0px) !important; }
+  html body[data-accessibility-fixed] > .accessibility-header { display: none !important; }
+}
+
+/* Fixed accessibility headers must never inherit content container widths. */
+html body[data-accessibility-fixed] > header.accessibility-header { max-width:none !important; width:100% !important; margin:0 !important; }

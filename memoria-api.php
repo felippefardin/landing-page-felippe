@@ -72,7 +72,7 @@ try {
             if (!is_int($input['position']??null)) throw new MemoryProblem('Carta inválida.');
             memory_apply_flip($game,$input['position']);
             if ($game['status']==='won') {
-                $won=true;$coupon='FA50-'.strtoupper(bin2hex(random_bytes(12)));$expires=gmdate('Y-m-d H:i:s',time()+7*86400);
+                $won=true;$coupon='FAS-'.strtoupper(bin2hex(random_bytes(12)));$expires=gmdate('Y-m-d H:i:s',time()+7*86400);
                 memory_sql($db,"UPDATE promo_memory_players SET coupon=?,coupon_status='active',won_at=?,expires_at=? WHERE id=? AND coupon IS NULL",'sssi',[$coupon,memory_now(),$expires,$id]);
             }
         } elseif ($action==='settle') {

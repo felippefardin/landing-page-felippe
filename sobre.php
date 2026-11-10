@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/public-modern.css?v=20260824"><link rel="stylesheet" href="css/acessibilidade-global.css?v=20260814f"><link rel="stylesheet" href="css/sobre-modern.css?v=20260824"><link rel="stylesheet" href="css/sobre-fixes.css?v=20261016">
-  <script src="js/acessibilidade-global.js?v=20260814f" defer></script><script src="js/public-shell.js?v=20260824" defer></script>
+  <script src="js/acessibilidade-global.js?v=20260814f" defer></script><script src="js/public-shell.js?v=20261110" defer></script>
 </head>
 <body>
   <?php require __DIR__ . '/includes/public-nav.php'; ?>

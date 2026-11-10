@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $senha = $_POST['senha'] ?? '';
 
     // Usar prepared statement para segurança
-    $stmt = $conn->prepare("SELECT nome, senha FROM usuarios WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, nome, email, senha FROM usuarios WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -23,6 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (password_verify($senha, $usuario['senha'])) {
             session_regenerate_id(true);
             $_SESSION['usuario'] = $usuario['nome'];
+            $_SESSION['usuario_id'] = (int)$usuario['id'];
+            $_SESSION['usuario_email'] = $usuario['email'];
+            $_SESSION['auth_provider'] = 'password';
             header("Location: home.php");
             exit;
         } else {

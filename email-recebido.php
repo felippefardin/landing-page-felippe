@@ -190,7 +190,7 @@ $resultado = $conn->query($sql);
       margin-top: 10px;
     }
   </style>
-    <script src="js/acessibilidade-global.js?v=20260814f" defer></script>
+    <script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script>
 </head>
 <body>
 
