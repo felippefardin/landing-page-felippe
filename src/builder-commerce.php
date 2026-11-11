@@ -402,7 +402,15 @@ function bc_resend_otp(mysqli $db, array $o): bool {
 
         return true;
     } catch (Throwable $e) {
-        return false;
+        if ($e instanceof MemoryProblem) { throw $e; }
+        if ($e->getMessage() === "Mail library missing") {
+            throw new MemoryProblem("Biblioteca PHPMailer ausente na hospedagem.", 503, "smtp_library");
+        }
+        if ($e->getMessage() === "SMTP unavailable") {
+            throw new MemoryProblem("Usuário ou senha SMTP não carregados na hospedagem.", 503, "smtp_config");
+        }
+        error_log("Builder resend failed: ".get_class($e));
+        throw new MemoryProblem("Falha interna ao preparar o e-mail. Confira a biblioteca e a configuração SMTP.", 503, "smtp_internal");
     }
 }
 

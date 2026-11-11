@@ -1,13 +1,8 @@
-CRIADOR DE PÁGINAS — PACOTE COMPLETO DE ATUALIZAÇÃO
+Atualização do layout dos botões — criar-site
 
-Leia INSTALACAO-CRIADOR.md antes de instalar.
-
-Contém editor, preços fixos, suporte opcional, cupom, termo por código de e-mail, integração de pagamento, entrega ZIP/PDF e arquivo de documentos no painel.
-A entrega do cliente agora inclui PHP, banco.sql, painel próprio para textos e mensagens e instruções de instalação em hospedagem com PHP e MySQL. Não contém credenciais da sua plataforma. Inclui os ajustes anteriores desta conversa.
-
-Não contém credenciais, não ativa cobranças por padrão e requer hospedagem compatível com webhook e cron.
-O plano gratuito da InfinityFree não deve ser usado para vendas automáticas sem resolver suas limitações.
-
-Faça backup, mantenha as subpastas e importe a migração indicada. Não substitua seu .env por um arquivo de exemplo. As pastas dompdf e PHPMailer já existentes no projeto devem permanecer.
-
-Testes locais foram feitos com banco isolado e simulações de pagamento/e-mail. Ainda é necessário homologar com o provedor e a hospedagem reais antes de ativar vendas.
+Faça uma cópia dos arquivos atuais antes de substituir.
+Copie criar-site.php para a raiz do projeto.
+Copie css/criador-site.css para a pasta css do projeto.
+Use os mesmos caminhos no localhost e no InfinityFree.
+Depois atualize a página com Ctrl+F5.
+Não altere seu .env.

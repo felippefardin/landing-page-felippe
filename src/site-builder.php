@@ -67,8 +67,27 @@ function sb_html(array $p,bool $preview=false): string {
     $heroButton=$showCta?'<a class="button" href="'.$e($link).'">'.$e($cta).'</a>':'';
     $contactMarker=in_array('contact',$p['sections'],true)?'<!--CONTACT_FORM-->':'';
     if($preview && $contactMarker!=='')$contactMarker='<section class="section contact"><div class="shell"><h2>Envie uma mensagem</h2><form class="contact-form"><label>Nome<input disabled placeholder="Nome do visitante"></label><label>E-mail<input disabled placeholder="E-mail do visitante"></label><label>Mensagem<textarea disabled rows="4" placeholder="Mensagem do visitante"></textarea></label><p class="contact-privacy">As mensagens serão recebidas no painel do seu site após a instalação.</p><button disabled class="button">Enviar mensagem</button></form></div></section>';
+    $previewNavigation='';
+    if($preview){
+        $previewNavigation=<<<'HTML'
+<script>
+// Keep section links inside the sandboxed srcdoc preview.
+document.addEventListener('click', function(event) {
+    var link=event.target.closest ? event.target.closest('a[href]') : null;
+    if(!link)return;
+    var href=link.getAttribute('href')||'';
+    if(href.charAt(0)!=='#')return;
+    event.preventDefault();
+    var id;
+    try{id=decodeURIComponent(href.slice(1));}catch(error){return;}
+    var section=id?document.getElementById(id):document.body;
+    if(section)section.scrollIntoView({behavior:'smooth',block:'start'});
+});
+</script>
+HTML;
+    }
     $style=$preview?'<style>'.sb_styles().'</style>':'<link rel="stylesheet" href="style.css">';
-    return '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="'.$e($p['intro']).'"><title>'.$e($p['brand']).'</title>'.$style.'</head><body class="'.$p['template'].'" style="--accent:'.$p['color'].';--button-text:'.$contrast.'"><header class="top"><div class="shell"><a class="brand" href="#inicio">'.$logo.'</a><nav aria-label="Navegação principal">'.$nav.'</nav></div></header><main><section id="inicio" class="hero '.($photo===''?'no-photo':'').'"><div class="shell"><div><span class="eyebrow">'.$e($p['brand']).'</span><h1>'.$e($p['headline']).'</h1><p>'.$e($p['intro']).'</p>'.$heroButton.'</div>'.$photo.'</div></section>'.$sections.$contactMarker.'</main><footer><div class="shell">'.$e($p['footer']!==''?$p['footer']:$p['brand'].' — Todos os direitos reservados.').'</div></footer></body></html>';
+    return '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="'.$e($p['intro']).'"><title>'.$e($p['brand']).'</title>'.$style.'</head><body class="'.$p['template'].'" style="--accent:'.$p['color'].';--button-text:'.$contrast.'"><header class="top"><div class="shell"><a class="brand" href="#inicio">'.$logo.'</a><nav aria-label="Navegação principal">'.$nav.'</nav></div></header><main><section id="inicio" class="hero '.($photo===''?'no-photo':'').'"><div class="shell"><div><span class="eyebrow">'.$e($p['brand']).'</span><h1>'.$e($p['headline']).'</h1><p>'.$e($p['intro']).'</p>'.$heroButton.'</div>'.$photo.'</div></section>'.$sections.$contactMarker.'</main><footer><div class="shell">'.$e($p['footer']!==''?$p['footer']:$p['brand'].' — Todos os direitos reservados.').'</div></footer>'.$previewNavigation.'</body></html>';
 }
 function sb_zip(array $p): string {
     $path=tempnam(sys_get_temp_dir(),'site-export-');

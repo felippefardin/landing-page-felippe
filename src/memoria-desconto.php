@@ -55,13 +55,14 @@ function memory_mail(string $to,string $subject,string $body): void {
             require_once $path;
         }
     }
-    $user=memory_env('SMTP_USERNAME');$pass=memory_env('SMTP_PASSWORD');
+    $cfg=smtp_config();
+    $user=$cfg['username'];$pass=$cfg['password'];
     if ($user==='' || $pass==='') throw new RuntimeException('SMTP unavailable');
     $mail=new \PHPMailer\PHPMailer\PHPMailer(true);
-    $mail->isSMTP();$mail->Host=memory_env('SMTP_HOST','smtp.gmail.com');$mail->SMTPAuth=true;
-    $mail->Username=$user;$mail->Password=$pass;$mail->Port=(int)memory_env('SMTP_PORT','587');
+    $mail->isSMTP();$mail->Host=$cfg['host'];$mail->SMTPAuth=true;
+    $mail->Username=$user;$mail->Password=$pass;$mail->Port=(int)$cfg['port'];
     $mail->SMTPSecure=$mail->Port===465?'ssl':'tls';$mail->Timeout=15;$mail->SMTPDebug=0;
-    $mail->CharSet='UTF-8';$mail->setFrom(memory_env('SMTP_FROM_EMAIL',$user),memory_env('SMTP_FROM_NAME','Tech Tecnologia'));
+    $mail->CharSet='UTF-8';$mail->setFrom($cfg['from_email'],$cfg['from_name']);
     $mail->addAddress($to);$mail->isHTML(false);$mail->Subject=$subject;$mail->Body=$body;
     try {$mail->send();}
     catch(\PHPMailer\PHPMailer\Exception $e) {
