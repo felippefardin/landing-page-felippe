@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-const BUILDER_TERMS_VERSION = '2026-11-10-v3-refunds';
+const BUILDER_TERMS_VERSION = '2026-11-12-v4-cpf';
 function sb_escape(mixed $v): string { return htmlspecialchars((string)$v, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
 function sb_money(int $cents): string { return 'R$ '.number_format($cents/100,2,',','.'); }
 function sb_price(bool $support, bool $coupon): array {
@@ -12,6 +12,18 @@ function sb_text(array $input,string $key,int $max,string $fallback=''): string 
     if(!is_string($v) || mb_strlen($v)>$max) throw new InvalidArgumentException('Confira o campo '.$key.'.');
     return trim($v);
 }
+function sb_cpf(array $input,string $key='cpf'): string {
+    $cpf=preg_replace('/\D+/', '', sb_text($input,$key,18));
+    if(!is_string($cpf) || strlen($cpf)!==11 || preg_match('/^(\d)\1{10}$/D',$cpf)) throw new InvalidArgumentException('Informe um CPF válido.');
+    for($digit=9;$digit<11;$digit++){
+        $sum=0;
+        for($i=0;$i<$digit;$i++)$sum+=(int)$cpf[$i]*(($digit+1)-$i);
+        $check=(10*($sum%11))%11;
+        if($check===10)$check=0;
+        if($check!==(int)$cpf[$digit])throw new InvalidArgumentException('Informe um CPF válido.');
+    }
+    return substr($cpf,0,3).'.'.substr($cpf,3,3).'.'.substr($cpf,6,3).'-'.substr($cpf,9,2);
+}
 function sb_image(mixed $image): ?array {
     if($image===null || $image==='') return null;
     if(!is_string($image) || strlen($image)>2800000 || !preg_match('~^data:image/(png|jpeg|webp);base64,([A-Za-z0-9+/=]+)$~D',$image,$m)) throw new InvalidArgumentException('Use uma imagem PNG, JPG ou WebP de até 2 MB.');
@@ -21,7 +33,7 @@ function sb_image(mixed $image): ?array {
     if(!$info || !in_array($info['mime'],['image/png','image/jpeg','image/webp'],true) || $info['mime']!=='image/'.$m[1] || $info[0]>6000 || $info[1]>6000) throw new InvalidArgumentException('Imagem inválida ou com dimensões maiores que 6000 pixels.');
     return ['data'=>$image,'bytes'=>$bytes,'ext'=>['png'=>'png','jpeg'=>'jpg','webp'=>'webp'][$m[1]]];
 }
-function sb_project(array $in): array {
+function sb_project_base(array $in): array {
     $p=[];
     foreach(['brand'=>80,'headline'=>140,'intro'=>450,'about'=>1800,'service1'=>240,'service2'=>240,'service3'=>240,'cta'=>60,'footer'=>180,'email'=>254,'phone'=>20,'instagram'=>250] as $key=>$max) $p[$key]=sb_text($in,$key,$max);
     if($p['brand']==='' || $p['headline']==='') throw new InvalidArgumentException('Preencha o nome do negócio e o título principal.');
@@ -37,11 +49,11 @@ function sb_project(array $in): array {
     $p['logo']=sb_image($in['logo']??null);$p['photo']=sb_image($in['photo']??null);
     return $p;
 }
-function sb_styles(): string { return <<<'CSS'
+function sb_styles_base(): string { return <<<'CSS'
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#172033;background:#f7f9fc;font:17px/1.65 Arial,sans-serif}a{color:inherit}a:focus-visible{outline:3px solid #f59e0b;outline-offset:4px}.shell{width:min(1120px,calc(100% - 40px));margin:auto}.top{padding:22px 0;background:#fff;border-bottom:1px solid #e2e8f0}.top .shell{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;font-size:1.3rem;text-decoration:none;overflow-wrap:anywhere}.brand img{max-width:180px;max-height:70px;object-fit:contain}.top nav{display:flex;flex-wrap:wrap;gap:18px;font-size:.9rem}.hero{padding:90px 0;background:#0b1930;color:white}.hero .shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);align-items:center;gap:54px}.hero.no-photo .shell{display:block;max-width:900px}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hero h1{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.08;letter-spacing:-.04em;margin:14px 0 24px;overflow-wrap:anywhere}.hero p{color:#dbe5f5;max-width:650px}.hero img{width:100%;height:450px;object-fit:cover;border-radius:24px}.button{display:inline-block;margin-top:16px;background:var(--accent);color:var(--button-text);font-weight:700;padding:14px 24px;border-radius:10px;text-decoration:none}.section{padding:72px 0}.section h2{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.2;margin:0 0 24px}.prose{max-width:800px;white-space:pre-line;overflow-wrap:anywhere}.services{background:white}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.cards article{padding:28px;border:1px solid #dbe2ed;border-radius:16px;overflow-wrap:anywhere}.cards span{font-size:2rem;color:var(--accent);font-weight:800}.contact{background:#eaf0f8}.contact a{margin-right:18px;overflow-wrap:anywhere}footer{padding:30px 0;font-size:.9rem;color:#475569;border-top:1px solid #dbe2ed}.consultoria .hero{background:#f0eee8;color:#172033}.consultoria .hero p{color:#475569}.consultoria h1,.consultoria h2{font-family:Georgia,serif;letter-spacing:-.03em}.consultoria .button{border-radius:0}.local .hero{background:linear-gradient(130deg,#102f2a,#17473b)}.local .hero img{border-radius:100px 16px 100px 16px}.local .cards article{background:#f0f7f2}.local .contact{background:#e6f1e9}@media(max-width:700px){.top .shell{align-items:start;flex-direction:column}.top nav{gap:12px}.hero{padding:52px 0}.hero .shell{grid-template-columns:1fr;gap:30px}.hero img{height:300px}.cards{grid-template-columns:1fr}.section{padding:44px 0}.shell{width:calc(100% - 32px)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}.contact-form{max-width:720px}.contact-form label{display:grid;gap:8px;margin:16px 0;font-weight:700}.contact-form input,.contact-form textarea{box-sizing:border-box;width:100%;padding:12px;border:1px solid #94a3b8;border-radius:8px;font:inherit;background:#fff;color:#172033}.contact-form .contact-consent{display:flex;align-items:start;gap:10px;font-size:.9rem;font-weight:400}.contact-form .contact-consent input{width:auto;margin-top:6px}.contact-form .contact-privacy{font-size:.85rem}.contact-honey{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.contact-form .button{border:0;font:700 16px Arial,sans-serif;cursor:pointer}
 CSS;
 }
-function sb_html(array $p,bool $preview=false): string {
+function sb_html_base(array $p,bool $preview=false): string {
     $e=fn($v)=>sb_escape($v);
     $image=function(string $key)use($p,$preview){return !$p[$key]?'':($preview?$p[$key]['data']:'assets/'.$key.'.'.$p[$key]['ext']);};
     $logo=$p['logo']?'<img src="'.$e($image('logo')).'" alt="'.$e($p['brand']).'">':$e($p['brand']);
@@ -97,12 +109,14 @@ function sb_zip(array $p): string {
         require_once __DIR__.'/client-site-export.php';
         foreach(sb_server_files($p) as $name=>$content)$zip->addFromString($name,$content);
         $zip->addFromString('style.css',sb_styles());
-        foreach(['logo','photo'] as $key)if($p[$key])$zip->addFromString('assets/'.$key.'.'.$p[$key]['ext'],$p[$key]['bytes']);
+        $zip->addFromString('site.js',sb_site_script());
+        foreach(sb_image_keys() as $key)if(($p[$key]??null) && sb_image_is_selected($p,$key))$zip->addFromString('assets/'.$key.'.'.$p[$key]['ext'],$p[$key]['bytes']);
         $zip->addFromString('LEIA-ME.txt',"SEU SITE COMPLETO\r\nLeia INSTALACAO.md. O pacote inclui PHP, painel próprio, formulário de contato, banco.sql, CSS, imagens e configuração de exemplo.\r\nRequer PHP 8.2+ e MySQL/MariaDB. Crie o banco na sua hospedagem, importe o SQL, preencha app/config.php e execute instalar.php para definir seu administrador.\r\nNenhuma credencial do criador ou de pagamento acompanha os arquivos. Guarde este ZIP e faça backup do banco e dos arquivos. O suporte de publicação é opcional.\r\n");
         $zip->close();$bytes=file_get_contents($path);if($bytes===false)throw new RuntimeException('Falha ao gerar ZIP.');return $bytes;
     }finally{if(is_file($path))unlink($path);}
 }
 function sb_terms(array $o): string {
+    $o['customer_name'].="\nCPF: ".$o['customer_cpf'];
     return "TERMO DE CONTRATAÇÃO — CRIADOR DE PÁGINAS\nVersão: ".BUILDER_TERMS_VERSION."\nPedido: ".$o['id']."\nCliente: ".$o['customer_name']."\nE-mail confirmado: ".$o['email']."\nProjeto: ".$o['project_title']."\n\n1. OBJETO\nLicença de uso do criador para personalização, pelo próprio cliente, de uma página responsiva com código de servidor PHP e banco MySQL/MariaDB a partir dos modelos disponibilizados. A entrega contém PHP, CSS, imagens, banco.sql, configuração de exemplo e instruções de instalação em ZIP. Inclui formulário de contato com armazenamento de mensagens e painel próprio para editar textos e contatos e consultar mensagens. Requer hospedagem compatível com PHP 8.2+ e MySQL/MariaDB, contratada pelo cliente. Não inclui WordPress, loja virtual, funcionalidades sob medida, domínio nem hospedagem.\n\n2. VALORES\nPágina: ".sb_money($o['base_cents'])."\nDesconto da página: ".sb_money($o['discount_cents'])."\nSuporte opcional: ".sb_money($o['support_cents'])."\nTotal: ".sb_money($o['total_cents'])."\nO cupom, quando informado e válido, aplica-se apenas à página. O suporte não recebe desconto.\n\n3. SUPORTE OPCIONAL\n".($o['support_cents']>0?"Contratado: até 2 horas de ajuda para publicação, por R$ 150,00, mediante agendamento com o responsável. As 2 horas não incluem desenvolvimento de novas funcionalidades. Domínio e hospedagem são contratados pelo cliente.":"Não contratado. A compra inclui somente os arquivos da página personalizada pelo cliente.")."\n\n4. CONTEÚDO E CONFERÊNCIA\nO cliente insere e confere os textos, imagens, contatos e demais conteúdos, declarando possuir autorização para utilizá-los. A prévia deve ser revisada antes do pagamento. A plataforma gera os arquivos a partir das escolhas do cliente.\n\n5. ENTREGA E CÓPIA DE SEGURANÇA\nApós a confirmação do pagamento pelo provedor, o ZIP será enviado ao e-mail confirmado e o link de download ficará disponível na página do pedido por 7 dias contados da aprovação. Os arquivos são armazenados temporariamente para permitir essa entrega. Depois do prazo, serão excluídos do sistema e não haverá cópia disponível para reenvio. O cliente deve baixar o ZIP e manter seu próprio backup. Falhas de entrega devem ser comunicadas ao atendimento. Esta política não afasta os direitos legalmente assegurados ao consumidor.\n\n6. DADOS E DOCUMENTO ELETRÔNICO\nSão preservados os dados necessários ao pedido, pagamento, suporte e comprovação deste aceite. O conteúdo dos arquivos do site é temporário; o termo aceito eletronicamente permanece no arquivo administrativo. O código de confirmação por e-mail é pessoal e de uso único. Este aceite é assinatura eletrônica simples, sem certificado digital ICP-Brasil. O PDF é uma representação do termo e das evidências registradas, não um PDF assinado com certificado.\n\n7. PAGAMENTO E CUPOM\nA assinatura deste termo não comprova pagamento nem libera arquivos. A entrega ocorre apenas após pagamento aprovado. O cupom fica reservado para este pedido no início do checkout e passa a utilizado após aprovação. Tentativas de cobrança duplicadas são encaminhadas ao atendimento e não geram nova entrega.\n\n8. ATENÇÃO — ARREPENDIMENTO E REEMBOLSO\nBase legal: art. 49 do Código de Defesa do Consumidor (Lei nº 8.078/1990) e art. 5º do Decreto nº 7.962/2013, normas fiscalizadas pelos órgãos de defesa do consumidor, como o Procon.\nO consumidor pode exercer o arrependimento em 7 dias, observada a contratação e o recebimento do produto ou serviço. Para este sistema, a janela considera a data mais recente entre disponibilização após pagamento e envio da entrega, até o fim do sétimo dia no horário de Brasília. Falha ou atraso de entrega deve ser comunicado para análise, sem perda dos direitos legais.\nApós esse prazo, não há devolução por simples arrependimento prevista nesta oferta. PERMANECEM os direitos legais relativos a vícios, falhas, cobrança indevida e descumprimento da oferta. O teste, o download e o aceite não eliminam esses direitos.\nA solicitação pode ser feita na página do pedido ou pelo atendimento, sem motivo obrigatório. No arrependimento tempestivo, a devolução será integral, incluindo suporte opcional contratado, sem multa. A solicitação é registrada imediatamente e encaminhada para execução pelo responsável; o crédito depende do provedor e da instituição financeira.\nAo solicitar o cancelamento, os links de download serão bloqueados imediatamente. Isso não apaga arquivos já baixados. A página de acompanhamento e o atendimento permanecem acessíveis após a expiração dos downloads.\n\n9. ATENDIMENTO\nContato: ".(function_exists('memory_env')?memory_env('BUILDER_CONTACT_EMAIL','felippefardin@gmail.com'):'felippefardin@gmail.com').". Solicitações sobre compra, entrega, suporte e direitos do consumidor serão tratadas por esse canal.\n\nDeclaro que revisei a prévia e os valores e concordo com este termo, incluindo a conservação temporária dos arquivos e a necessidade de backup.\n";
 }
 
@@ -119,3 +133,5 @@ document.querySelectorAll('a').forEach(a=>{if(!a.getAttribute('href').startsWith
 HTML;
     return str_replace('</body>',$script.'</body>',$html);
 }
+
+require_once __DIR__.'/builder-sections.php';

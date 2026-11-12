@@ -20,8 +20,9 @@
   <script src="js/acessibilidade-global.js?v=20260814f" defer></script>
   <script src="js/public-shell.js?v=20261016" defer></script>
   <script src="js/projetos.js?v=20261016" defer></script>
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
 </head>
-<body>
+<body class="layout-unified">
   <?php require __DIR__ . '/includes/public-nav.php'; ?>
 
   <main id="conteudo-principal">

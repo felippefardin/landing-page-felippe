@@ -1,0 +1,112 @@
+/* Design system compartilhado — 12/11/2026.
+   Claro por padrão; modo escuro apenas com a classe de acessibilidade. */
+:root {
+  color-scheme: light;
+  --theme-bg: #f4f7fb;
+  --theme-surface: #ffffff;
+  --theme-surface-2: #eaf1fa;
+  --theme-border: #cbd7e6;
+  --theme-text: #142033;
+  --theme-muted: #4b5d73;
+  --theme-primary: #075bd8;
+  --theme-primary-hover: #0546a9;
+  --theme-focus: #f59e0b;
+  --theme-danger: #b42318;
+  --theme-radius: 18px;
+  --theme-shadow: 0 12px 34px rgba(7,27,53,.09);
+  --site-max-width: 1800px;
+  --site-gutter: clamp(16px,2.5vw,48px);
+  --site-gap: clamp(16px,1.6vw,26px);
+  --site-font: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+html.accessibility-dark,
+html:has(body.dark-mode),
+html:has(body.a11y-dark) {
+  color-scheme: dark;
+  --theme-bg: #0b1424;
+  --theme-surface: #192539;
+  --theme-surface-2: #24334a;
+  --theme-border: #51637f;
+  --theme-text: #f1f5fc;
+  --theme-muted: #c7d3e5;
+  --theme-primary: #82b7ff;
+  --theme-primary-hover: #b3d2ff;
+  --theme-danger: #ff9992;
+  --theme-shadow: 0 16px 40px rgba(0,0,0,.22);
+}
+html { scroll-behavior: smooth; }
+html, body { min-width: 0; }
+body { font-family: var(--site-font); line-height: 1.55; }
+body, body :is(button,input,select,textarea) { font-family: var(--site-font); }
+body :is(h1,h2,h3,h4,h5,h6) { line-height: 1.2; letter-spacing: -.02em; }
+body :is(button,input,select,textarea) { max-width: 100%; }
+body :is(img,video,iframe) { max-width: 100%; }
+body :is(.card,.panel,.box,.produto-container,.benefit-grid>article,.builder-editor,.builder-preview,.builder-checkout,.dashboard-card,.content-card) { min-width: 0; box-sizing: border-box; }
+body :is(.benefit-grid,.cards-grid,.products-grid,.projetos-grid,.builder-workspace) > * { min-width: 0; }
+body :is(button,.btn,.button,.botao) { transition: background-color .2s ease,border-color .2s ease,transform .2s ease; }
+body :is(button,.btn,.button,.botao):not(:disabled):hover { transform: translateY(-1px); }
+body :is(button,input,select,textarea,a,summary):focus-visible { outline: 3px solid var(--theme-focus) !important; outline-offset: 3px !important; }
+body :is(input,textarea)::placeholder { opacity: 1; }
+
+/* Escopo de cores para páginas de vitrine, não para componentes de prévia/checkout. */
+html:not(.accessibility-dark) body.public-page,
+html:not(.accessibility-dark) body.builder-page { background-color: var(--theme-bg); color: var(--theme-text); }
+html:not(.accessibility-dark) body.public-page :is(.benefit-grid>article,.card,.produto-container,.form-container,.login-container,.dashboard-card,.content-card),
+html:not(.accessibility-dark) body.builder-page :is(.builder-editor,.builder-preview,.builder-checkout) { border-color: var(--theme-border); }
+html:not(.accessibility-dark) body.public-page :is(input:not([type=checkbox]):not([type=radio]):not([type=color]),textarea,select),
+html:not(.accessibility-dark) body.builder-page :is(input:not([type=checkbox]):not([type=radio]):not([type=color]),textarea,select) {
+  background: #fff !important; color: #142033 !important; border: 1px solid #a6b5c8 !important;
+}
+html:not(.accessibility-dark) body.public-page :is(input,textarea)::placeholder,
+html:not(.accessibility-dark) body.builder-page :is(input,textarea)::placeholder { color: #526177 !important; }
+
+/* Layout desktop: a página aproveita a viewport sem colar nas bordas. */
+@media (min-width: 1100px) {
+  body.public-page main:not(.modal):not(.modal-content),
+  body.builder-page main,
+  body.public-page > :is(.container,.content,.content-wrapper),
+  body.public-page .page-container,
+  body.public-page .main-container {
+    width: calc(100% - 2 * var(--site-gutter));
+    max-width: var(--site-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+  body.public-page main > section:not(.modal):not(.modal-content),
+  body.public-page main > .container,
+  body.public-page main > .content,
+  body.builder-page main > section { max-width: none; }
+  body.public-page :is(.benefit-grid,.cards-grid,.products-grid,.projetos-grid) { gap: var(--site-gap); }
+}
+
+/* Preservar um mesmo padrão geométrico nas caixas e cartões. */
+body.public-page :is(.benefit-grid>article,.card,.produto-container,.content-card,.dashboard-card),
+body.builder-page :is(.builder-editor,.builder-preview,.builder-checkout) { border-radius: var(--theme-radius); }
+body.public-page :is(.benefit-grid,.cards-grid,.products-grid,.projetos-grid) { align-items: stretch; }
+body.public-page :is(.benefit-grid>article,.cards-grid>.card,.products-grid>.card,.projetos-grid>.card) { height: 100%; }
+
+/* Modo escuro: somente elementos de interface, sem modificar iframes ou conteúdo montado pelo cliente. */
+html.accessibility-dark body.public-page,
+html.accessibility-dark body.builder-page { background: var(--theme-bg) !important; color: var(--theme-text) !important; }
+html.accessibility-dark body.public-page :is(.benefit-grid>article,.card,.produto-container,.form-container,.login-container,.content-card,.dashboard-card),
+html.accessibility-dark body.builder-page :is(.builder-editor,.builder-preview,.builder-checkout,.builder-summary,.builder-benefits span,.builder-preview-devices) {
+  background: var(--theme-surface) !important; color: var(--theme-text) !important; border-color: var(--theme-border) !important;
+}
+html.accessibility-dark body.public-page :is(.benefit-grid>article,.card,.produto-container,.form-container,.login-container,.content-card,.dashboard-card) :is(h1,h2,h3,h4,p,small,label),
+html.accessibility-dark body.builder-page :is(.builder-editor,.builder-preview,.builder-checkout,.builder-summary) :is(h1,h2,h3,h4,p,small,label,dt,dd) { color: var(--theme-text) !important; }
+html.accessibility-dark body.public-page :is(input:not([type=checkbox]):not([type=radio]):not([type=color]),textarea,select),
+html.accessibility-dark body.builder-page :is(input:not([type=checkbox]):not([type=radio]):not([type=color]),textarea,select) {
+  background: #111d31 !important; color: #f1f5fc !important; border: 1px solid #8293ae !important;
+}
+html.accessibility-dark body :is(input,textarea)::placeholder { color: #c7d3e5 !important; }
+html.accessibility-dark body.builder-page :is(.builder-intro>p,.builder-checkout p,.builder-hint,.builder-preview>p,.builder-eyebrow) { color: #c7d3e5; }
+html.accessibility-dark body.builder-page .builder-secondary,
+html.accessibility-dark body.builder-page .builder-preview-toolbar button:not([aria-pressed=true]) { color: #dbeafe; background: #253751; border-color: #8fa5c4; }
+html.accessibility-dark body.builder-page .builder-summary { background: #24334a !important; }
+html.accessibility-dark body.builder-page .builder-preview-frame { background: #29364b; }
+html.accessibility-dark body.builder-page .refund-notice { background: #432f1b; color: #ffdbad; border-color: #e9a65a; }
+html.accessibility-dark body.builder-page .refund-notice * { color: inherit; }
+@media (max-width: 760px) { body.public-page main,body.builder-page main { max-width: 100%; } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+@media print { :root,html.accessibility-dark { color-scheme:light; } html,body { background:#fff !important; color:#111 !important; } }

@@ -53,8 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="js/acessibilidade-global.js?v=20261109-login-layout" defer></script>
 <link rel="stylesheet" href="css/acessibilidade-global.css?v=20261109-login-layout">
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
 </head>
-<body>
+<body class="layout-unified">
 
     <div class="container">
         <h2>Login</h2>

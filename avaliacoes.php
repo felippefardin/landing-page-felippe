@@ -44,7 +44,8 @@ $flash=$_SESSION['review_flash']??'';unset($_SESSION['review_flash']);
 <link rel="stylesheet" href="css/avaliacoes.css?v=20261110-padrao">
 <script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script>
 <script src="js/avaliacoes.js?v=20261109" defer></script>
-</head><body class="review-admin"><header class="review-admin-header"><div class="review-admin-heading"><a class="review-admin-brand" href="home.php"><img src="img/logotipofelippe.png" alt="Felippe Andreata" width="240" height="80"></a><div><h1>Avaliações</h1><p>Gerencie os comentários enviados pelo site.</p></div></div><a class="review-back" href="home.php">&larr; Voltar ao painel</a></header>
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
+</head><body class="layout-unified review-admin"><header class="review-admin-header"><div class="review-admin-heading"><a class="review-admin-brand" href="home.php"><img src="img/logotipofelippe.png" alt="Felippe Andreata" width="240" height="80"></a><div><h1>Avaliações</h1><p>Gerencie os comentários enviados pelo site.</p></div></div><a class="review-back" href="home.php">&larr; Voltar ao painel</a></header>
 <main id="conteudo-principal" class="review-admin-main">
 <?php if ($error): ?><p class="error" role="alert"><?= review_escape($error) ?></p><?php endif; ?>
 <?php if ($flash): ?><p class="success" role="status"><?= review_escape($flash) ?></p><?php endif; ?>

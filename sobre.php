@@ -15,8 +15,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/public-modern.css?v=20260824"><link rel="stylesheet" href="css/acessibilidade-global.css?v=20260814f"><link rel="stylesheet" href="css/sobre-modern.css?v=20260824"><link rel="stylesheet" href="css/sobre-fixes.css?v=20261016">
   <script src="js/acessibilidade-global.js?v=20260814f" defer></script><script src="js/public-shell.js?v=20261110" defer></script>
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
 </head>
-<body>
+<body class="layout-unified">
   <?php require __DIR__ . '/includes/public-nav.php'; ?>
   <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
   <main id="conteudo-principal">

@@ -32,8 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="js/acessibilidade-global.js?v=20260814f" defer></script>
     <link rel="stylesheet" href="css/public-modern.css?v=20260814c">
     <script src="js/public-shell.js?v=20260814b" defer></script>
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
 </head>
-<body>
+<body class="layout-unified">
     <h2>Redefinir Senha</h2>
     <form method="POST">
         <label>Nova Senha:</label><br>

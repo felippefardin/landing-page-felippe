@@ -47,7 +47,8 @@ if($authorized){try{
 }catch(Throwable $e){$ready=false;}}
 if ($ready && !$authorized) http_response_code(403);
 ?>
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Cupons de desconto | Tech Tecnologia</title><link rel="stylesheet" href="css/cupons-desconto.css?v=20261109"><script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script></head><body class="coupons-admin">
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Cupons de desconto | Tech Tecnologia</title><link rel="stylesheet" href="css/cupons-desconto.css?v=20261109"><script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script><link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
+</head><body class="layout-unified coupons-admin">
 <main><nav><a href="validar-cupom.php">Validar cupom</a><a href="admin.php">← Voltar ao painel</a><a href="index.php#desafio-memoria">Abrir jogo no site</a></nav><h1>Cupons de desconto</h1><p>Jogo da memória · 25 pares · 80 jogadas · 3 partidas · Vale-desconto surpresa por 7 dias</p>
 <?php if(!$ready):?><p role="alert" class="notice">O módulo ainda não está disponível. Importe a migração do jogo no banco e confira a configuração.</p>
 <?php elseif(!$authorized):?><section class="notice"><h2>Confirme seu e-mail de administrador</h2><p>Além do login do site, confirme o e-mail do proprietário pelo código enviado na janela do jogo. Não é necessário iniciar uma partida.</p><p><a href="index.php#desafio-memoria">Confirmar meu e-mail na index</a></p><p>Administrador configurado: <?=mh(memory_env('DISCOUNT_ADMIN_EMAIL','felippefardin@gmail.com'))?>.</p></section>

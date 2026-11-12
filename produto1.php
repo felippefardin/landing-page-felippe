@@ -29,8 +29,9 @@
     <link rel="stylesheet" href="css/product-modern.css?v=20260814f">
     <script src="js/public-shell.js?v=20260814b" defer></script>
     <link rel="stylesheet" href="css/produto1-fixes.css?v=20261109-contraste">
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
 </head>
-<body class="security-product-page">
+<body class="layout-unified security-product-page">
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>

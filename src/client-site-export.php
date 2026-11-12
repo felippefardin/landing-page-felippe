@@ -7,12 +7,13 @@ function sb_server_files(array $p): array {
     }
     $files['app/config.example.php']=str_replace(['__APP_KEY__','__SETUP_TOKEN__'],[bin2hex(random_bytes(32)),bin2hex(random_bytes(32))],$files['app/config.example.php']);
     $render="<?php\ndeclare(strict_types=1);\n// Renderização do site do cliente. Nenhuma credencial do criador é incluída.\n";
-    foreach(['sb_escape','sb_styles','sb_html'] as $function){
+    foreach(['sb_escape','sb_text','sb_image','sb_project_base','sb_styles_base','sb_html_base'] as $function){
         $reflection=new ReflectionFunction($function);$source=file($reflection->getFileName());if($source===false)throw new RuntimeException('Renderizador indisponível.');
         $render.=implode('',array_slice($source,$reflection->getStartLine()-1,$reflection->getEndLine()-$reflection->getStartLine()+1))."\n";
     }
+    $render.=preg_replace('/^<\?php\s*declare\(strict_types=1\);\s*/', '', file_get_contents(__DIR__.'/builder-sections.php'));
     $files['app/render.php']=$render;
-    $data=$p;foreach(['logo','photo'] as $key)$data[$key]=$p[$key]?['ext'=>$p[$key]['ext']]:null;
+    $data=$p;foreach(sb_image_keys() as $key)$data[$key]=($p[$key]??null) && sb_image_is_selected($p,$key)?['ext'=>$p[$key]['ext']]:null;
     $json=json_encode($data,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_THROW_ON_ERROR);
     $files['banco.sql']=<<<'SQL'
 -- Importe em um banco vazio já criado na SUA hospedagem.

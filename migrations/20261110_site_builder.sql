@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS builder_orders (
  id CHAR(32) PRIMARY KEY,
  access_hash CHAR(64) NOT NULL,
  customer_name VARCHAR(100) NOT NULL,
+ customer_cpf VARCHAR(14) NOT NULL,
  email VARCHAR(254) NOT NULL,
  project_title VARCHAR(100) NOT NULL,
  base_cents INT UNSIGNED NOT NULL,

@@ -197,6 +197,7 @@ function bc_create(mysqli $db, array $in): array {
     }
 
     $name = sb_text($in, 'name', 100);
+    $cpf = sb_cpf($in);
 
     if (mb_strlen($name) < 2) {
         throw new InvalidArgumentException('Informe seu nome completo.');
@@ -245,6 +246,7 @@ function bc_create(mysqli $db, array $in): array {
     $o = $quote + [
         'id' => $id,
         'customer_name' => $name,
+        'customer_cpf' => $cpf,
         'email' => $email,
         'project_title' => $project['brand']
     ];
@@ -260,17 +262,18 @@ function bc_create(mysqli $db, array $in): array {
         memory_sql(
             $db,
             'INSERT INTO builder_orders
-            (id,access_hash,customer_name,email,project_title,
+            (id,access_hash,customer_name,customer_cpf,email,project_title,
              base_cents,discount_cents,support_cents,total_cents,
              coupon_id,coupon_code,terms_version,terms_text,terms_hash,
              otp_hash,otp_expires,otp_sends,otp_last,zip_hash,created_at,
              support_status)
-             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1,?,?,?,?)',
-            'sssssiiiiissssssssss',
+             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1,?,?,?,?)',
+            'ssssssiiiiissssssssss',
             [
                 $id,
                 hash('sha256', $token),
                 $name,
+                $cpf,
                 $email,
                 $project['brand'],
                 35000,

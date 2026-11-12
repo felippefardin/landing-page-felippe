@@ -29,8 +29,9 @@
     <link rel="stylesheet" href="css/public-modern.css?v=20260814c">
     <link rel="stylesheet" href="css/product-modern.css?v=20260814f">
     <script src="js/public-shell.js?v=20260814b" defer></script>
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
 </head>
-<body>
+<body class="layout-unified">
 
     <!-- VLibras widget -->
     <div vw class="enabled">

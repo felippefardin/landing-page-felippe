@@ -217,8 +217,9 @@ $totalPaginas = ceil($totalRegistros / $limite);
 }
     </style>
     <script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script>
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
 </head>
-<body>
+<body class="layout-unified">
 
 <div class="dropdown-container">
     <div class="dropdown">

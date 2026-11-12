@@ -89,8 +89,9 @@ body.home-wide #conteudo-principal .work-faq{width:100%;max-width:none}
 <script src="js/memoria-desconto.js?v=20261110-20261109-memory1" defer></script>
 <link rel="stylesheet" href="css/criador-oferta.css?v=20261110-destaque">
 <link rel="stylesheet" href="css/home-header-compact.css?v=20261110-botao-centralizado">
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
 </head>
-<body class="home-wide">
+<body class="layout-unified home-wide">
     <!-- VLibras widget -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>

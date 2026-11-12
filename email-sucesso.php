@@ -200,8 +200,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           .email-confirmacao-page .email-return { transition: none; }
       }
     </style>
+<link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
 </head>
-<body class="email-confirmacao-page">
+<body class="layout-unified email-confirmacao-page">
     <main id="conteudo-principal" class="email-main">
         <section class="email-card <?= $cadastroSucesso ? 'is-success' : 'is-warning' ?>" aria-labelledby="email-title">
             <div class="email-status-icon" aria-hidden="true">

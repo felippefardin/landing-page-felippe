@@ -1,0 +1,142 @@
+/* Shared geometry. Loaded last by each page; no dependency on JavaScript. */
+@import url('theme-global.css?v=20261112-padronizacao2');
+
+body.layout-unified {
+  --layout-gutter: clamp(12px, 2vw, 40px);
+  --layout-gap: clamp(16px, 1.6vw, 28px);
+  --layout-padding: clamp(18px, 2vw, 36px);
+  --site-max-width: none;
+  --site-gutter: var(--layout-gutter);
+  margin-inline: 0;
+}
+body.layout-unified :is(main, section, article, .container, .content, .builder-workspace) {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* One box per top-level topic; nested cards keep their own structure. */
+html body.layout-unified :is(main > section, body > section):not([hidden]):not(.modal):not(.modal-content),
+html body.layout-unified > section:not([hidden]):not(.modal):not(.modal-content),
+html body.layout-unified :is(.builder-editor, .builder-preview, .builder-checkout) {
+  border: 1px solid var(--theme-border) !important;
+  border-radius: var(--theme-radius) !important;
+  box-shadow: var(--theme-shadow);
+}
+html body.layout-unified main > section:not([hidden]):not(.modal):not(.modal-content),
+html body.layout-unified > section:not([hidden]):not(.modal):not(.modal-content) {
+  margin-block: 0 var(--layout-gap) !important;
+  padding: var(--layout-padding) !important;
+}
+/* Grid gaps already separate rows on the homepage. */
+html body.layout-unified.home-wide #conteudo-principal > section {
+  margin-block: 0 !important;
+}
+html body.layout-unified .builder-intro {
+  background: var(--theme-surface);
+  color: var(--theme-text);
+}
+html body.layout-unified :is(.work-steps, .about-cards, .projects-grid, .benefit-grid, .cards-grid, .products-grid, .cards) {
+  gap: var(--layout-gap);
+  align-items: stretch;
+}
+html body.layout-unified :is(.work-steps > li, .about-cards > article, .projects-grid > article, .cards > .card) {
+  min-width: 0;
+  border-radius: var(--theme-radius);
+  box-sizing: border-box;
+}
+html body.layout-unified .builder-workspace { margin-bottom: var(--layout-gap); }
+html body.layout-unified :is(form.busca, #chart-container) {
+  padding: var(--layout-padding);
+  margin-block: var(--layout-gap);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius);
+  box-sizing: border-box;
+}
+html body.layout-unified form.busca {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+html body.layout-unified .builder-checkout { gap: var(--layout-gap); }
+html body.layout-unified :is(.builder-preview, .builder-summary) { position: static; }
+html body.layout-unified .builder-workspace { align-items: stretch; }
+html body.layout-unified .builder-preview { display: flex; flex-direction: column; }
+html body.layout-unified .builder-preview-frame { flex: 1; }
+
+@media screen and (min-width: 1024px) {
+  /* No 1180/1480/1800px ceiling, including on ultrawide monitors. */
+  html body.layout-unified > :is(main, .container, .content, .form-container, .login-container),
+  html body.layout-unified.public-page > main,
+  html body.layout-unified.builder-page main#conteudo-principal {
+    width: calc(100% - 2 * var(--layout-gutter)) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    margin-block: var(--layout-gap) !important;
+  }
+  html body.layout-unified:has(> main, > .container) { padding-inline: 0 !important; }
+  html body.layout-unified main > section,
+  html body.layout-unified > section {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  html body.layout-unified > section {
+    width: calc(100% - 2 * var(--layout-gutter)) !important;
+    margin-inline: auto !important;
+  }
+  html body.layout-unified :is(.about-shell, .projects-shell, .work-wrap, .container-oferta, .wrapper-horizontal, .produto-container, .work-faq) {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+  }
+  html body.layout-unified :is(.public-nav, .builder-top) {
+    padding-inline: var(--layout-gutter) !important;
+  }
+  html body.layout-unified :is(.header-conteudo, .footer-container) {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box;
+  }
+  html body.layout-unified main > :is(.container, .content),
+  html body.layout-unified .container > main.content {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0;
+    flex: 1;
+  }
+  html body.layout-unified .builder-workspace {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  }
+  html body.layout-unified .painel-botoes {
+    max-width: none !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--layout-gap);
+  }
+  html body.layout-unified .painel-botoes > a {
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* Standalone forms are a single topic box; inputs stay readable. */
+html body.layout-unified > :is(.container, .form-container, .login-container):not(:has(.sidebar)) {
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius);
+  padding: var(--layout-padding);
+  box-sizing: border-box;
+}
+html body.layout-unified :is(.review-admin-main, .coupons-admin main) { min-width: 0; }
+html.accessibility-dark body.layout-unified .builder-intro {
+  background: var(--theme-surface) !important;
+  color: var(--theme-text) !important;
+}
+@media screen and (max-width: 1023px) {
+  html body.layout-unified main > section { max-width: 100%; }
+  html body.layout-unified .builder-workspace { grid-template-columns: minmax(0, 1fr); }
+}
+@media print {
+  html body.layout-unified main > section { box-shadow: none; border-color: #bbb !important; }
+}

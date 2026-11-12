@@ -1,8 +1,21 @@
-Atualização do layout dos botões — criar-site
+LAYOUT FULL DESKTOP
 
-Faça uma cópia dos arquivos atuais antes de substituir.
-Copie criar-site.php para a raiz do projeto.
-Copie css/criador-site.css para a pasta css do projeto.
-Use os mesmos caminhos no localhost e no InfinityFree.
-Depois atualize a página com Ctrl+F5.
-Não altere seu .env.
+Copie os arquivos PHP/HTML e a pasta css deste pacote para a raiz do
+projeto, mantendo as subpastas e substituindo os arquivos correspondentes.
+No InfinityFree, envie os mesmos arquivos para htdocs. Depois use Ctrl+F5.
+
+Para aplicar na pasta local indicada, execute APLICAR.ps1 no PowerShell.
+O script salva uma copia dos arquivos anteriores antes de substitui-los.
+Ele nao foi executado automaticamente nesta sessao.
+
+Alteracoes: largura desktop sem teto de 1800px, caixas por secao,
+bordas e espacamentos uniformes, editor e previa alinhados, filtros
+e graficos em caixas, formularios e painel usando a largura disponivel.
+No celular, o criador continua em uma coluna.
+
+Validacao: sintaxe PHP de todas as paginas aprovada; blocos PHP, IDs,
+nomes dos campos e scripts comparados e preservados.
+Nao foi possivel concluir a verificacao visual: o navegador de teste
+foi bloqueado pelo ambiente. Login, banco e pagamento nao foram executados.
+
+O pacote nao inclui configuracoes, credenciais, SQL ou dados cadastrados.

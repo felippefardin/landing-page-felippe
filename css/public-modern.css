@@ -1,3 +1,5 @@
+@import url('theme-global.css?v=20261112-padronizacao2');
+
 :root {
   --public-navy: #071b35;
   --public-blue: #075bd8;
@@ -104,3 +106,4 @@ body.public-page footer h3 { color: #7de8ff; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+

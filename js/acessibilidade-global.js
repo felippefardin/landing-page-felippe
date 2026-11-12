@@ -1,12 +1,21 @@
 (function () {
   'use strict';
 
+  if (!document.querySelector('link[data-theme-global]')) {
+    const theme = document.createElement('link');
+    theme.rel = 'stylesheet';
+    theme.href = 'css/theme-global.css?v=20261112-padronizacao2';
+    theme.dataset.themeGlobal = 'true';
+    document.head.appendChild(theme);
+  }
+
   const FONT_KEY = 'tamanhoFonte';
   const THEME_KEY = 'modoDark';
   const MIN_FONT = 60;
   const MAX_FONT = 150;
   const STEP = 10;
 
+  if (localStorage.getItem(THEME_KEY) === null) localStorage.setItem(THEME_KEY, 'inativo');
   const storedFont = Number.parseInt(localStorage.getItem(FONT_KEY) || '100', 10);
   let fontSize = Number.isFinite(storedFont)
     ? Math.min(MAX_FONT, Math.max(MIN_FONT, storedFont))

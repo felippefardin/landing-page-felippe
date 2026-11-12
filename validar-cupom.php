@@ -44,8 +44,9 @@ $status=$row?memory_coupon_state($row):'';
 $labels=['reserved'=>'Reservado em uma compra pendente','active'=>'Disponível para uso','used'=>'Utilizado — não pode ser reutilizado','expired'=>'Expirado','cancelled'=>'Desativado'];
 ?>
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Validar cupom | Tech Tecnologia</title>
-<link rel="stylesheet" href="css/validar-cupom.css?v=20261110"><script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script></head>
-<body class="coupon-validation"><main id="conteudo-principal">
+<link rel="stylesheet" href="css/validar-cupom.css?v=20261110"><script src="js/acessibilidade-global.js?v=20261110-reviews-layout" data-accessibility-fixed defer></script><link rel="stylesheet" href="css/layout-full.css?v=20261112-1">
+</head>
+<body class="layout-unified coupon-validation"><main id="conteudo-principal">
 <header class="coupon-heading"><div><h1>Validar cupom</h1><p>Consulte o vale e confirme sua utilização na contratação.</p></div><a href="home.php">&larr; Voltar ao painel</a></header>
 <?php if($notice):?><p class="coupon-notice" role="status"><?=ch($notice)?></p><?php endif;?>
 <?php if($error):?><p class="coupon-error" role="alert"><?=ch($error)?></p><?php endif;?>

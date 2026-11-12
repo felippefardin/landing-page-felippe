@@ -12,14 +12,14 @@ try{
     $action=$in['action']??'';
     if(in_array($action,['preview','test_preview'],true)){
         if(!is_array($in['project']??null))throw new InvalidArgumentException('Projeto inválido.');
-        $project=sb_project($in['project']);$html=sb_html($project,true);
+        $project=sb_project($in['project'],$action==='preview');$html=sb_html($project,true);
         if($action==='test_preview'){$_SESSION['builder_tested_project']=hash('sha256',serialize($project));$html=sb_test_html($html);}
         ba_reply(['html'=>$html]);
     }
     if($action==='terms'){
         $email=is_string($in['email']??null)?strtolower(trim($in['email'])):'';$code=is_string($in['coupon']??null)?strtoupper(trim($in['coupon'])):'';
         $quote=$code===''?sb_price(($in['support']??false)===true,false):bc_quote(bc_db(),$email,$code,($in['support']??false)===true);
-        $o=$quote+['id'=>'Prévia — o identificador será gerado ao continuar','customer_name'=>sb_text($in,'name',100),'email'=>$email,'project_title'=>sb_text($in,'title',100)];
+        $o=$quote+['id'=>'Prévia — o identificador será gerado ao continuar','customer_name'=>sb_text($in,'name',100),'customer_cpf'=>sb_cpf($in),'email'=>$email,'project_title'=>sb_text($in,'title',100)];
         ba_reply(['quote'=>$quote,'terms'=>sb_terms($o)]);
     }
     $db=bc_db();
