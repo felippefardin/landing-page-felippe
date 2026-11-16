@@ -651,10 +651,9 @@ body.home-wide #conteudo-principal .work-faq{width:100%;max-width:none}
         <section class="foto-e-formulario" id="foto-e-formulario">
             <div class="wrapper-horizontal">
                 <div class="foto-container">
-                    <img src="img/planodesuporte.png" alt="Imagem institucional da Tech Tecnologia" class="foto" loading="lazy">
-                    <!-- <img src="img/manutencaoesuporte.png" alt="Foto 2" class="foto"> -->
-                    <img src="img/conteudoseguros.png" alt="Orientações para uso seguro da tecnologia" class="foto" loading="lazy">
-                </div>
+    <img src="img/siteatualizado.png" alt="Seu site sempre atualizado — manutenção e suporte técnico" class="foto" loading="lazy">
+    <img src="img/escudodigital.png" alt="Mais proteção para seu site — segurança e cuidado contínuo" class="foto" loading="lazy">
+</div>
 
                 <div class="formulario" id="formulario">
                     <h2>Vamos conversar? </h2>
